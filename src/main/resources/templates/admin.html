@@ -13,6 +13,29 @@
 <!-- /Head -->
 
 <body>
+
+    <!-- Navbar Auth-->
+    <nav id="navbar-main" class="navbar navbar-horizontal navbar-transparent navbar-main navbar-expand-lg navbar-light">
+        <div class="container">
+            {{#admin}}
+            <div class="navbar" id="navbar-admin">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin.html" style="background-color: red;">
+                            <span class="nav-link-inner--text">ADMIN</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            {{/admin}}
+
+            {{>navbar_auth}}
+
+        </div>
+    </nav>
+    <!-- /Navbar Auth-->
+
+
     <h2>ADMIN PAGE</h2>
     <!-- Footer -->
     <div class="footer nav-footer">

@@ -1,383 +1,284 @@
 <!--
 =========================================================
-* Argon Dashboard - v1.2.0
+* THEME: Argon Dashboard - v1.2.0
 =========================================================
 * Product Page: https://www.creative-tim.com/product/argon-dashboard
-
-
 * Copyright  Creative Tim (http://www.creative-tim.com)
-* Coded by www.creative-tim.com
-
-
-
 =========================================================
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 -->
 <!DOCTYPE html>
-<html>
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="MuMApp">
-    <meta name="author" content="Ana Jurado">
-    <title>MuMApp - Profile</title>
-    <!-- Favicon -->
-    <link rel="icon" href="../static/assets/img/brand/favicon.png" type="image/png">
-    <!-- Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
-    <!-- Icons -->
-    <link rel="stylesheet" href="../static/assets/vendor/nucleo/css/nucleo.css" type="text/css">
-    <link rel="stylesheet" href="../static/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css" type="text/css">
-    <!-- Argon CSS -->
-    <link rel="stylesheet" href="../static/assets/css/argon.css?v=1.2.0" type="text/css">
-</head>
+<html lang="en">
+<!-- Head -->
+{{>head}}
+<!-- /Head -->
 
 <body>
-<!-- Navbar -->
-<nav id="navbar-main" class="navbar navbar-horizontal navbar-transparent navbar-main navbar-expand-lg navbar-light" >
-    <div class="container">
-        <a class="navbar-brand" href="examples/dashboard.html">
-            <img src="../static/assets/img/brand/white.png">
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="navbar-collapse navbar-custom-collapse collapse" id="navbar-collapse">
-            <div class="navbar-collapse-header">
+    <!-- Navbar Auth-->
+    <nav id="navbar-main" class="navbar navbar-horizontal navbar-transparent navbar-main navbar-expand-lg navbar-light">
+        <div class="container">
+            {{#admin}}
+                <div class="navbar" id="navbar-admin">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin.html" style="background-color: red;">
+                            <span class="nav-link-inner--text">ADMIN</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            {{/admin}}
+
+            {{>navbar_auth}}
+
+        </div>
+    </nav>
+    <!-- /Navbar Auth-->
+
+    <!-- Main content -->
+    <div class="main-content" id="panel">
+
+        <!-- Header -->
+         <div class="header pb-6 d-flex align-items-center" style="min-height: 450px; background-color: rgba(94, 114, 228, 0.3);  background-size: cover; background-position: center top;">
+
+        <!-- Mask -->
+            <span class="mask bg-gradient-default opacity-8"></span>
+            <!-- Header container -->
+            <div class="container-fluid d-flex align-items-center" style="padding-top: 40px;">
                 <div class="row">
-                    <div class="col-6 collapse-brand">
-                        <a href="examples/dashboard.html">
-                            <img src="../static/assets/img/brand/blue.png">
-                        </a>
-                    </div>
-                    <div class="col-6 collapse-close">
-                        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
-                            <span></span>
-                            <span></span>
-                        </button>
+                    <div class="col-lg-7 col-md-10">
+                        <h1 class="display-2 text-white">Hello Jesse</h1>
+                        <p class="text-white mt-0 mb-5">This is your profile page. You can see  and edit all the info about you and your preferences.</p>
                     </div>
                 </div>
             </div>
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a href="examples/dashboard.html" class="nav-link">
-                        <span class="nav-link-inner--text">My Dashboard</span>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a href="profile.html" class="nav-link">
-                        <span class="nav-link-inner--text">My Profile</span>
-                    </a>
-                </li>
-            </ul>
-            <hr class="d-lg-none" />
-            <ul class="navbar-nav align-items-lg-center ml-lg-auto">
-
-
-            <!-- Profile photo navbar -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <div class="media align-items-center">
-                                  <span class="avatar avatar-sm rounded-circle">
-                                    <img alt="Image placeholder" src="../static/assets/img/theme/team-4.jpg">
-                                  </span>
-                            <div class="media-body  ml-2  d-none d-lg-block">
-                                <span class="mb-0 text-sm  font-weight-bold">John Snow</span>
-                            </div>
-                        </div>
-                    </a>
-                    <div class="dropdown-menu  dropdown-menu-right ">
-                        <div class="dropdown-header noti-title">
-                            <h6 class="text-overflow m-0">Welcome!</h6>
-                        </div>
-                        <a href="#!" class="dropdown-item">
-                            <i class="ni ni-single-02"></i>
-                            <span>My profile</span>
-                        </a>
-                        <a href="#!" class="dropdown-item">
-                            <i class="ni ni-sound-wave"></i>
-                            <span>My Dashboard</span>
-                        </a>
-                        <div class="dropdown-divider"></div>
-                        <a href="#!" class="dropdown-item">
-                            <i class="ni ni-user-run"></i>
-                            <span>Logout</span>
-                        </a>
-                    </div>
-                </li>
-            </ul>
         </div>
-    </div>
-</nav>
-
-<!-- Main content -->
-<div class="main-content" id="panel">
-
-    <!-- Header -->
-     <div class="header pb-6 d-flex align-items-center" style="min-height: 450px; background-color: rgba(94, 114, 228, 0.3);  background-size: cover; background-position: center top;">
-
-    <!-- Mask -->
-        <span class="mask bg-gradient-default opacity-8"></span>
-        <!-- Header container -->
-        <div class="container-fluid d-flex align-items-center" style="padding-top: 40px;">
+        <!-- Page content -->
+        <div class="container-fluid mt--6">
             <div class="row">
-                <div class="col-lg-7 col-md-10">
-                    <h1 class="display-2 text-white">Hello Jesse</h1>
-                    <p class="text-white mt-0 mb-5">This is your profile page. You can see  and edit all the info about you and your preferences.</p>
+                <!-- SIDE PROFILE BLOCK -->
+                <div class="col-xl-4 order-xl-2">
+                    <div class="card card-profile">
+                        <img src="../static/assets/img/theme/img-1-1000x600.jpg" alt="Image placeholder" class="card-img-top">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-3 order-lg-2">
+                                <div class="card-profile-image">
+                                    <img src="../static/assets/img/theme/team-4.jpg" class="rounded-circle" style="border-radius: 0% !important;">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body pt-0">
+                            <div class="text-center">
+                                <h5 class="h3">
+                                    Jessica Jones<span class="font-weight-light">, 27</span>
+                                </h5>
+                                <div class="h5" style="margin-top: 60px;">
+                                    <h5 class="h3">Jessica Jones </h5>
+                                </div>
+                                <div class="mt-4">
+                                    <h7>Cities:</h7>
+                                    <i class="ni business_briefcase-24 mr-2"></i>Madrid
+                                </div>
+                                <div>
+                                    <h7>Styles:</h7>
+                                    <i class="ni education_hat mr-2"></i>Rock, Pop, Trap
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- PROFILE AND PREFERENCES FORM -->
+                <div class="col-xl-8 order-xl-1">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="row align-items-center">
+                                <h2 class="mb-0">Your profile </h2>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <!-- USER INFORMATION INFORMATION -->
+                            <form>
+                                <div class="pl-lg-4">
+                                    <h6 class="heading-small text-muted mb-4">User information</h6>
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label class="form-control-label" for="input-username">Username</label>
+                                                <input type="text" id="input-username" class="form-control" placeholder="Username" value="lucky.jesse">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label class="form-control-label" for="input-email">Email address</label>
+                                                <input type="email" id="input-email" class="form-control" placeholder="jesse@example.com">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label class="form-control-label" for="input-first-name">First name</label>
+                                                <input type="text" id="input-first-name" class="form-control" placeholder="First name" value="Lucky">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label class="form-control-label" for="input-last-name">Last name</label>
+                                                <input type="text" id="input-last-name" class="form-control" placeholder="Last name" value="Jesse">
+                                            </div>
+                                        </div>
+                                    </div>
+                                <hr class="my-4" />
+                                <!-- PREFERENCES -->
+                                    <h6 class="heading-small text-muted mb-4">Preferences</h6>
+                                    <!-- PREFERENCES: MUSIC -->
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="form-group">
+                                                <label class="form-control-label">Music Styles</label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xl-6 order-xl-2 dropdown">
+                                                <button aria-expanded="true" aria-haspopup="true"
+                                                        class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                                                        id="dropdownMenuMUSIC" type="button">
+                                                    <i class="ni ni-note-03"></i>
+                                                    CHOOSE UP TO 10
+                                                    <span class="caret"></span>
+                                                </button>
+                                                <ul aria-labelledby="dropdownMenu1"
+                                                    class="dropdown-menu checkbox-menu allow-focus">
+                                                    <li><label><input type="checkbox"> Rock </label></li>
+                                                    <li><label><input type="checkbox"> Pop </label></li>
+                                                    <li><label><input type="checkbox"> Rap </label></li>
+                                                    <li><label><input type="checkbox"> Trap </label></li>
+                                                    <li><label><input type="checkbox"> R&B </label></li>
+                                                    <li><label><input type="checkbox"> Soul </label></li>
+                                                    <li><label><input type="checkbox"> Funk </label></li>
+                                                    <li><label><input type="checkbox"> Jazz </label></li>
+                                                    <li><label><input type="checkbox"> Classic </label></li>
+                                                    <li><label><input type="checkbox"> Romantic </label></li>
+                                                    <li><label><input type="checkbox"> Original Soundtrack </label></li>
+                                                    <li><label><input type="checkbox"> Latin </label></li>
+                                                    <li><label><input type="checkbox"> Disco </label></li>
+                                                    <li><label><input type="checkbox"> No se </label></li>
+                                                    <li><label><input type="checkbox"> Algo </label></li>
+
+                                                </ul>
+                                            </div>
+                                            <div class="col-xl-6 order-xl-2 form-group">
+                                                <h4>Rock, Pop, Trap, Jazz, Classic, Funk, Disco</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- PREFERENCES: CITIES -->
+                                    <div class="container">
+                                        <div class="row">
+                                            <p> </p>
+                                        </div>
+                                        <div class="row">
+                                            <div class="form-group">
+                                                <label class="form-control-label">Cities</label>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-xl-6 order-xl-2 dropdown">
+                                                <button aria-expanded="true" aria-haspopup="true"
+                                                        class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                                                        id="dropdownMenuCITIES" type="button">
+                                                    <i class="ni ni-world-2"></i>
+                                                    CHOOSE UP TO 5
+                                                    <span class="caret"></span>
+                                                </button>
+                                                <ul aria-labelledby="dropdownMenu1"
+                                                    class="dropdown-menu checkbox-menu allow-focus">
+                                                    <li><label><input type="checkbox"> Madrid </label></li>
+                                                    <li><label><input type="checkbox"> Lisbon </label></li>
+                                                    <li><label><input type="checkbox"> London </label></li>
+                                                    <li><label><input type="checkbox"> Paris </label></li>
+                                                    <li><label><input type="checkbox"> New York </label></li>
+                                                    <li><label><input type="checkbox"> Boston </label></li>
+                                                    <li><label><input type="checkbox"> Chicago </label></li>
+                                                    <li><label><input type="checkbox"> L.A. </label></li>
+                                                    <li><label><input type="checkbox"> Rome </label></li>
+                                                    <li><label><input type="checkbox"> Dublin </label></li>
+                                                    <li><label><input type="checkbox"> Berlin </label></li>
+                                                    <li><label><input type="checkbox"> Oslo </label></li>
+                                                    <li><label><input type="checkbox"> Stockholm </label></li>
+                                                    <li><label><input type="checkbox"> Helsinki </label></li>
+                                                    <li><label><input type="checkbox"> Viena </label></li>
+                                                    <li><label><input type="checkbox"> Berna </label></li>
+                                                    <li><label><input type="checkbox"> Sidney </label></li>
+                                                    <li><label><input type="checkbox"> Montreal </label></li>
+                                                    <li><label><input type="checkbox"> Tallin </label></li>
+
+                                                </ul>
+                                            </div>
+                                            <div class="col-xl-6 order-xl-2 form-group">
+                                                <h4>Madrid, Lisbon, New York, Helsinki</h4>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                <hr class="my-4" />
+                                <!-- UPLOAD IMAGE -->
+                                <h6 class="heading-small text-muted mb-4">Profile image</h6>
+                                <div class="pl-lg-4">
+                                    <div class="form-group">
+                                        <label class="form-control-label">Upload an image to complete your profile</label>
+                                        <div class="input-group">
+                                                <span class="btn btn-default btn-file">
+                                                    <input type="file" id="imgInp">
+                                                </span>
+                                            <input type="text" class="form-control" readonly>
+                                        </div>
+                                    </div>
+                                </div>
+                                    <hr class="my-4" />
+                                    <!-- PASSWORD -->
+                                    <h6 class="heading-small text-muted mb-4">Set a new password</h6>
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label class="form-control-label" for="input-first-name">Password</label>
+                                                <input type="text" id="input-old-password" class="form-control" placeholder="Password" value="">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="form-group">
+                                                <label class="form-control-label" for="input-last-name">New Password</label>
+                                                <input type="text" id="input-new-password" class="form-control" placeholder="New Password" value="">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- SAVE BUTTON -->
+                                    <hr class="my-4" />
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <button type="button" class="btn btn-primary">Save Changes</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Page content -->
-    <div class="container-fluid mt--6">
-        <div class="row">
-            <!-- SIDE PROFILE BLOCK -->
-            <div class="col-xl-4 order-xl-2">
-                <div class="card card-profile">
-                    <img src="../static/assets/img/theme/img-1-1000x600.jpg" alt="Image placeholder" class="card-img-top">
-                    <div class="row justify-content-center">
-                        <div class="col-lg-3 order-lg-2">
-                            <div class="card-profile-image">
-                                <img src="../static/assets/img/theme/team-4.jpg" class="rounded-circle" style="border-radius: 0% !important;">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-body pt-0">
-                        <div class="text-center">
-                            <h5 class="h3">
-                                Jessica Jones<span class="font-weight-light">, 27</span>
-                            </h5>
-                            <div class="h5" style="margin-top: 60px;">
-                                <h5 class="h3">Jessica Jones </h5>
-                            </div>
-                            <div class="mt-4">
-                                <h7>Cities:</h7>
-                                <i class="ni business_briefcase-24 mr-2"></i>Madrid
-                            </div>
-                            <div>
-                                <h7>Styles:</h7>
-                                <i class="ni education_hat mr-2"></i>Rock, Pop, Trap
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- PROFILE AND PREFERENCES FORM -->
-            <div class="col-xl-8 order-xl-1">
-                <div class="card">
-                    <div class="card-header">
-                        <div class="row align-items-center">
-                            <h2 class="mb-0">Your profile </h2>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <!-- USER INFORMATION INFORMATION -->
-                        <form>
-                            <div class="pl-lg-4">
-                                <h6 class="heading-small text-muted mb-4">User information</h6>
-                                <div class="row">
-                                    <div class="col-lg-6">
-                                        <div class="form-group">
-                                            <label class="form-control-label" for="input-username">Username</label>
-                                            <input type="text" id="input-username" class="form-control" placeholder="Username" value="lucky.jesse">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <div class="form-group">
-                                            <label class="form-control-label" for="input-email">Email address</label>
-                                            <input type="email" id="input-email" class="form-control" placeholder="jesse@example.com">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-lg-6">
-                                        <div class="form-group">
-                                            <label class="form-control-label" for="input-first-name">First name</label>
-                                            <input type="text" id="input-first-name" class="form-control" placeholder="First name" value="Lucky">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <div class="form-group">
-                                            <label class="form-control-label" for="input-last-name">Last name</label>
-                                            <input type="text" id="input-last-name" class="form-control" placeholder="Last name" value="Jesse">
-                                        </div>
-                                    </div>
-                                </div>
-                            <hr class="my-4" />
-                            <!-- PREFERENCES -->
-                                <h6 class="heading-small text-muted mb-4">Preferences</h6>
-                                <!-- PREFERENCES: MUSIC -->
-                                <div class="container">
-                                    <div class="row">
-                                        <div class="form-group">
-                                            <label class="form-control-label">Music Styles</label>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-xl-6 order-xl-2 dropdown">
-                                            <button aria-expanded="true" aria-haspopup="true"
-                                                    class="btn btn-default dropdown-toggle" data-toggle="dropdown"
-                                                    id="dropdownMenuMUSIC" type="button">
-                                                <i class="ni ni-note-03"></i>
-                                                CHOOSE UP TO 10
-                                                <span class="caret"></span>
-                                            </button>
-                                            <ul aria-labelledby="dropdownMenu1"
-                                                class="dropdown-menu checkbox-menu allow-focus">
-                                                <li><label><input type="checkbox"> Rock </label></li>
-                                                <li><label><input type="checkbox"> Pop </label></li>
-                                                <li><label><input type="checkbox"> Rap </label></li>
-                                                <li><label><input type="checkbox"> Trap </label></li>
-                                                <li><label><input type="checkbox"> R&B </label></li>
-                                                <li><label><input type="checkbox"> Soul </label></li>
-                                                <li><label><input type="checkbox"> Funk </label></li>
-                                                <li><label><input type="checkbox"> Jazz </label></li>
-                                                <li><label><input type="checkbox"> Classic </label></li>
-                                                <li><label><input type="checkbox"> Romantic </label></li>
-                                                <li><label><input type="checkbox"> Original Soundtrack </label></li>
-                                                <li><label><input type="checkbox"> Latin </label></li>
-                                                <li><label><input type="checkbox"> Disco </label></li>
-                                                <li><label><input type="checkbox"> No se </label></li>
-                                                <li><label><input type="checkbox"> Algo </label></li>
 
-                                            </ul>
-                                        </div>
-                                        <div class="col-xl-6 order-xl-2 form-group">
-                                            <h4>Rock, Pop, Trap, Jazz, Classic, Funk, Disco</h4>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- PREFERENCES: CITIES -->
-                                <div class="container">
-                                    <div class="row">
-                                        <p> </p>
-                                    </div>
-                                    <div class="row">
-                                        <div class="form-group">
-                                            <label class="form-control-label">Cities</label>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-xl-6 order-xl-2 dropdown">
-                                            <button aria-expanded="true" aria-haspopup="true"
-                                                    class="btn btn-default dropdown-toggle" data-toggle="dropdown"
-                                                    id="dropdownMenuCITIES" type="button">
-                                                <i class="ni ni-world-2"></i>
-                                                CHOOSE UP TO 5
-                                                <span class="caret"></span>
-                                            </button>
-                                            <ul aria-labelledby="dropdownMenu1"
-                                                class="dropdown-menu checkbox-menu allow-focus">
-                                                <li><label><input type="checkbox"> Madrid </label></li>
-                                                <li><label><input type="checkbox"> Lisbon </label></li>
-                                                <li><label><input type="checkbox"> London </label></li>
-                                                <li><label><input type="checkbox"> Paris </label></li>
-                                                <li><label><input type="checkbox"> New York </label></li>
-                                                <li><label><input type="checkbox"> Boston </label></li>
-                                                <li><label><input type="checkbox"> Chicago </label></li>
-                                                <li><label><input type="checkbox"> L.A. </label></li>
-                                                <li><label><input type="checkbox"> Rome </label></li>
-                                                <li><label><input type="checkbox"> Dublin </label></li>
-                                                <li><label><input type="checkbox"> Berlin </label></li>
-                                                <li><label><input type="checkbox"> Oslo </label></li>
-                                                <li><label><input type="checkbox"> Stockholm </label></li>
-                                                <li><label><input type="checkbox"> Helsinki </label></li>
-                                                <li><label><input type="checkbox"> Viena </label></li>
-                                                <li><label><input type="checkbox"> Berna </label></li>
-                                                <li><label><input type="checkbox"> Sidney </label></li>
-                                                <li><label><input type="checkbox"> Montreal </label></li>
-                                                <li><label><input type="checkbox"> Tallin </label></li>
-
-                                            </ul>
-                                        </div>
-                                        <div class="col-xl-6 order-xl-2 form-group">
-                                            <h4>Madrid, Lisbon, New York, Helsinki</h4>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                            <hr class="my-4" />
-                            <!-- UPLOAD IMAGE -->
-                            <h6 class="heading-small text-muted mb-4">Profile image</h6>
-                            <div class="pl-lg-4">
-                                <div class="form-group">
-                                    <label class="form-control-label">Upload an image to complete your profile</label>
-                                    <div class="input-group">
-                                            <span class="btn btn-default btn-file">
-                                                <input type="file" id="imgInp">
-                                            </span>
-                                        <input type="text" class="form-control" readonly>
-                                    </div>
-                                </div>
-                            </div>
-                                <hr class="my-4" />
-                                <!-- PASSWORD -->
-                                <h6 class="heading-small text-muted mb-4">Set a new password</h6>
-                                <div class="row">
-                                    <div class="col-lg-6">
-                                        <div class="form-group">
-                                            <label class="form-control-label" for="input-first-name">Password</label>
-                                            <input type="text" id="input-old-password" class="form-control" placeholder="Password" value="">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <div class="form-group">
-                                            <label class="form-control-label" for="input-last-name">New Password</label>
-                                            <input type="text" id="input-new-password" class="form-control" placeholder="New Password" value="">
-                                        </div>
-                                    </div>
-                                </div>
-                                <!-- SAVE BUTTON -->
-                                <hr class="my-4" />
-                                <div class="row">
-                                    <div class="col-lg-6">
-                                        <button type="button" class="btn btn-primary">Save Changes</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Footer -->
-        <footer class="py-5" id="footer-main">
-            <div class="container">
-                <div class="row align-items-center justify-content-xl-between">
-                    <div class="col-xl-6">
-                        <div class="copyright text-center text-xl-left text-muted">
-                            &copy; 2020 <a href="https://www.urjc.es" class="font-weight-bold ml-1" target="_blank">URJC - DAW - Ana Jurado</a>
-                        </div>
-                    </div>
-                    <div class="col-xl-6">
-                        <ul class="nav nav-footer justify-content-center justify-content-xl-end">
-                            <li class="nav-item">
-                                <a href="https://www.creative-tim.com/presentation" class="nav-link" target="_blank">About Us</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link nav-link-icon" href="https://github.com/creativetimofficial" target="_blank" data-toggle="tooltip" data-original-title="Star us on Github">
-                                    <i class="fab fa-github"></i>
-                                    <span class="nav-link-inner--text d-lg-none">Github</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </footer>
+    <!-- Footer -->
+    <div class="footer nav-footer">
+        {{>footer}}
     </div>
-</div>
-<!-- Argon Scripts -->
-<!-- Core -->
-<script src="../static/assets/vendor/jquery/dist/jquery.min.js"></script>
-<script src="../static/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-<script src="../static/assets/vendor/js-cookie/js.cookie.js"></script>
-<script src="../static/assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js"></script>
-<script src="../static/assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js"></script>
-<!-- Argon JS -->
-<script src="../static/assets/js/argon.js?v=1.2.0"></script>
+    <!-- /Footer -->
+
+    <!-- Scripts -->
+    <div class="scripts">
+        {{>scripts}}
+    </div>
+    <!-- /Scrips -->
+
 </body>
-
 </html>
