@@ -37,3 +37,5 @@ node_modules
 ### TARGET FOLDER ###
 target/
 target
+
+*.DS_Store
