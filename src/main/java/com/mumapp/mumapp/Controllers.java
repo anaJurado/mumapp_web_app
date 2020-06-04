@@ -31,4 +31,15 @@ public class Controllers {
     public String dashboard(Model model) {
         return "dashboard";
     }
+
+    @GetMapping("/admin")
+    public String admin(Model model) {
+        return "admin";
+    }
+
+    @GetMapping("/error")
+    public String error(Model model) {
+        return "error";
+    }
+
 }
