@@ -1,4 +1,10 @@
 package com.mumapp.mumapp.city;
 
-public class CityRepository {
+import com.mumapp.mumapp.user.User;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface CityRepository extends JpaRepository<User, Long> {
+
 }
+
+

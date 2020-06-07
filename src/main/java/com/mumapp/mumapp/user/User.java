@@ -16,7 +16,7 @@ public class User {
 
     private String firstName;
     private String lastName;
-    private String userName;
+    private String username;
     private String email;
     private String password;
     private Boolean isAdmin;
@@ -26,11 +26,11 @@ public class User {
     public User() {
     }
 
-    public User(Long id, String firstName, String lastName, String userName, String email, String password, Boolean isAdmin, Date birthday) {
+    public User(Long id, String firstName, String lastName, String username, String email, String password, Boolean isAdmin, Date birthday) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.userName = userName;
+        this.username = username;
         this.email = email;
         this.password = password;
         this.isAdmin = isAdmin;
@@ -61,12 +61,12 @@ public class User {
         this.lastName = lastName;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setUsername(String userName) {
+        this.username = userName;
     }
 
     public Boolean getAdmin() {
