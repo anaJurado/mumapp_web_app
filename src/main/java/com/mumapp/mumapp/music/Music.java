@@ -1,26 +1,34 @@
 package com.mumapp.mumapp.music;
 
+import com.mumapp.mumapp.musiccity.MusicCity;
+
 import javax.persistence.*;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class Music {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Long id = Long.valueOf(0);
 
+    @Column
     private String styleName;
 
-    @ElementCollection(fetch = FetchType.EAGER)
-    private List<String> characteristics;
+    @OneToMany(
+            mappedBy = "music",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
+    )
+    private Set<MusicCity> musicCitySet;
+
 
     public Music(){}
 
-    public Music(Long id, String styleName, List<String> characteristics) {
-        this.id = id;
+    public Music(String styleName) {
         this.styleName = styleName;
-        this.characteristics = characteristics;
+        musicCitySet = new HashSet<>();
     }
 
     public Long getId() {
@@ -39,11 +47,11 @@ public class Music {
         this.styleName = styleName;
     }
 
-    public List<String> getCharacteristics() {
-        return characteristics;
+    public Set<MusicCity> getMusicCitySet() {
+        return musicCitySet;
     }
 
-    public void setCharacteristics(List<String> characteristics) {
-        this.characteristics = characteristics;
+    public void setMusicCitySet(Set<MusicCity> musicCitySet) {
+        this.musicCitySet = musicCitySet;
     }
 }

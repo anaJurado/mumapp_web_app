@@ -1,9 +1,9 @@
 package com.mumapp.mumapp.city;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import com.mumapp.mumapp.musiccity.MusicCity;
+
+import javax.persistence.*;
+import java.util.Set;
 
 
 @Entity
@@ -11,16 +11,19 @@ public class City {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Long id = Long.valueOf(0);
 
     private String cityName;
     private String country;
     private String continent;
 
+    @OneToMany(mappedBy = "city")
+    private Set<MusicCity> musicCitySet;
+
+
     public City() {}
 
-    public City(Long id, String cityName, String country, String continent) {
-        this.id = id;
+    public City(String cityName, String country, String continent) {
         this.cityName = cityName;
         this.country = country;
         this.continent = continent;
@@ -58,5 +61,11 @@ public class City {
         this.continent = continent;
     }
 
+    public Set<MusicCity> getMusicCitySet() {
+        return musicCitySet;
+    }
 
+    public void setMusicCitySet(Set<MusicCity> musicCitySet) {
+        this.musicCitySet = musicCitySet;
+    }
 }

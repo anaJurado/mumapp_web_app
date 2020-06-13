@@ -1,10 +1,11 @@
 package com.mumapp.mumapp.user;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import java.util.Date;
+import com.mumapp.mumapp.music.Music;
+import com.mumapp.mumapp.city.City;
+import com.mumapp.mumapp.musiccity.MusicCity;
+
+import javax.persistence.*;
+import java.util.*;
 
 
 @Entity
@@ -12,7 +13,7 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Long id = Long.valueOf(0);
 
     private String firstName;
     private String lastName;
@@ -20,21 +21,36 @@ public class User {
     private String email;
     private String password;
     private Boolean isAdmin;
-    private Date birthday;
 
 
-    public User() {
-    }
+    //Uni-directional many-to-many association to music
+    @ManyToMany(cascade={CascadeType.ALL})
+    @JoinTable(name="user_music",
+            joinColumns=@JoinColumn(name="user_id"),
+            inverseJoinColumns=@JoinColumn(name="music_id"))
+    private Set<Music> musicSet;
 
-    public User(Long id, String firstName, String lastName, String username, String email, String password, Boolean isAdmin, Date birthday) {
-        this.id = id;
+    //Uni-directional many-to-many association to city
+    @ManyToMany(cascade={CascadeType.ALL})
+    @JoinTable(name="user_city",
+            joinColumns=@JoinColumn(name="user_id"),
+            inverseJoinColumns=@JoinColumn(name="city_id"))
+    private Set<City> citySet;
+
+
+    public User() {}
+
+    public User(String firstName, String lastName, String username, String email, String password,
+                Boolean isAdmin) {
+        super();
         this.firstName = firstName;
         this.lastName = lastName;
         this.username = username;
         this.email = email;
         this.password = password;
         this.isAdmin = isAdmin;
-        this.birthday = birthday;
+        musicSet = new HashSet<>();
+        citySet = new HashSet<>();
     }
 
     public Long getId() {
@@ -93,12 +109,19 @@ public class User {
         this.password = password;
     }
 
-
-    public Date getBirthday() {
-        return birthday;
+    public Set<Music> getMusicSet() {
+        return musicSet;
     }
 
-    public void setBirthday(Date birthday) {
-        this.birthday = birthday;
+    public void setMusicSet(Set<Music> musicSet) {
+        this.musicSet = musicSet;
+    }
+
+    public Set<City> getCitySet() {
+        return citySet;
+    }
+
+    public void setCitySet(Set<City> citySet) {
+        this.citySet = citySet;
     }
 }
