@@ -27,13 +27,13 @@ public class DatabaseInitializer {
     @PostConstruct
     public void init() {
 
-        // MUSIC STYLES (15)
+        // MUSIC STYLES (25)
 
         Music jazz = musicRepository.save(new Music("jazz"));
         Music blues = musicRepository.save(new Music("blues"));
         Music funk = musicRepository.save(new Music("funk"));
         Music soul = musicRepository.save(new Music("soul"));
-        Music randb = musicRepository.save(new Music("r&b"));
+        Music randb = musicRepository.save(new Music("r and b"));
         Music latin = musicRepository.save(new Music("latin"));
         Music indie = musicRepository.save(new Music("indie"));
         Music pop = musicRepository.save(new Music("pop"));
@@ -43,7 +43,17 @@ public class DatabaseInitializer {
         Music country = musicRepository.save(new Music("country"));
         Music trap = musicRepository.save(new Music("trap"));
         Music classical = musicRepository.save(new Music("classical"));
-        Music tvandfilm = musicRepository.save(new Music("tv&film"));
+        Music tvandfilm = musicRepository.save(new Music("tv and film"));
+        Music romantic = musicRepository.save(new Music("romantic"));
+        Music bolero = musicRepository.save(new Music("bolero"));
+        Music cumbia = musicRepository.save(new Music("cumbia"));
+        Music electronic = musicRepository.save(new Music("electronic"));
+        Music urban = musicRepository.save(new Music("urban"));
+        Music disco = musicRepository.save(new Music("disco"));
+        Music singersongwriter = musicRepository.save(new Music("singer-songwriter"));
+        Music cover = musicRepository.save(new Music("cover"));
+        Music acoustic = musicRepository.save(new Music("acoustic"));
+        Music bossa = musicRepository.save(new Music("bossa-nova"));
 
 
         // CITITES (25)
@@ -83,7 +93,7 @@ public class DatabaseInitializer {
                 "mimi@mumapp.not", "54321", false));
 
 
-        // USER - MUSIC - CITY ANA
+        // USER - MUSIC(5) - CITY(5) ANA
         ana.getMusicSet().add(jazz);
         ana.getMusicSet().add(soul);
         ana.getMusicSet().add(funk);
@@ -100,7 +110,7 @@ public class DatabaseInitializer {
         userRepository.save(ana);
 
 
-        // USER - MUSIC - CITY MARIA
+        // USER - MUSIC(10) - CITY(3) MARIA
 
         maria.getMusicSet().add(jazz);
         maria.getMusicSet().add(latin);
@@ -116,6 +126,7 @@ public class DatabaseInitializer {
         maria.getCitySet().add(santiago);
         maria.getCitySet().add(buenosaires);
         maria.getCitySet().add(tokyo);
+
         userRepository.save(maria);
 
 /*
