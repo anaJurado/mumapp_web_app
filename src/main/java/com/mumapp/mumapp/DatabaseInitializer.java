@@ -27,22 +27,64 @@ public class DatabaseInitializer {
     @PostConstruct
     public void init() {
 
-        // Sample MUSIC
-        musicRepository.save(new Music("rock", "upbeat","guitar"));
-        musicRepository.save(new Music("jazz", "upbeat","downbeat","improvisation","trio","quartet"));
-        musicRepository.save(new Music("pop", "upbeat","popular"));
-        musicRepository.save(new Music("funk", "upbeat","guitar","disco","80's"));
-        musicRepository.save(new Music("trap", "vocal","rap"));
+        // MUSIC STYLES (15)
 
-        cityRepository.save(new City("madrid", "spain", "europe"));
-        cityRepository.save(new City("dublin", "ireland", "europe"));
-        cityRepository.save(new City("new york", "usa", "america"));
-        cityRepository.save(new City("lisbon", "portugal", "europe"));
-        cityRepository.save(new City("tokyo", "japan", "asia"));
+        Music jazz = musicRepository.save(new Music("jazz"));
+        Music blues = musicRepository.save(new Music("blues"));
+        Music funk = musicRepository.save(new Music("funk"));
+        Music soul = musicRepository.save(new Music("soul"));
+        Music randb = musicRepository.save(new Music("r&b"));
+        Music latin = musicRepository.save(new Music("latin"));
+        Music indie = musicRepository.save(new Music("indie"));
+        Music pop = musicRepository.save(new Music("pop"));
+        Music rock = musicRepository.save(new Music("rock"));
+        Music metal = musicRepository.save(new Music("metal"));
+        Music punk = musicRepository.save(new Music("punk"));
+        Music country = musicRepository.save(new Music("country"));
+        Music trap = musicRepository.save(new Music("trap"));
+        Music classical = musicRepository.save(new Music("classical"));
+        Music tvandfilm = musicRepository.save(new Music("tv&film"));
+
+
+        // CITITES (25)
+        City madrid = cityRepository.save(new City("madrid", "spain", "europe"));
+        City barcelona = cityRepository.save(new City("barcelona", "spain", "europe"));
+        City rome = cityRepository.save(new City("rome", "italy", "europe"));
+        City helsinki = cityRepository.save(new City("helsinki", "finland", "europe"));
+        City dublin = cityRepository.save(new City("dublin", "ireland", "europe"));
+        City amsterdam = cityRepository.save(new City("amsterdam", "netherlands", "europe"));
+        City newyork = cityRepository.save(new City("new york", "usa", "america"));
+        City losangeles = cityRepository.save(new City("l.a.", "usa", "america"));
+        City vancouver = cityRepository.save(new City("vancouver", "canada", "america"));
+        City mexicocity = cityRepository.save(new City("mexico city", "mexico", "america"));
+        City buenosaires = cityRepository.save(new City("buenos aires", "argentina", "america"));
+        City santiago = cityRepository.save(new City("santiago", "chile", "america"));
+        City tokyo = cityRepository.save(new City("tokyo", "japan", "asia"));
+        City manila = cityRepository.save(new City("manila", "philippines", "asia"));
+        City beijing = cityRepository.save(new City("beijing", "china", "asia"));
+        City shanghai = cityRepository.save(new City("shanghai", "china", "asia"));
+        City mumbai = cityRepository.save(new City("mumbai", "india", "asia"));
+        City nairobi = cityRepository.save(new City("nairobi", "kenya", "africa"));
+        City capetown = cityRepository.save(new City("cape town", "south africa", "africa"));
+        City cairo = cityRepository.save(new City("cairo", "egypt", "africa"));
+        City luanda = cityRepository.save(new City("luanda", "angola", "africa"));
+        City tunis = cityRepository.save(new City("tunis", "tunisia", "africa"));
+        City sidney = cityRepository.save(new City("sidney", "australia", "oceania"));
+        City brisbane = cityRepository.save(new City("brisbane", "australia", "oceania"));
+        City wellington = cityRepository.save(new City("wellington", "new zealand", "oceania"));
+
 
         // Sample users
-
         userRepository.save(new User("admin", "admin", "admin", "admin@mumapp.not", "pass", true));
         userRepository.save(new User("ana", "jurado", "nukyma", "ana@mumapp.not", "12345", false));
+        userRepository.save(new User("mariya", "petkova", "mimi", "mariya@mumapp.not", "54321", false));
+
+/*
+        INSERT INTO music_city (music_id, city_id)
+        SELECT music.id as music_id, city.id as city_id
+        FROM music CROSS JOIN city;
+
+        UPDATE music_city SET popularity_rate = 100 * RAND() WHERE 1;
+*/
     }
 }
