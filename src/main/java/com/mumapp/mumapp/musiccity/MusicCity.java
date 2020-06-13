@@ -1,7 +1,7 @@
 package com.mumapp.mumapp.musiccity;
+
 import com.mumapp.mumapp.city.City;
 import com.mumapp.mumapp.music.Music;
-
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -10,10 +10,6 @@ import java.io.Serializable;
 @Entity
 @Table(name = "music_city")
 public class MusicCity implements Serializable {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id = Long.valueOf(0);
 
     @Id
     @ManyToOne
@@ -27,6 +23,8 @@ public class MusicCity implements Serializable {
 
     @Column(name = "popularity_rate")
     private int popularityRate;
+
+
 
     public MusicCity() {
     }

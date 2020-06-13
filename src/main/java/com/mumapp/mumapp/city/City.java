@@ -1,12 +1,8 @@
 package com.mumapp.mumapp.city;
 
-import javax.persistence.*;
-
 import com.mumapp.mumapp.musiccity.MusicCity;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import javax.persistence.*;
 import java.util.Set;
 
 
