@@ -16,7 +16,6 @@ public class Music {
     @Column
     private String styleName;
 
-
     @OneToMany(
             mappedBy = "music",
             cascade = CascadeType.ALL,

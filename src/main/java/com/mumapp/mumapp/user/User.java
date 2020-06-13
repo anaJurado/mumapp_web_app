@@ -1,9 +1,11 @@
 package com.mumapp.mumapp.user;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import com.mumapp.mumapp.music.Music;
+import com.mumapp.mumapp.city.City;
+import com.mumapp.mumapp.musiccity.MusicCity;
+
+import javax.persistence.*;
+import java.util.*;
 
 
 @Entity
@@ -21,10 +23,25 @@ public class User {
     private Boolean isAdmin;
 
 
-    public User() {
-    }
+    //Uni-directional many-to-many association to music
+    @ManyToMany(cascade={CascadeType.ALL})
+    @JoinTable(name="user_music",
+            joinColumns=@JoinColumn(name="user_id"),
+            inverseJoinColumns=@JoinColumn(name="music_id"))
+    private Set<Music> musicSet;
 
-    public User(String firstName, String lastName, String username, String email, String password, Boolean isAdmin) {
+    //Uni-directional many-to-many association to city
+    @ManyToMany(cascade={CascadeType.ALL})
+    @JoinTable(name="user_city",
+            joinColumns=@JoinColumn(name="user_id"),
+            inverseJoinColumns=@JoinColumn(name="city_id"))
+    private Set<City> citySet;
+
+
+    public User() {}
+
+    public User(String firstName, String lastName, String username, String email, String password,
+                Boolean isAdmin) {
         super();
         this.firstName = firstName;
         this.lastName = lastName;
@@ -32,6 +49,8 @@ public class User {
         this.email = email;
         this.password = password;
         this.isAdmin = isAdmin;
+        musicSet = new HashSet<>();
+        citySet = new HashSet<>();
     }
 
     public Long getId() {
@@ -90,4 +109,19 @@ public class User {
         this.password = password;
     }
 
+    public Set<Music> getMusicSet() {
+        return musicSet;
+    }
+
+    public void setMusicSet(Set<Music> musicSet) {
+        this.musicSet = musicSet;
+    }
+
+    public Set<City> getCitySet() {
+        return citySet;
+    }
+
+    public void setCitySet(Set<City> citySet) {
+        this.citySet = citySet;
+    }
 }

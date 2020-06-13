@@ -75,9 +75,48 @@ public class DatabaseInitializer {
 
 
         // Sample users
-        userRepository.save(new User("admin", "admin", "admin", "admin@mumapp.not", "pass", true));
-        userRepository.save(new User("ana", "jurado", "nukyma", "ana@mumapp.not", "12345", false));
-        userRepository.save(new User("mariya", "petkova", "mimi", "mariya@mumapp.not", "54321", false));
+        User admin = userRepository.save(new User("admin", "admin", "admin",
+                "admin@mumapp.not", "pass", true));
+        User ana = userRepository.save(new User("ana", "jurado", "nukyma",
+                "ana@mumapp.not", "12345", false));
+        User maria = userRepository.save(new User("maria", "crespo", "mimi",
+                "mimi@mumapp.not", "54321", false));
+
+
+        // USER - MUSIC - CITY ANA
+        ana.getMusicSet().add(jazz);
+        ana.getMusicSet().add(soul);
+        ana.getMusicSet().add(funk);
+        ana.getMusicSet().add(randb);
+        ana.getMusicSet().add(classical);
+
+        ana.getCitySet().add(madrid);
+        ana.getCitySet().add(dublin);
+        ana.getCitySet().add(newyork);
+        ana.getCitySet().add(cairo);
+        ana.getCitySet().add(sidney);
+
+
+        userRepository.save(ana);
+
+
+        // USER - MUSIC - CITY MARIA
+
+        maria.getMusicSet().add(jazz);
+        maria.getMusicSet().add(latin);
+        maria.getMusicSet().add(rock);
+        maria.getMusicSet().add(metal);
+        maria.getMusicSet().add(pop);
+        maria.getMusicSet().add(trap);
+        maria.getMusicSet().add(punk);
+        maria.getMusicSet().add(indie);
+        maria.getMusicSet().add(country);
+        maria.getMusicSet().add(tvandfilm);
+
+        maria.getCitySet().add(santiago);
+        maria.getCitySet().add(buenosaires);
+        maria.getCitySet().add(tokyo);
+        userRepository.save(maria);
 
 /*
         INSERT INTO music_city (music_id, city_id)

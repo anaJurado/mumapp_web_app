@@ -35,6 +35,8 @@ public class MusicCity implements Serializable {
         this.popularityRate = popularityRate;
     }
 
+
+
     public Music getMusic(){
         return music;
     }
