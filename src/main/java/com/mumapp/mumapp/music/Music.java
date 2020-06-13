@@ -1,6 +1,8 @@
 package com.mumapp.mumapp.music;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 @Entity
@@ -8,7 +10,7 @@ public class Music {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Long id = Long.valueOf(0);
 
     private String styleName;
 
@@ -17,10 +19,10 @@ public class Music {
 
     public Music(){}
 
-    public Music(Long id, String styleName, List<String> characteristics) {
-        this.id = id;
+    public Music(String styleName, String... characteristics) {
+        super();
         this.styleName = styleName;
-        this.characteristics = characteristics;
+        this.characteristics = new ArrayList<>(Arrays.asList(characteristics));
     }
 
     public Long getId() {

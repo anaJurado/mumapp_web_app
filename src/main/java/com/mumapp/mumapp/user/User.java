@@ -12,7 +12,7 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Long id = Long.valueOf(0);
 
     private String firstName;
     private String lastName;
@@ -20,21 +20,19 @@ public class User {
     private String email;
     private String password;
     private Boolean isAdmin;
-    private Date birthday;
 
 
     public User() {
     }
 
-    public User(Long id, String firstName, String lastName, String username, String email, String password, Boolean isAdmin, Date birthday) {
-        this.id = id;
+    public User(String firstName, String lastName, String username, String email, String password, Boolean isAdmin) {
+        super();
         this.firstName = firstName;
         this.lastName = lastName;
         this.username = username;
         this.email = email;
         this.password = password;
         this.isAdmin = isAdmin;
-        this.birthday = birthday;
     }
 
     public Long getId() {
@@ -93,12 +91,4 @@ public class User {
         this.password = password;
     }
 
-
-    public Date getBirthday() {
-        return birthday;
-    }
-
-    public void setBirthday(Date birthday) {
-        this.birthday = birthday;
-    }
 }

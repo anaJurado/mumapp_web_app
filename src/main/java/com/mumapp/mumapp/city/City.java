@@ -11,7 +11,7 @@ public class City {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Long id = Long.valueOf(0);
 
     private String cityName;
     private String country;
@@ -19,8 +19,8 @@ public class City {
 
     public City() {}
 
-    public City(Long id, String cityName, String country, String continent) {
-        this.id = id;
+    public City(String cityName, String country, String continent) {
+        super();
         this.cityName = cityName;
         this.country = country;
         this.continent = continent;
