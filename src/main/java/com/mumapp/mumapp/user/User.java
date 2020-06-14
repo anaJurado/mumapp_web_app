@@ -1,8 +1,9 @@
 package com.mumapp.mumapp.user;
 
-import com.mumapp.mumapp.music.Music;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.mumapp.mumapp.city.City;
-import com.mumapp.mumapp.musiccity.MusicCity;
+import com.mumapp.mumapp.music.Music;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import javax.persistence.*;
 import java.util.*;
@@ -17,10 +18,14 @@ public class User {
 
     private String firstName;
     private String lastName;
-    private String username;
+    private String name;
     private String email;
-    private String password;
-    private Boolean isAdmin;
+
+    @JsonIgnore
+    private String passwordHash;
+
+    @ElementCollection(fetch = FetchType.EAGER)
+    private List<String> roles;
 
 
     //Uni-directional many-to-many association to music
@@ -40,15 +45,15 @@ public class User {
 
     public User() {}
 
-    public User(String firstName, String lastName, String username, String email, String password,
-                Boolean isAdmin) {
+    public User(String firstName, String lastName, String name, String email, String password,
+                String... roles) {
         super();
         this.firstName = firstName;
         this.lastName = lastName;
-        this.username = username;
+        this.name = name;
         this.email = email;
-        this.password = password;
-        this.isAdmin = isAdmin;
+        this.passwordHash = new BCryptPasswordEncoder().encode(password);
+        this.roles = new ArrayList<>(Arrays.asList(roles));
         musicSet = new HashSet<>();
         citySet = new HashSet<>();
     }
@@ -77,20 +82,12 @@ public class User {
         this.lastName = lastName;
     }
 
-    public String getUsername() {
-        return username;
+    public String getName() {
+        return name;
     }
 
-    public void setUsername(String userName) {
-        this.username = userName;
-    }
-
-    public Boolean getAdmin() {
-        return isAdmin;
-    }
-
-    public void setAdmin(Boolean admin) {
-        isAdmin = admin;
+    public void setName(String userName) {
+        this.name = userName;
     }
 
     public String getEmail() {
@@ -101,12 +98,20 @@ public class User {
         this.email = email;
     }
 
-    public String getPassword() {
-        return password;
+    public String getPasswordHash() {
+        return passwordHash;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setPasswordHash(String passwordHash) {
+        this.passwordHash = passwordHash;
+    }
+
+    public List<String> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(List<String> roles) {
+        this.roles = roles;
     }
 
     public Set<Music> getMusicSet() {
