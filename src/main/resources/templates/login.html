@@ -48,25 +48,16 @@
               </div>
               <!-- FORM -->
               <form action="/login" method="post">
-                <div class="form-group mb-3">
-                  <div class="input-group input-group-merge input-group-alternative">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text"><i class="ni ni-email-83"></i></span>
-                    </div>
-                    <input class="form-control" placeholder="Your email" type="email" name="user_email">
-                  </div>
+                <div class="form-group">
+                  <label for="username">User name</label>
+                  <input type="text" id="username" name="username" class="form-control"/>
                 </div>
                 <div class="form-group">
-                  <div class="input-group input-group-merge input-group-alternative">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
-                    </div>
-                    <input class="form-control" placeholder="Your password" type="password" name="user_pass">
-                  </div>
+                  <label for="password">Password</label>
+                  <input type="password" id="password" name="password" class="form-control"/><br>
                 </div>
-                <div class="text-center">
-                  <button type="submit" class="btn btn-primary my-4">Sign in</button>
-                </div>
+                <button type="submit" class="btn btn-primary">Sign In</button>
+                <input type="hidden" name="_csrf" value="{{token}}"/>
               </form>
             </div>
           </div>

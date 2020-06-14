@@ -56,7 +56,7 @@ public class DatabaseInitializer {
         Music bossa = musicRepository.save(new Music("bossa-nova"));
 
 
-        // CITITES (25)
+        // CITIES (25)
         City madrid = cityRepository.save(new City("madrid", "spain", "europe"));
         City barcelona = cityRepository.save(new City("barcelona", "spain", "europe"));
         City rome = cityRepository.save(new City("rome", "italy", "europe"));
@@ -86,11 +86,11 @@ public class DatabaseInitializer {
 
         // Sample users
         User admin = userRepository.save(new User("admin", "admin", "admin",
-                "admin@mumapp.not", "pass", true));
+                "admin@mumapp.not", "pass", "ROLE_ADMIN", "ROLE_USER"));
         User ana = userRepository.save(new User("ana", "jurado", "nukyma",
-                "ana@mumapp.not", "12345", false));
+                "ana@mumapp.not", "12345", "ROLE_USER"));
         User maria = userRepository.save(new User("maria", "crespo", "mimi",
-                "mimi@mumapp.not", "54321", false));
+                "mimi@mumapp.not", "54321", "ROLE_USER"));
 
 
         // USER - MUSIC(5) - CITY(5) ANA
