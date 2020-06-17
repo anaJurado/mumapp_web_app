@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 
 @Controller
 public class AppControllers {
@@ -68,5 +69,33 @@ public class AppControllers {
     public String error(Model model) {
         return "error";
     }
+
+
+    // USERS
+
+    // User info
+    @GetMapping("/{id}/profile")
+    public String showUserData(Model model, @PathVariable long id){}
+
+    //User music
+    @GetMapping("/{id}/music")
+    public String showUserMusic(Model model, @PathVariable long id){}
+
+    // User city
+    @GetMapping("/{id}/city")
+    public String showUserCity(Model model, @PathVariable long id){}
+
+    //Popularity Rate
+    @GetMapping("/{music}/{city}")
+    public String showPopularityRate(Model model, @PathVariable long id){}
+
+    // CITY
+    @GetMapping("/city")
+    public String showPopularityRate(Model model, @PathVariable long id){}
+
+    // MUSIC
+    @GetMapping("/music")
+    public String showPopularityRate(Model model, @PathVariable long id){}
+
 
 }
