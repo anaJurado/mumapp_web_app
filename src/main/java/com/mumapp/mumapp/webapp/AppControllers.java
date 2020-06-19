@@ -1,14 +1,20 @@
 package com.mumapp.mumapp.webapp;
 
+import com.mumapp.mumapp.music.Music;
+import com.mumapp.mumapp.city.City;
+import com.mumapp.mumapp.city.CityService;
+import com.mumapp.mumapp.music.MusicService;
+import com.mumapp.mumapp.user.User;
 import com.mumapp.mumapp.user.UserComponent;
 import com.mumapp.mumapp.user.UserRepository;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
-import com.mumapp.mumapp.user.User;
+
 import java.util.Optional;
 
 @Controller
@@ -19,6 +25,12 @@ public class AppControllers {
 
     @Autowired
     private UserRepository userRepository;
+
+    @Autowired
+    private MusicService musicService;
+
+    @Autowired
+    private CityService cityService;
 
     @ModelAttribute
     public void addUserToModel(Model model) {
@@ -82,41 +94,27 @@ public class AppControllers {
     // User info
     @GetMapping("/{name}/profile")
     public String showUserInfo(Model model, @PathVariable String name){
-        //Long id = userComponent.getLoggedUser().getId();
 
+        //USER INFO
         Optional<User> user = Optional.ofNullable(userRepository.findByName(name));
 
         if(user.isPresent()) {
             model.addAttribute("user", user.get());
-        }
-
-        return "profile";
-    }
-
-/*
-    @GetMapping("/userMusicInfo")
-    public String showUserMusicInfo(Model model){
-        Long id = userComponent.getLoggedUser().getId();
-        Optional<User> user = userRepository.findById(id);
-        if(user.isPresent()) {
             model.addAttribute("userMusic", user.get().getMusicSet());
-        }
-        return "profile";
-    }
-
-    @GetMapping("/userCityInfo")
-    public String showUserCityInfo(Model model){
-        Long id = userComponent.getLoggedUser().getId();
-        Optional<User> user = userRepository.findById(id);
-
-        if(user.isPresent()) {
             model.addAttribute("userCity", user.get().getCitySet());
         }
+
+        //MUSIC INFO
+        model.addAttribute("allMusic", musicService.findAll());
+
+        //CITY INFO
+        model.addAttribute("allCity", cityService.findAll());
+
         return "profile";
     }
 
 
-
+    /*
     //User music
     @GetMapping("/{id}/music")
     public String showUserMusic(Model model, @PathVariable long id){}
