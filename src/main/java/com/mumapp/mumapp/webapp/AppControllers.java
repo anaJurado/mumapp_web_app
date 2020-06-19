@@ -1,20 +1,16 @@
 package com.mumapp.mumapp.webapp;
 
-import com.mumapp.mumapp.music.Music;
-import com.mumapp.mumapp.city.City;
-import com.mumapp.mumapp.city.CityService;
-import com.mumapp.mumapp.music.MusicService;
-import com.mumapp.mumapp.user.User;
 import com.mumapp.mumapp.user.UserComponent;
 import com.mumapp.mumapp.user.UserRepository;
-
+import com.mumapp.mumapp.city.CityService;
+import com.mumapp.mumapp.music.MusicService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
-
+import com.mumapp.mumapp.user.User;
 import java.util.Optional;
 
 @Controller
@@ -68,18 +64,6 @@ public class AppControllers {
         return "register";
     }
 
-/*
-    @GetMapping("/profile")
-    public String profile(Model model) {
-        return "profile";
-    }
-*/
-
-    @GetMapping("/dashboard")
-    public String dashboard(Model model) {
-        return "dashboard";
-    }
-
     @GetMapping("/admin")
     public String admin(Model model) {
         return "admin";
@@ -90,13 +74,13 @@ public class AppControllers {
         return "error";
     }
 
-    // USERS
-    // User info
-    @GetMapping("/{name}/profile")
-    public String showUserInfo(Model model, @PathVariable String name){
+    // PROFILE VIEW
+    @GetMapping("/profile")
+    public String profileView(Model model){
+        Long id = userComponent.getLoggedUser().getId();
 
         //USER INFO
-        Optional<User> user = Optional.ofNullable(userRepository.findByName(name));
+        Optional<User> user = userRepository.findById(id);
 
         if(user.isPresent()) {
             model.addAttribute("user", user.get());
@@ -113,26 +97,25 @@ public class AppControllers {
         return "profile";
     }
 
+    // DASHBOARD VIEW
+    @GetMapping("/dashboard")
+    public String dashboardView(Model model){
+        Long id = userComponent.getLoggedUser().getId();
 
-    /*
-    //User music
-    @GetMapping("/{id}/music")
-    public String showUserMusic(Model model, @PathVariable long id){}
+        //USER INFO
+        Optional<User> user = userRepository.findById(id);
 
-    // User city
-    @GetMapping("/{id}/city")
-    public String showUserCity(Model model, @PathVariable long id){}
+        if(user.isPresent()) {
+            model.addAttribute("user", user.get());
+            model.addAttribute("userMusic", user.get().getMusicSet());
+            model.addAttribute("userCity", user.get().getCitySet());
+        }
+        //MUSIC INFO
+        model.addAttribute("allMusic", musicService.findAll());
 
-    //Popularity Rate
-    @GetMapping("/{music}/{city}")
-    public String showPopularityRate(Model model, @PathVariable long id){}
+        //CITY INFO
+        model.addAttribute("allCity", cityService.findAll());
 
-    // CITY
-    @GetMapping("/city")
-    public String showPopularityRate(Model model, @PathVariable long id){}
-
-    // MUSIC
-    @GetMapping("/music")
-    public String showPopularityRate(Model model, @PathVariable long id){}
-*/
+        return "dashboard";
+    }
 }
