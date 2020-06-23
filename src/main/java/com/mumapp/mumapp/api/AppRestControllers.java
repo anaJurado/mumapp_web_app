@@ -1,6 +1,6 @@
 package com.mumapp.mumapp.api;
 
-
+import com.mumapp.mumapp.musiccity.MusicCity;
 import com.mumapp.mumapp.city.CityService;
 import com.mumapp.mumapp.city.City;
 import com.mumapp.mumapp.user.UserRepository;
@@ -30,8 +30,6 @@ public class AppRestControllers {
     @Autowired
     private UserRepository userRepository;
 
-/*    @Autowired
-    private  MusicCityService musicCityService;*/
 
 
     @GetMapping("/music/style")
@@ -43,11 +41,6 @@ public class AppRestControllers {
     public List<Long> getMusicListId() {
         return musicService.findAll().stream().map(music -> music.getId()).collect(Collectors.toList());
     }
-
-/*    @GetMapping("/poprate/{musicId}/{cityId}")
-    public Integer getPopularityRate(@PathVariable long musicId, @PathVariable long cityId) {
-        return musicCityService.findPopRateByMusicAndCity(musicId, cityId);
-    }*/
 
     @GetMapping("/city")
     public Collection<String> getCityName() {
@@ -70,6 +63,13 @@ public class AppRestControllers {
         return (Set<Music>) userRepository.findById(id).getMusicSet();
     }
 
+    @GetMapping("/popularity/{musicId}/{cityId}")
+    public Integer getPopularityRate(@PathVariable long musicId, @PathVariable long cityId) {
+        return musicService.findByMusicIdAndCityId(musicId, cityId);
+    }
 
-
+    @GetMapping("/{id}/popularity")
+    public List<MusicCity> getPopularityRateUserId(@PathVariable long id){
+        return musicService.findPopularityRateByUserId(id);
+    }
 }
