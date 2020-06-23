@@ -69,7 +69,7 @@ public class AppRestControllers {
     }
 
     @GetMapping("/{id}/popularity")
-    public List<MusicCity> getPopularityRateUserId(@PathVariable long id){
+    public List<Object> getPopularityRateUserId(@PathVariable long id){
         return musicService.findPopularityRateByUserId(id);
     }
 }

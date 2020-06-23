@@ -22,7 +22,7 @@ public class MusicService {
         return musicRepository.findByMusicIdAndCityId(musicId, cityId);
     }
 
-    public List<MusicCity> findPopularityRateByUserId(long id) {
+    public List<Object> findPopularityRateByUserId(long id) {
         return musicRepository.findPopularityRateByUserId(id);
     }
 }

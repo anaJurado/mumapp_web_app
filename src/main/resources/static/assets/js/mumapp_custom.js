@@ -1,13 +1,16 @@
 GET: $(document).ready(
     function() {
-        console.log("holi");
+        console.log("holi holita vecinito");
+        console.log(userId);
         debugger;
+
         var userCities;
         var userStyles;
+        var userPopRate;
 
         $.ajax({
             type: "GET",
-            url: "/api/{id}/city",
+            url: '/api/'+userId+'/city',
         })
             .done(function (data) {
             if (console && console.log) {
@@ -19,7 +22,7 @@ GET: $(document).ready(
 
         $.ajax({
             type: "GET",
-            url: "/api/{id}/music",
+            url: '/api/'+userId+'/music',
         })
             .done(function (data) {
                 if (console && console.log) {
@@ -31,19 +34,15 @@ GET: $(document).ready(
 
         $.ajax({
             type: "GET",
-            url: "/api/popularity/{musicId}/{cityId}",
+            url: '/api/'+userId+'/popularity',
         })
             .done(function (data) {
                 if (console && console.log) {
                     console.log(" Sample of data: ", data);
-                    userStyles=data;
+                    userPopRate=data;
                     debugger;
                 }
             });
-
-
-
-
 
     });
 

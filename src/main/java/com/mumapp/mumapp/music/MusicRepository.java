@@ -11,8 +11,8 @@ public interface MusicRepository extends JpaRepository<Music, Long> {
             nativeQuery = true)
     int findByMusicIdAndCityId(long musicId, long cityId);
 
-    @Query( value = "SELECT music_id, city_id, popularity_rate FROM music_city WHERE music_id in ( SELECT music_id as userMusicId FROM user JOIN user_music um on user.id = um.user_id WHERE user.id = ?1 ) and city_id in ( SELECT city_id as userCityId FROM user JOIN user_city uc on user.id = uc.user_id WHERE user.id = ?1 ) ",
+    @Query ( value = "SELECT music_id as music, city_id as city,  popularity_rate as popularityRate FROM music_city WHERE music_id in ( SELECT music_id as userMusicId FROM user JOIN user_music um on user.id = um.user_id WHERE user.id = ?1 ) and city_id in ( SELECT city_id as userCityId FROM user JOIN user_city uc on user.id = uc.user_id WHERE user.id = ?1 ) ",
             nativeQuery = true)
-    List<MusicCity> findPopularityRateByUserId(long id);
+    List<Object> findPopularityRateByUserId(long id);
 
 }
