@@ -1,5 +1,6 @@
 package com.mumapp.mumapp.music;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.mumapp.mumapp.musiccity.MusicCity;
 
 import javax.persistence.*;
@@ -16,6 +17,7 @@ public class Music {
     @Column
     private String styleName;
 
+    @JsonIgnore
     @OneToMany(
             mappedBy = "music",
             cascade = CascadeType.ALL,

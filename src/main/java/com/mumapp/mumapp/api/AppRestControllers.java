@@ -2,14 +2,19 @@ package com.mumapp.mumapp.api;
 
 
 import com.mumapp.mumapp.city.CityService;
+import com.mumapp.mumapp.city.City;
+import com.mumapp.mumapp.user.UserRepository;
 import com.mumapp.mumapp.music.MusicService;
+import com.mumapp.mumapp.music.Music;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Collection;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 @RestController
@@ -21,6 +26,9 @@ public class AppRestControllers {
 
     @Autowired
     private CityService cityService;
+
+    @Autowired
+    private UserRepository userRepository;
 
 /*    @Autowired
     private  MusicCityService musicCityService;*/
@@ -50,5 +58,18 @@ public class AppRestControllers {
     public List<Long> getCityId() {
         return cityService.findAll().stream().map(city -> city.getId()).collect(Collectors.toList());
     }
+
+    @GetMapping("/{id}/city")
+    public Set<City> getUserCity(@PathVariable long id) {
+        return (Set<City>) userRepository.findById(id).getCitySet();
+
+    }
+
+    @GetMapping("/{id}/music")
+    public Set<Music> getUserMusic(@PathVariable long id) {
+        return (Set<Music>) userRepository.findById(id).getMusicSet();
+    }
+
+
 
 }
