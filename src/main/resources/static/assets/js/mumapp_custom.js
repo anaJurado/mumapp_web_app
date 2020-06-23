@@ -1,32 +1,51 @@
 GET: $(document).ready(
     function() {
+        console.log("holi");
+        debugger;
+        var userCities;
+        var userStyles;
 
-        // GET REQUEST
-        $("#getALlBooks").click(function(event) {
-            event.preventDefault();
-            ajaxGet();
+        $.ajax({
+            type: "GET",
+            url: "/api/{id}/city",
+        })
+            .done(function (data) {
+            if (console && console.log) {
+                console.log(" Sample of data: ", data);
+                userCities=data;
+                debugger;
+            }
         });
 
-        // DO GET
-        function ajaxGet() {
-            $.ajax({
-                type : "GET",
-                url : "",
-                success : function(result) {
-                    if (result.status === "success") {
-                        console.log("Success: ", result);
-                        debugger;
-                    } else {
-                        console.log("Fail: ", result);
-                        debugger;
-                    }
-                },
-                error : function(e) {
-                    console.log("ERROR: ", e);
+        $.ajax({
+            type: "GET",
+            url: "/api/{id}/music",
+        })
+            .done(function (data) {
+                if (console && console.log) {
+                    console.log(" Sample of data: ", data);
+                    userStyles=data;
+                    debugger;
                 }
             });
-        }
-    })
+
+        $.ajax({
+            type: "GET",
+            url: "/api/popularity/{musicId}/{cityId}",
+        })
+            .done(function (data) {
+                if (console && console.log) {
+                    console.log(" Sample of data: ", data);
+                    userStyles=data;
+                    debugger;
+                }
+            });
+
+
+
+
+
+    });
 
 
 

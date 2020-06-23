@@ -814,6 +814,7 @@ function initMap() {
 if ($map.length) {
     google.maps.event.addDomListener(window, 'load', initMap);
 }
+/*
 
 //
 // Bars chart
@@ -837,11 +838,12 @@ var BarsChart = (function () {
 
         // Create chart
         var ordersChart = new Chart($chart, {
+
             type: 'bar',
             data: {
-                labels: ['Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                labels: ['pepe', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
                 datasets: [{
-                    label: 'Sales',
+                    label: 'popularity rate',
                     data: [25, 20, 30, 22, 17, 29]
                 }]
             }
@@ -860,6 +862,7 @@ var BarsChart = (function () {
 })();
 
 'use strict';
+*/
 
 //
 // Sales chart
