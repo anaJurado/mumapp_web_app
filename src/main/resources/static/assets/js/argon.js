@@ -932,7 +932,7 @@ GET: $(document).ready(
 
                     for (let i=0; i< userTopPopRate.length; i++ ) {
                         tableRowsUser = tableRowsUser+
-                        "<tr><td>" + userTopPopRate[i][2] + "</td>" +
+                        "<tr><td class='text-center'><b>" + userTopPopRate[i][2] + "</b></td>" +
                         "<td>" + userTopPopRate[i][0] + "</td>" +
                         "<td>" + userTopPopRate[i][1] + "</td>" +
                         "<td>" + allCitiesDict[userTopPopRate[i][1]].country + "</td>" +
@@ -942,7 +942,7 @@ GET: $(document).ready(
 
                     for (let j=0; j< allTopRate.length; j++ ) {
                         tableRowsWorld = tableRowsWorld+
-                            "<tr><td>" + allTopRate[j][2] + "</td>" +
+                            "<tr><td class='text-center'><b>" + allTopRate[j][2] + "</b></td>" +
                             "<td>" + allTopRate[j][0] + "</td>" +
                             "<td>" + allTopRate[j][1] + "</td>" +
                             "<td>" + allCitiesDict[allTopRate[j][1]].country + "</td>" +
