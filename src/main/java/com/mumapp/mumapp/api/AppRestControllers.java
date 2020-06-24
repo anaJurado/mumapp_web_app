@@ -76,14 +76,14 @@ public class AppRestControllers {
         return musicService.findPopularityRateByUserId(id);
     }
 
-    @GetMapping("/{id}/popularity/top5")
+    @GetMapping("/{id}/popularity/top")
     public List<Object> getTop5PopularityRateUserId(@PathVariable long id){
-        return musicService.findTop5PopularityRateByUserId(id);
+        return musicService.findTopPopularityRateByUserId(id);
     }
 
-    @GetMapping("/all/popularity/top5")
+    @GetMapping("/all/popularity/top")
     public List<Object> getTop5Popularity(){
-        return musicService.findTop5Popularity();
+        return musicService.findTopPopularity();
     }
 
 

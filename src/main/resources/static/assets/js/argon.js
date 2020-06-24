@@ -905,7 +905,7 @@ GET: $(document).ready(
 
         $.ajax({
             type: "GET",
-            url: '/api/all/popularity/top5',
+            url: '/api/all/popularity/top',
         })
             .done(function (data) {
                 if (console && console.log) {
@@ -915,7 +915,7 @@ GET: $(document).ready(
 
         $.ajax({
             type: "GET",
-            url: '/api/'+userId+'/popularity/top5',
+            url: '/api/'+userId+'/popularity/top',
         })
             .done(function (data) {
                 if (console && console.log) {
