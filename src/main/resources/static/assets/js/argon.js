@@ -824,37 +824,12 @@ if ($map.length) {
 GET: $(document).ready(
     function() {
 
-        var userCities;
-        var userStyles;
         var userPopRate;
 
         var charData = {
             musicLabels: [],
             ratesValues: [],
         };
-
-
-        $.ajax({
-            type: "GET",
-            url: '/api/'+userId+'/city',
-        })
-            .done(function (data) {
-                if (console && console.log) {
-                    console.log(" userCities: ", data);
-                    userCities=data;
-                }
-            });
-
-        $.ajax({
-            type: "GET",
-            url: '/api/'+userId+'/music',
-        })
-            .done(function (data) {
-                if (console && console.log) {
-                    console.log(" userStyles: ", data);
-                    userStyles=data;
-                }
-            });
 
         $.ajax({
             type: "GET",
@@ -880,13 +855,11 @@ GET: $(document).ready(
             charData.ratesValues.push(item[2]);
         }
 
-
         // CREO AHORA EL CHART
         var $chart = $('#chart-bars');
 
         // Init chart
         function initChart($chart, data) {
-            console.log(data);
 
             // Create chart
             var ordersChart = new Chart($chart, {
@@ -905,6 +878,85 @@ GET: $(document).ready(
         }
 
     });
+
+
+//
+// AJAX + TABLE TOP 5
+//
+
+GET: $(document).ready(
+    function() {
+
+        var allCity;
+        var allTopRate;
+        var userTopPopRate;
+        var tableRowsUser = "";
+        var tableRowsWorld = "";
+
+        $.ajax({
+            type: "GET",
+            url: '/api/all/city',
+        })
+            .done(function (data) {
+                if (console && console.log) {
+                    allCity = data;
+                }
+            });
+
+        $.ajax({
+            type: "GET",
+            url: '/api/all/popularity/top5',
+        })
+            .done(function (data) {
+                if (console && console.log) {
+                    allTopRate=data;
+                }
+            });
+
+        $.ajax({
+            type: "GET",
+            url: '/api/'+userId+'/popularity/top5',
+        })
+            .done(function (data) {
+                if (console && console.log) {
+                    // INFO: data format: [music, city, popularity_rate]
+                    userTopPopRate=data;
+
+                    const arrayToObject = (array, keyField) =>
+                        array.reduce((obj, item) => {
+                            obj[item[keyField]] = item
+                            return obj
+                        }, {})
+
+                    var allCitiesDict = arrayToObject(allCity, "cityName")
+
+                    for (let i=0; i< userTopPopRate.length; i++ ) {
+                        tableRowsUser = tableRowsUser+
+                        "<tr><td>" + userTopPopRate[i][2] + "</td>" +
+                        "<td>" + userTopPopRate[i][0] + "</td>" +
+                        "<td>" + userTopPopRate[i][1] + "</td>" +
+                        "<td>" + allCitiesDict[userTopPopRate[i][1]].country + "</td>" +
+                        "<td>" + allCitiesDict[userTopPopRate[i][1]].continent + "</td></tr>"
+                    }
+                    document.getElementById("table-body-user").innerHTML = tableRowsUser;
+
+                    for (let j=0; j< allTopRate.length; j++ ) {
+                        tableRowsWorld = tableRowsWorld+
+                            "<tr><td>" + allTopRate[j][2] + "</td>" +
+                            "<td>" + allTopRate[j][0] + "</td>" +
+                            "<td>" + allTopRate[j][1] + "</td>" +
+                            "<td>" + allCitiesDict[allTopRate[j][1]].country + "</td>" +
+                            "<td>" + allCitiesDict[allTopRate[j][1]].continent + "</td></tr>"
+                    }
+                    document.getElementById("table-body-world").innerHTML = tableRowsWorld;
+
+                }
+            });
+
+    });
+
+
+
 
 
 //

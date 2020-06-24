@@ -1,6 +1,5 @@
 package com.mumapp.mumapp.api;
 
-import com.mumapp.mumapp.musiccity.MusicCity;
 import com.mumapp.mumapp.city.CityService;
 import com.mumapp.mumapp.city.City;
 import com.mumapp.mumapp.user.UserRepository;
@@ -47,6 +46,11 @@ public class AppRestControllers {
         return cityService.findAll().stream().map(city -> city.getCityName()).collect(Collectors.toList());
     }
 
+    @GetMapping("/all/city")
+    public List<City> getAllCity(){
+        return cityService.findAll();
+    }
+
     @GetMapping("/city/id")
     public List<Long> getCityId() {
         return cityService.findAll().stream().map(city -> city.getId()).collect(Collectors.toList());
@@ -55,7 +59,6 @@ public class AppRestControllers {
     @GetMapping("/{id}/city")
     public Set<City> getUserCity(@PathVariable long id) {
         return (Set<City>) userRepository.findById(id).getCitySet();
-
     }
 
     @GetMapping("/{id}/music")
@@ -72,4 +75,18 @@ public class AppRestControllers {
     public List<Object> getPopularityRateUserId(@PathVariable long id){
         return musicService.findPopularityRateByUserId(id);
     }
+
+    @GetMapping("/{id}/popularity/top5")
+    public List<Object> getTop5PopularityRateUserId(@PathVariable long id){
+        return musicService.findTop5PopularityRateByUserId(id);
+    }
+
+    @GetMapping("/all/popularity/top5")
+    public List<Object> getTop5Popularity(){
+        return musicService.findTop5Popularity();
+    }
+
+
+
+
 }
