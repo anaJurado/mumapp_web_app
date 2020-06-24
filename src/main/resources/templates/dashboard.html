@@ -169,40 +169,63 @@
         </div>
         <!-- Table -->
         <div class="row">
-          <div class="col-xl-12">
+          <!-- TABLE TOP 5 USER-->
+          <div class="col-xl-6">
             <div class="card">
               <div class="card-header border-0">
                 <div class="row align-items-center">
                   <div class="col">
-                    <h3 class="mb-0">Popularity Rates</h3>
+                    <h3 class="mb-0">{{user.name}} Top 10 </h3>
                   </div>
                 </div>
               </div>
+
+              <!-- TABLE TOP 5 USER: BODY -->
               <div class="table-responsive">
-                <!-- Projects table -->
                 <table class="table align-items-center table-flush">
                   <thead class="thead-light">
-                    <tr>
-                      <th scope="col">Music Style</th>
-                      {{#user.citySet}}
-                        <th scope="col">{{cityName}}</th>
-                      {{/user.citySet}}
-                    </tr>
+                  <tr>
+                    <th scope="col" class='text-center'>Popularity Rate</th>
+                    <th scope="col">Music Style</th>
+                    <th scope="col">City</th>
+                    <th scope="col">Country</th>
+                    <th scope="col">Continent</th>
+                  </tr>
                   </thead>
-                  <tbody>
-                    {{#user.musicSet}}
-                    <tr>
-                      <th scope="row">
-                        {{styleName}}
-                      </th>
-                        {{#userCity}}
-                          <td>{{country}}</td>
-                        {{/userCity}}
-                    </tr>
-                    {{/user.musicSet}}
-                  </tbody>
+                  <tbody id="table-body-user" class="text-capitalize"></tbody>
                 </table>
               </div>
+            </div>
+          </div>
+
+          <!-- TABLE TOP ALL -->
+          <div class="col-xl-6">
+            <div class="card">
+
+              <div class="card-header border-0">
+                <div class="row align-items-center">
+                  <div class="col">
+                    <h3 class="mb-0">World Top 10 </h3>
+                  </div>
+                </div>
+              </div>
+
+            <!-- TABLE TOP ALL: BODY -->
+              <div class="table-responsive">
+                <table class="table align-items-center table-flush">
+                  <thead class="thead-light">
+                  <tr>
+                    <th scope="col" class='text-center'>Popularity Rate</th>
+                    <th scope="col">Music Style</th>
+                    <th scope="col">City</th>
+                    <th scope="col">Country</th>
+                    <th scope="col">Continent</th>
+                  </tr>
+                  </thead>
+                  <tbody id="table-body-world" class="text-capitalize"></tbody>
+                </table>
+              </div>
+            </div>
             </div>
           </div>
         </div>

@@ -25,4 +25,13 @@ public class MusicService {
     public List<Object> findPopularityRateByUserId(long id) {
         return musicRepository.findPopularityRateByUserId(id);
     }
+
+    public List<Object> findTopPopularityRateByUserId(long id) {
+        return musicRepository.findTopPopularityRateByUserId(id);
+    }
+
+    public List<Object> findTopPopularity() {
+        return musicRepository.findTopPopularity();
+    }
+
 }
