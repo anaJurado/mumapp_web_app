@@ -899,7 +899,7 @@ GET: $(document).ready(
                     //labels: ['pepiño', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
                     labels: data.musicLabels,
                     datasets: [{
-                        label: "popularity",
+                        label: "rate: ",
                         data: data.ratesValues,
                     }]
                 }
@@ -909,10 +909,6 @@ GET: $(document).ready(
             $chart.data('chart', ordersChart);
         }
 
-        // Init chart
-/*        if ($chart.length) {
-            initChart($chart);
-        }*/
     });
 
 
