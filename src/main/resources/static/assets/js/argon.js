@@ -814,13 +814,115 @@ function initMap() {
 if ($map.length) {
     google.maps.event.addDomListener(window, 'load', initMap);
 }
-/*
+
+
+
+//
+// AJAX CALLS + BARS CHART
+//
+
+GET: $(document).ready(
+    function() {
+
+        var userCities;
+        var userStyles;
+        var userPopRate;
+
+        var charData = {
+            musicLabels: [],
+            cityLabels: [],
+            ratesValues: [],
+        };
+
+
+        $.ajax({
+            type: "GET",
+            url: '/api/'+userId+'/city',
+        })
+            .done(function (data) {
+                if (console && console.log) {
+                    console.log(" userCities: ", data);
+                    userCities=data;
+                }
+            });
+
+        $.ajax({
+            type: "GET",
+            url: '/api/'+userId+'/music',
+        })
+            .done(function (data) {
+                if (console && console.log) {
+                    console.log(" userStyles: ", data);
+                    userStyles=data;
+                }
+            });
+
+        $.ajax({
+            type: "GET",
+            url: '/api/'+userId+'/popularity',
+        })
+            .done(function (data) {
+                if (console && console.log) {
+                    console.log(" userPopRate: ", data);
+                    // INFO: data format: [music_id, city_id, popularity_rate]
+                    userPopRate=data;
+                    userPopRate.forEach(deconstructData);
+
+                    if ($chart.length) {
+                        initChart($chart, charData);
+                    }
+                }
+            });
+
+        function deconstructData(item){
+            // [music_id, city_id, popularity_rate]
+            console.log(item);
+            console.log(charData);
+
+            charData.musicLabels.push(item[0]);
+            charData.cityLabels.push(item[1]);
+            charData.ratesValues.push(item[2]);
+        }
+
+
+        // CREO AHORA EL CHART
+        var $chart = $('#chart-bars');
+
+        // Init chart
+        function initChart($chart, data) {
+            console.log(data);
+
+            // Create chart
+            var ordersChart = new Chart($chart, {
+                type: 'bar',
+                data: {
+                    //labels: ['pepiño', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                    labels: data.musicLabels,
+                    datasets: [{
+                        label: "popularity",
+                        data: data.ratesValues,
+                    }]
+                }
+            });
+
+            // Save to jQuery object
+            $chart.data('chart', ordersChart);
+        }
+
+        // Init chart
+/*        if ($chart.length) {
+            initChart($chart);
+        }*/
+    });
+
 
 //
 // Bars chart
 //
-
+/*
 var BarsChart = (function () {
+
+
 
     //
     // Variables
@@ -841,7 +943,8 @@ var BarsChart = (function () {
 
             type: 'bar',
             data: {
-                labels: ['pepe', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                labels: {userCities},
+                //labels: ['pepe', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
                 datasets: [{
                     label: 'popularity rate',
                     data: [25, 20, 30, 22, 17, 29]
@@ -861,8 +964,10 @@ var BarsChart = (function () {
 
 })();
 
-'use strict';
 */
+
+'use strict';
+
 
 //
 // Sales chart

@@ -23,7 +23,7 @@ public class DatabaseInitializer {
 
     @Autowired
     private UserRepository userRepository;
-
+/*
     @PostConstruct
     public void init() {
 
@@ -129,6 +129,7 @@ public class DatabaseInitializer {
 
         userRepository.save(maria);
 
+
 /*
         INSERT INTO music_city (music_id, city_id)
         SELECT music.id as music_id, city.id as city_id
@@ -136,5 +137,7 @@ public class DatabaseInitializer {
 
         UPDATE music_city SET popularity_rate = 100 * RAND() WHERE 1;
 */
-    }
+
+//  }
+
 }
