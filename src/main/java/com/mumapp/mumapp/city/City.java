@@ -1,5 +1,6 @@
 package com.mumapp.mumapp.city;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.mumapp.mumapp.musiccity.MusicCity;
 
 import javax.persistence.*;
@@ -17,6 +18,7 @@ public class City {
     private String country;
     private String continent;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "city")
     private Set<MusicCity> musicCitySet;
 

@@ -100,21 +100,26 @@ public class AppControllers {
     // DASHBOARD VIEW
     @GetMapping("/dashboard")
     public String dashboardView(Model model){
-        Long id = userComponent.getLoggedUser().getId();
+        Long id;
+        id = userComponent.getLoggedUser().getId();
 
         //USER INFO
-        Optional<User> user = userRepository.findById(id);
+        Optional<User> user;
+        user = userRepository.findById(id);
 
-        if(user.isPresent()) {
-            model.addAttribute("user", user.get());
-            model.addAttribute("userMusic", user.get().getMusicSet());
-            model.addAttribute("userCity", user.get().getCitySet());
-        }
+        user.ifPresent(value -> {
+            model.addAttribute("user", value);
+            model.addAttribute("userMusic", value.getMusicSet());
+            model.addAttribute("userCity", value.getCitySet());
+        });
         //MUSIC INFO
         model.addAttribute("allMusic", musicService.findAll());
 
         //CITY INFO
         model.addAttribute("allCity", cityService.findAll());
+
+        //MUSIC CITY POPULARITY RATE
+        model.addAttribute("popRate", musicService.findAll());
 
         return "dashboard";
     }
