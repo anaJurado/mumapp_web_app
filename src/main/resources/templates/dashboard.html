@@ -146,15 +146,6 @@
       -->
       <!-- Page content -->
       <div class="container-fluid mt--6">
-        <!-- FILA BOTONES CIUDADES -->
-        <div class="row">
-          <div class="col text-right">
-            {{#user.citySet}}
-              <a href="#!" class="btn btn-sm btn-primary text-capitalize">{{cityName}}</a>
-            {{/user.citySet}}
-          </div>
-        </div>
-
 
         <div class="row">
           <div class="col-xl-12">
@@ -164,25 +155,19 @@
                   <div class="col">
                     <h6 class="text-uppercase text-muted ls-1 mb-1">Music Styles</h6>
                     <h5 class="h3 mb-0">Popularity Rate per City</h5>
-                    <div>
-                      {{#user.citySet}}
-                        {{#user.musicSet}}
-                          <p>CIUDAD: {{cityName}} - MUSICA: {{styleName}}</p>
-                        {{/user.musicSet}}
-                      {{/user.citySet}}
-                    </div>
                   </div>
                 </div>
               </div>
               <div class="card-body">
                 <!-- Chart -->
-              <div class="chart">
-                  <canvas id="chart-bars" class="chart-canvas"></canvas>
-              </div>
+                <div class="chart">
+                    <canvas id="chart-bars" class="chart-canvas"></canvas>
+                </div>
               </div>
             </div>
           </div>
         </div>
+        <!-- Table -->
         <div class="row">
           <div class="col-xl-12">
             <div class="card">

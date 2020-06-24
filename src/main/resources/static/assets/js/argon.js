@@ -830,7 +830,6 @@ GET: $(document).ready(
 
         var charData = {
             musicLabels: [],
-            cityLabels: [],
             ratesValues: [],
         };
 
@@ -875,12 +874,9 @@ GET: $(document).ready(
             });
 
         function deconstructData(item){
-            // [music_id, city_id, popularity_rate]
-            console.log(item);
-            console.log(charData);
-
-            charData.musicLabels.push(item[0]);
-            charData.cityLabels.push(item[1]);
+            // item: [music_styleName, city_cityName, popularity_rate]
+            let musicCityLabel = item[0] + " - " + item[1].toUpperCase()
+            charData.musicLabels.push(musicCityLabel);
             charData.ratesValues.push(item[2]);
         }
 
@@ -896,10 +892,9 @@ GET: $(document).ready(
             var ordersChart = new Chart($chart, {
                 type: 'bar',
                 data: {
-                    //labels: ['pepiño', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
                     labels: data.musicLabels,
                     datasets: [{
-                        label: "rate: ",
+                        label: "popularity",
                         data: data.ratesValues,
                     }]
                 }
