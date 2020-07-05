@@ -23,10 +23,10 @@ public class DatabaseInitializer {
 
     @Autowired
     private UserRepository userRepository;
-/*
+
     @PostConstruct
     public void init() {
-
+/*
         // MUSIC STYLES (25)
 
         Music jazz = musicRepository.save(new Music("jazz"));
@@ -138,6 +138,6 @@ public class DatabaseInitializer {
         UPDATE music_city SET popularity_rate = 100 * RAND() WHERE 1;
 */
 
-//  }
+ }
 
 }
