@@ -10,10 +10,140 @@
 <html lang="en">
 <!-- Head -->
 {{>head}}
+
 <!-- /Head -->
 
 <body>
-    <div class="section-buttons">
+    <!-- Main content -->
+    <div class="main-content" id="panel">
+        <div class="row" class="text-center" style="padding-top: 30px;">
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4">
+                <h1>ADMIN PANEL</h1>
+            </div>
+            <div class="col-lg-4"></div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-lg-1"></div>
+            <div class="col-lg-10">
+                <h2>USERS</h2>
+                <div id="display-users">
+                    <ul>
+                    {{#allUser}}
+                    <li>
+                        <button type="button" id="updateUserFormButton" class="btn btn-link">{{name}}</button>
+                        <form id="updateUser" style="display: none;">
+                            <div class="form-group">
+                                <label class="form-control-label" style="padding-right: 15px;">User Name: <b>{{name}}</b></label>
+                            </div>
+                            <div class="form-group">
+                                <label for="update-firstName" class="form-control-label" style="padding-right: 15px;">Change First Name:   </label>
+                                <input type="text" id="update-firstName" name="update-firstName" value="{{firstName}}">
+                            </div>
+                            <div class="form-group">
+                                <label for="update-lastName" class="form-control-label" style="padding-right: 15px;">Change Last Name:   </label>
+                                <input type="text" id="update-lastName" name="update-lastName" value="{{lastName}}">
+                            </div>
+                            <div class="form-group">
+                                <label for="update-email" class="form-control-label" style="padding-right: 15px;">Change Email:   </label>
+                                <input type="text" id="update-email" name="update-email" value="{{email}}">
+                            </div>
+                            <div class="form-group">
+                                <label for="update-password" class="form-control-label" style="padding-right: 15px;">Change Password:   </label>
+                                <input type="text" id="update-password" name="update-password" value="">
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" class="btn btn-outline-success" value="SAVE">
+                                <input type="hidden" name="_csrf" value="{{token}}"/>
+                            </div>
+                        </form>
+                        <a class="btn btn-outline-danger btn-sm" href="" role="button">DELETE</a>
+                    </li>
+                    {{/allUser}}
+                </ul>
+                </div>
+                <div id="create-user">
+                    <button type="button" id="createUserFormButton" class="btn btn-primary">CREATE USER</button>
+                    <form id="createUser" style="display: none;">
+                        <div class="form-group">
+                            <label for="create-userName" class="form-control-label" style="padding-right: 15px; padding-top: 25px;">User Name: </label>
+                            <input type="text" id="create-userName" name="create-userName" value="">
+                        </div>
+                        <div class="form-group">
+                            <label for="create-firstName" class="form-control-label" style="padding-right: 15px;">First Name: </label>
+                            <input type="text" id="create-firstName" name="create-firstName" value="">
+                        </div>
+                        <div class="form-group">
+                            <label for="create-lastName" class="form-control-label" style="padding-right: 15px;">Last Name: </label>
+                            <input type="text" id="create-lastName" name="create-lastName" value="">
+                        </div>
+                        <div class="form-group">
+                            <label for="create-email" class="form-control-label" style="padding-right: 15px;">Email: </label>
+                            <input type="create-email" id="create-email" name="create-email" value="">
+                        </div>
+                        <div class="form-group">
+                            <label for="create-password" class="form-control-label" style="padding-right: 15px;">Password: </label>
+                            <input type="create-password" id="create-password" name="create-password" value="">
+                        </div>
+                        <div class="form-group">
+                            <input class="btn btn-info" type="submit" value="Submit">
+                            <input type="hidden" name="_csrf" value="{{token}}"/>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-lg-1"></div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-lg-1"></div>
+            <div class="col-lg-10">
+                <h2>MUSIC</h2>
+                <div id="display-music">
+                    <ul>
+                        {{#allMusic}}
+                        <li>
+                            <label style="padding-right: 25px;">{{styleName}}</label>
+                            <a class="btn btn-outline-danger btn-sm" href="" role="button">DELETE</a>
+                        </li>
+                        {{/allMusic}}
+                    </ul>
+                </div>
+                <div id="create-music">
+                    <button type="button" id="createMusicFormButton" class="btn btn-primary">ADD MUSIC STYLE</button>
+                    <form id="createMusic" style="display: none;">
+                        <div class="form-group">
+                            <label for="create-styleMusic" class="form-control-label" style="padding-right: 15px; padding-top: 25px;">Music style: </label>
+                            <input type="text" id="create-styleMusic" name="create-styleMusic" value="">
+                        </div>
+                        <div class="form-group">
+                            <input class="btn btn-info" type="submit" value="Submit">
+                            <input type="hidden" name="_csrf" value="{{token}}"/>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-lg-1"></div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-lg-1"></div>
+            <div class="col-lg-10">
+                <h2>CITY</h2>
+            </div>
+            <div class="col-lg-1"></div>
+        </div>
+    </div>
+    <!-- /Main content -->
+
+    <hr>
+
+    <!-- Buttons Bottom-->
+    <div class="row">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
+            <div class="section-buttons">
         <div class="navbar" >
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
@@ -29,60 +159,14 @@
             </ul>
         </div>
     </div>
-    <!-- Main content -->
-    <div class="main-content" id="panel">
-        <h2>ADMIN PAGE</h2>
-
-        <h2>USERS</h2>
-        <div class="row">
-            <div class="col-lg-10">
-                <button onclick="showForm()">CREATE USER</button>
-                <form id="formElement" style="display: none;">
-                    <p></p>
-                    <label for="userName">User Name: </label><br>
-                    <input type="text" id="userName" name="userName" value="">
-                    <p></p>
-                    <label for="firstName">First Name: </label><br>
-                    <input type="text" id="firstName" name="firstName" value="">
-                    <p></p>
-                    <label for="lastName">Last Name: </label><br>
-                    <input type="text" id="lastName" name="lastName" value="">
-                    <p></p>
-                    <label for="email">Email: </label><br>
-                    <input type="email" id="email" name="email" value="">
-                    <p></p>
-                    <label for="password">Password: </label><br>
-                    <input type="password" id="password" name="password" value="">
-                    <p></p>
-                    <input type="submit" value="Submit">
-                    <input type="hidden" name="_csrf" value="{{token}}"/>
-                    <p></p>
-                </form>
-
-            </div>
         </div>
-        <div class="row">
-            <h2>MUSIC</h2>
-            <div class="col-lg-10">
-
-            </div>
-        </div>
-        <div class="row">
-            <h2>CITY</h2>
-            <div class="col-lg-10">
-
-            </div>
-        </div>
-
-
-
+        <div class="col-lg-1"></div>
     </div>
-
-    <!-- /Main content -->
-
+    <!-- Buttons Bottom-->
 
 
     <!-- Scripts -->
+
     <div class="scripts">
         {{>scripts}}
     </div>

@@ -49,30 +49,54 @@ public class AppControllers {
         return "login";
     }
 
-    @GetMapping("/loginerror")
-    public String loginError() {
-        return "loginerror";
-    }
-
     @GetMapping("/logout")
     public String logout(Model model) {
         return "index";
-    }
-
-    @GetMapping("/register")
-    public String register(Model model) {
-        return "register";
-    }
-
-    @GetMapping("/admin")
-    public String admin(Model model) {
-        return "admin";
     }
 
     @GetMapping("/error")
     public String error(Model model) {
         return "error";
     }
+
+    @GetMapping("/loginerror")
+    public String loginError() {
+        return "loginerror";
+    }
+
+
+
+/*    @GetMapping("/register")
+    public String register(Model model) {
+        return "register";
+    }*/
+
+
+    // ADMIN VIEW
+    @GetMapping("/admin")
+    public String adminView(Model model) {
+
+        Long id = userComponent.getLoggedUser().getId();
+
+        //USER INFO
+        Optional<User> user = userRepository.findById(id);
+        if(user.isPresent()) {
+            model.addAttribute("user", user.get());
+        }
+
+        // ALL USERS
+        model.addAttribute("allUser", userRepository.findAll());
+
+        //MUSIC INFO
+        model.addAttribute("allMusic", musicService.findAll());
+
+        //CITY INFO
+        model.addAttribute("allCity", cityService.findAll());
+
+        return "admin";
+    }
+
+
 
     // PROFILE VIEW
     @GetMapping("/profile")

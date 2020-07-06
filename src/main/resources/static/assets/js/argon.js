@@ -1238,6 +1238,27 @@ GET: $(document).ready(
 //
 // ADMIN FORMS
 //
-function showForm() {
-    document.getElementById('formElement').style.display = 'block';
-}
+
+$(document).ready(function() {
+    $("#updateUserFormButton").click(function() {
+        $("#updateUser").toggle();
+    });
+});
+
+$(document).ready(function() {
+    $("#createUserFormButton").click(function() {
+        $("#createUser").toggle();
+    });
+});
+
+$(document).ready(function() {
+    $("#createMusicFormButton").click(function() {
+        $("#createMusic").toggle();
+    });
+});
+
+$(document).ready(function() {
+    $("#createCityFormButton").click(function() {
+        $("#createCity").toggle();
+    });
+});
