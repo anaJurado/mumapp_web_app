@@ -65,13 +65,6 @@ public class AppControllers {
     }
 
 
-
-/*    @GetMapping("/register")
-    public String register(Model model) {
-        return "register";
-    }*/
-
-
     // ADMIN VIEW
     @GetMapping("/admin")
     public String adminView(Model model) {
