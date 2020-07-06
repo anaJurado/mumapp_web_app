@@ -13,40 +13,80 @@
 <!-- /Head -->
 
 <body>
-
-    <!-- Navbar Auth-->
-    <nav id="navbar-main" class="navbar navbar-horizontal navbar-transparent navbar-main navbar-expand-lg navbar-light">
-        <div class="container">
-            {{#admin}}
-            <div class="navbar" id="navbar-admin">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="admin.html" style="background-color: red;">
-                            <span class="nav-link-inner--text">ADMIN</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            {{/admin}}
-
-            {{>navbar_auth}}
-
+    <div class="section-buttons">
+        <div class="navbar" >
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/profile">
+                        <button type="button" class="btn btn-primary">BACK TO PROFILE</button>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/dashboard">
+                        <button type="button" class="btn btn-primary">BACK TO DASHBOARD</button>
+                    </a>
+                </li>
+            </ul>
         </div>
-    </nav>
-    <!-- /Navbar Auth-->
-
-
-    <h2>ADMIN PAGE</h2>
-    <!-- Footer -->
-    <div class="footer nav-footer">
-        {{>footer}}
     </div>
-    <!-- /Footer -->
+    <!-- Main content -->
+    <div class="main-content" id="panel">
+        <h2>ADMIN PAGE</h2>
+
+        <h2>USERS</h2>
+        <div class="row">
+            <div class="col-lg-10">
+                <button onclick="showForm()">CREATE USER</button>
+                <form id="formElement" style="display: none;">
+                    <p></p>
+                    <label for="userName">User Name: </label><br>
+                    <input type="text" id="userName" name="userName" value="">
+                    <p></p>
+                    <label for="firstName">First Name: </label><br>
+                    <input type="text" id="firstName" name="firstName" value="">
+                    <p></p>
+                    <label for="lastName">Last Name: </label><br>
+                    <input type="text" id="lastName" name="lastName" value="">
+                    <p></p>
+                    <label for="email">Email: </label><br>
+                    <input type="email" id="email" name="email" value="">
+                    <p></p>
+                    <label for="password">Password: </label><br>
+                    <input type="password" id="password" name="password" value="">
+                    <p></p>
+                    <input type="submit" value="Submit">
+                    <input type="hidden" name="_csrf" value="{{token}}"/>
+                    <p></p>
+                </form>
+
+            </div>
+        </div>
+        <div class="row">
+            <h2>MUSIC</h2>
+            <div class="col-lg-10">
+
+            </div>
+        </div>
+        <div class="row">
+            <h2>CITY</h2>
+            <div class="col-lg-10">
+
+            </div>
+        </div>
+
+
+
+    </div>
+
+    <!-- /Main content -->
+
+
 
     <!-- Scripts -->
     <div class="scripts">
         {{>scripts}}
     </div>
     <!-- /Scrips -->
+
 </body>
 </html>
