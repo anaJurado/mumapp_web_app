@@ -27,7 +27,6 @@ public class User {
     @ElementCollection(fetch = FetchType.EAGER)
     private List<String> roles;
 
-
     //Uni-directional many-to-many association to music
     @ManyToMany(cascade={CascadeType.ALL})
     @JoinTable(name="user_music",
@@ -113,6 +112,20 @@ public class User {
     public void setRoles(List<String> roles) {
         this.roles = roles;
     }
+
+/*
+    public Set<Long> citySetIds{
+        get {
+            return citySet.toArray().map(city -> city.id);
+        }
+    }
+
+    public Set<Long> musicSetIds {
+        get {
+            return musicSet.toArray().map(music -> music.id);
+        }
+    }
+*/
 
     public Set<Music> getMusicSet() {
         return musicSet;

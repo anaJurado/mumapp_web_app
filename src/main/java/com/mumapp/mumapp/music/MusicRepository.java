@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import java.util.List;
 
 public interface MusicRepository extends JpaRepository<Music, Long> {
+
     @Query( value = "SELECT popularity_rate FROM music_city WHERE music_id = ?1 AND city_id = ?2",
             nativeQuery = true)
     int findByMusicIdAndCityId(long musicId, long cityId);
