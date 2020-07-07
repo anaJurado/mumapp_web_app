@@ -816,149 +816,6 @@ if ($map.length) {
 }
 
 
-
-//
-// AJAX CALLS + BARS CHART
-//
-
-GET: $(document).ready(
-    function() {
-
-        var userPopRate;
-
-        var charData = {
-            musicLabels: [],
-            ratesValues: [],
-        };
-
-        $.ajax({
-            type: "GET",
-            url: '/api/'+userId+'/popularity',
-        })
-            .done(function (data) {
-                if (console && console.log) {
-                    console.log(" userPopRate: ", data);
-                    // INFO: data format: [music_id, city_id, popularity_rate]
-                    userPopRate=data;
-                    userPopRate.forEach(deconstructData);
-
-                    if ($chart.length) {
-                        initChart($chart, charData);
-                    }
-                }
-            });
-
-        function deconstructData(item){
-            // item: [music_styleName, city_cityName, popularity_rate]
-            let musicCityLabel = item[0] + " - " + item[1].toUpperCase()
-            charData.musicLabels.push(musicCityLabel);
-            charData.ratesValues.push(item[2]);
-        }
-
-        // CREO AHORA EL CHART
-        var $chart = $('#chart-bars');
-
-        // Init chart
-        function initChart($chart, data) {
-
-            // Create chart
-            var ordersChart = new Chart($chart, {
-                type: 'bar',
-                data: {
-                    labels: data.musicLabels,
-                    datasets: [{
-                        label: "popularity",
-                        data: data.ratesValues,
-                    }]
-                }
-            });
-
-            // Save to jQuery object
-            $chart.data('chart', ordersChart);
-        }
-
-    });
-
-
-//
-// AJAX + TABLE TOP 5
-//
-
-GET: $(document).ready(
-    function() {
-
-        var allCity;
-        var allTopRate;
-        var userTopPopRate;
-        var tableRowsUser = "";
-        var tableRowsWorld = "";
-
-        $.ajax({
-            type: "GET",
-            url: '/api/all/city',
-        })
-            .done(function (data) {
-                if (console && console.log) {
-                    allCity = data;
-                }
-            });
-
-        $.ajax({
-            type: "GET",
-            url: '/api/all/popularity/top',
-        })
-            .done(function (data) {
-                if (console && console.log) {
-                    allTopRate=data;
-                }
-            });
-
-        $.ajax({
-            type: "GET",
-            url: '/api/'+userId+'/popularity/top',
-        })
-            .done(function (data) {
-                if (console && console.log) {
-                    // INFO: data format: [music, city, popularity_rate]
-                    userTopPopRate=data;
-
-                    const arrayToObject = (array, keyField) =>
-                        array.reduce((obj, item) => {
-                            obj[item[keyField]] = item
-                            return obj
-                        }, {})
-
-                    var allCitiesDict = arrayToObject(allCity, "cityName")
-
-                    for (let i=0; i< userTopPopRate.length; i++ ) {
-                        tableRowsUser = tableRowsUser+
-                        "<tr><td class='text-center'><b>" + userTopPopRate[i][2] + "</b></td>" +
-                        "<td>" + userTopPopRate[i][0] + "</td>" +
-                        "<td>" + userTopPopRate[i][1] + "</td>" +
-                        "<td>" + allCitiesDict[userTopPopRate[i][1]].country + "</td>" +
-                        "<td>" + allCitiesDict[userTopPopRate[i][1]].continent + "</td></tr>"
-                    }
-                    document.getElementById("table-body-user").innerHTML = tableRowsUser;
-
-                    for (let j=0; j< allTopRate.length; j++ ) {
-                        tableRowsWorld = tableRowsWorld+
-                            "<tr><td class='text-center'><b>" + allTopRate[j][2] + "</b></td>" +
-                            "<td>" + allTopRate[j][0] + "</td>" +
-                            "<td>" + allTopRate[j][1] + "</td>" +
-                            "<td>" + allCitiesDict[allTopRate[j][1]].country + "</td>" +
-                            "<td>" + allCitiesDict[allTopRate[j][1]].continent + "</td></tr>"
-                    }
-                    document.getElementById("table-body-world").innerHTML = tableRowsWorld;
-
-                }
-            });
-
-    });
-
-
-
-
-
 //
 // Bars chart
 //
@@ -1233,3 +1090,164 @@ var Scrollbar = (function () {
     }
 
 })();
+
+
+// -------------//
+// MY FUNCTIONS //
+// -------------//
+
+//
+// AJAX CALLS + BARS CHART
+//
+
+GET: $(document).ready(
+    function() {
+
+        var userPopRate;
+
+        var charData = {
+            musicLabels: [],
+            ratesValues: [],
+        };
+
+        $.ajax({
+            type: "GET",
+            url: '/api/'+userId+'/popularity',
+        })
+            .done(function (data) {
+                if (console && console.log) {
+                    console.log(" userPopRate: ", data);
+                    // INFO: data format: [music_id, city_id, popularity_rate]
+                    userPopRate=data;
+                    userPopRate.forEach(deconstructData);
+
+                    if ($chart.length) {
+                        initChart($chart, charData);
+                    }
+                }
+            });
+
+        function deconstructData(item){
+            // item: [music_styleName, city_cityName, popularity_rate]
+            let musicCityLabel = item[0] + " - " + item[1].toUpperCase()
+            charData.musicLabels.push(musicCityLabel);
+            charData.ratesValues.push(item[2]);
+        }
+
+        // CREO AHORA EL CHART
+        var $chart = $('#chart-bars');
+
+        // Init chart
+        function initChart($chart, data) {
+
+            // Create chart
+            var ordersChart = new Chart($chart, {
+                type: 'bar',
+                data: {
+                    labels: data.musicLabels,
+                    datasets: [{
+                        label: "popularity",
+                        data: data.ratesValues,
+                    }]
+                }
+            });
+
+            // Save to jQuery object
+            $chart.data('chart', ordersChart);
+        }
+
+    });
+
+
+//
+// AJAX + TABLE TOP 10
+//
+
+GET: $(document).ready(
+    function() {
+
+        var allCity;
+        var allTopRate;
+        var userTopPopRate;
+        var tableRowsUser = "";
+        var tableRowsWorld = "";
+
+        $.ajax({
+            type: "GET",
+            url: '/api/all/city',
+        })
+            .done(function (data) {
+                if (console && console.log) {
+                    allCity = data;
+                }
+            });
+
+        $.ajax({
+            type: "GET",
+            url: '/api/all/popularity/top',
+        })
+            .done(function (data) {
+                if (console && console.log) {
+                    allTopRate=data;
+                }
+            });
+
+        $.ajax({
+            type: "GET",
+            url: '/api/'+userId+'/popularity/top',
+        })
+            .done(function (data) {
+                if (console && console.log) {
+                    // INFO: data format: [music, city, popularity_rate]
+                    userTopPopRate=data;
+
+                    const arrayToObject = (array, keyField) =>
+                        array.reduce((obj, item) => {
+                            obj[item[keyField]] = item
+                            return obj
+                        }, {})
+
+                    var allCitiesDict = arrayToObject(allCity, "cityName")
+
+                    for (let i=0; i< userTopPopRate.length; i++ ) {
+                        tableRowsUser = tableRowsUser+
+                            "<tr><td class='text-center'><b>" + userTopPopRate[i][2] + "</b></td>" +
+                            "<td>" + userTopPopRate[i][0] + "</td>" +
+                            "<td>" + userTopPopRate[i][1] + "</td>" +
+                            "<td>" + allCitiesDict[userTopPopRate[i][1]].country + "</td>" +
+                            "<td>" + allCitiesDict[userTopPopRate[i][1]].continent + "</td></tr>"
+                    }
+                    document.getElementById("table-body-user").innerHTML = tableRowsUser;
+
+                    for (let j=0; j< allTopRate.length; j++ ) {
+                        tableRowsWorld = tableRowsWorld+
+                            "<tr><td class='text-center'><b>" + allTopRate[j][2] + "</b></td>" +
+                            "<td>" + allTopRate[j][0] + "</td>" +
+                            "<td>" + allTopRate[j][1] + "</td>" +
+                            "<td>" + allCitiesDict[allTopRate[j][1]].country + "</td>" +
+                            "<td>" + allCitiesDict[allTopRate[j][1]].continent + "</td></tr>"
+                    }
+                    document.getElementById("table-body-world").innerHTML = tableRowsWorld;
+
+                }
+            });
+
+    });
+
+
+//
+// ADMIN FORMS
+//
+
+
+$(document).ready(function() {
+    $("#updateCityFormButton").click(function() {
+        $("#updateCity").toggle();
+    });
+});
+
+$(document).ready(function() {
+    $("#createCityFormButton").click(function() {
+        $("#createCity").toggle();
+    });
+});

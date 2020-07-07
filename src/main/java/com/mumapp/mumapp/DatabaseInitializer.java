@@ -23,7 +23,7 @@ public class DatabaseInitializer {
 
     @Autowired
     private UserRepository userRepository;
-/*
+
     @PostConstruct
     public void init() {
 
@@ -85,12 +85,32 @@ public class DatabaseInitializer {
 
 
         // Sample users
-        User admin = userRepository.save(new User("admin", "admin", "admin",
+        User admin = userRepository.save(new User("adminFirstName", "adminLastName", "admin",
                 "admin@mumapp.not", "pass", "ROLE_ADMIN", "ROLE_USER"));
-        User ana = userRepository.save(new User("ana", "jurado", "nukyma",
+        User admin2 = userRepository.save(new User("admin2FirstName", "admin2LastName", "admin2",
+                "admin2@mumapp.not", "pass", "ROLE_ADMIN", "ROLE_USER"));
+        User admin3 = userRepository.save(new User("admin3FirstName", "admin3LastName", "admin3",
+                "admin3@mumapp.not", "pass", "ROLE_USER", "ROLE_ADMIN"));
+        User ana = userRepository.save(new User("ana", "z", "nuky",
                 "ana@mumapp.not", "12345", "ROLE_USER"));
-        User maria = userRepository.save(new User("maria", "crespo", "mimi",
-                "mimi@mumapp.not", "54321", "ROLE_USER"));
+        User maria = userRepository.save(new User("maria", "y", "mimi",
+                "mimi@mumapp.not", "12345", "ROLE_USER"));
+        User juana = userRepository.save(new User("juana", "x", "jj",
+                "juana@mumapp.not", "12345", "ROLE_USER"));
+
+
+        admin.getMusicSet().add(disco);
+        admin.getCitySet().add(helsinki);
+        userRepository.save(admin);
+
+/*        admin2.getMusicSet().add(disco);
+        admin2.getCitySet().add(helsinki);
+        userRepository.save(admin2);
+
+        admin3.getMusicSet().add(disco);
+        admin3.getCitySet().add(helsinki);
+        userRepository.save(admin3);
+        */
 
 
         // USER - MUSIC(5) - CITY(5) ANA
@@ -108,6 +128,21 @@ public class DatabaseInitializer {
 
 
         userRepository.save(ana);
+
+        juana.getMusicSet().add(bolero);
+        juana.getMusicSet().add(cumbia);
+        juana.getMusicSet().add(romantic);
+        juana.getMusicSet().add(cover);
+        juana.getMusicSet().add(bossa);
+
+        juana.getCitySet().add(manila);
+        juana.getCitySet().add(mumbai);
+        juana.getCitySet().add(nairobi);
+        juana.getCitySet().add(luanda);
+        juana.getCitySet().add(tunis);
+
+
+        userRepository.save(juana);
 
 
         // USER - MUSIC(10) - CITY(3) MARIA
@@ -130,6 +165,9 @@ public class DatabaseInitializer {
         userRepository.save(maria);
 
 
+        // USER - JUANA
+
+
 /*
         INSERT INTO music_city (music_id, city_id)
         SELECT music.id as music_id, city.id as city_id
@@ -138,6 +176,6 @@ public class DatabaseInitializer {
         UPDATE music_city SET popularity_rate = 100 * RAND() WHERE 1;
 */
 
-//  }
+ }
 
 }

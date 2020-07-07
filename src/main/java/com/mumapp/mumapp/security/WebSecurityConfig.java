@@ -23,9 +23,28 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 
         // Private pages (all other pages)
-        http.authorizeRequests().antMatchers("/admin").hasAnyRole("ADMIN");
         http.authorizeRequests().antMatchers("/profile").hasAnyRole("ADMIN", "USER");
         http.authorizeRequests().antMatchers("/dashboard").hasAnyRole("ADMIN", "USER");
+        http.authorizeRequests().antMatchers("/admin").hasAnyRole("ADMIN");
+
+        http.authorizeRequests().antMatchers("/newUser").hasAnyRole("ADMIN");
+        http.authorizeRequests().antMatchers("/deleteUser/{id}").hasAnyRole("ADMIN");
+
+        http.authorizeRequests().antMatchers("/saveUser").hasAnyRole("ADMIN", "USER");
+        http.authorizeRequests().antMatchers("/user/{id}").hasAnyRole("ADMIN", "USER");
+
+        http.authorizeRequests().antMatchers("/newMusic").hasAnyRole("ADMIN");
+        http.authorizeRequests().antMatchers("/deleteMusic/{id}").hasAnyRole("ADMIN");
+
+        http.authorizeRequests().antMatchers("/saveMusic").hasAnyRole("ADMIN", "USER");
+        http.authorizeRequests().antMatchers("/music/{id}").hasAnyRole("ADMIN", "USER");
+
+
+        http.authorizeRequests().antMatchers("/newCity").hasAnyRole("ADMIN");
+        http.authorizeRequests().antMatchers("/deleteCity/{id}").hasAnyRole("ADMIN");
+
+        http.authorizeRequests().antMatchers("/saveCity").hasAnyRole("ADMIN", "USER");
+        http.authorizeRequests().antMatchers("/city/{id}").hasAnyRole("ADMIN", "USER");
 
 
         // Login form

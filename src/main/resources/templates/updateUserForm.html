@@ -1,0 +1,97 @@
+<!--
+=========================================================
+* THEME: Argon Dashboard - v1.2.0
+=========================================================
+* Product Page: https://www.creative-tim.com/product/argon-dashboard
+* Copyright  Creative Tim (http://www.creative-tim.com)
+=========================================================
+-->
+<!DOCTYPE html>
+<html lang="en">
+<!-- Head -->
+{{>head}}
+<!-- /Head -->
+<body>
+    <div class="main-content" id="panel">
+        <div class="row" style="padding-top: 30px;">
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4">
+                <h1>ADMIN PANEL - USER </h1>
+            </div>
+            <div class="col-lg-4"></div>
+        </div>
+        <hr>
+        {{#user}}<h2>UPDATE USER: {{name}}</h2>{{/user}}
+        {{^user}}<h2>NEW USER</h2>{{/user}}
+        <div class="row">
+            <div class="col-lg-12">
+                <div id="update-user">
+                    <form action="/saveUser" method="post">
+                        <div class="form-group">
+                            {{#user}}
+                                <input type="hidden" name="id" value="{{id}}" class="form-control"/>
+                                <label class="form-control-label" style="padding-right: 15px;">User Name: <b>{{name}}</b></label>
+                            {{/user}}
+                            {{^user}}
+                                <label for="userName" class="form-control-label" style="padding-right: 15px;">User Name:   </label>
+                                <input type="text" id="userName" name="userName" class="form-control" value="">
+                            {{/user}}
+                        </div>
+                        <div class="form-group">
+                            <label for="update-firstName" class="form-control-label" style="padding-right: 15px;">First Name:   </label>
+                            <input type="text" id="update-firstName" name="update-firstName" class="form-control" {{#user}}value="{{firstName}}"{{/user}}>
+                        </div>
+                        <div class="form-group">
+                            <label for="update-lastName" class="form-control-label" style="padding-right: 15px;">Last Name:   </label>
+                            <input type="text" id="update-lastName" name="update-lastName" class="form-control" {{#user}}value="{{lastName}}"{{/user}}>
+                        </div>
+                        <div class="form-group">
+                            <label for="update-email" class="form-control-label" style="padding-right: 15px;">Email:   </label>
+                            <input type="text" id="update-email" name="update-email" class="form-control" {{#user}}value="{{email}}"{{/user}}>
+                        </div>
+                        <div class="form-group">
+                            <label for="update-password" class="form-control-label" style="padding-right: 15px;">Password:   </label>
+                            <input type="text" id="update-password" name="update-password" class="form-control" value="">
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-outline-success" value="SAVE">
+                            <input type="hidden" name="_csrf" value="{{token}}"/>
+                        </div>
+                        {{#user}}
+                            <div class="form-group">
+                                <label style="padding-right: 15px;">USER ID:<b>{{id}}</b></label><br>
+                                <a class="btn btn-danger" href="/deleteUser/{{id}}">DELETE USER</a>
+                            </div>
+                        {{/user}}
+                    </form>
+                </div>
+            </div>
+        </div>
+        <hr>
+    </div>
+
+
+    <!-- Buttons Bottom-->
+    <div class="row">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
+            <div class="section-buttons">
+                <div class="navbar" >
+                <a class="nav-link" href="/admin">
+                    <button type="button" class="btn btn-primary">BACK TO ADMIN</button>
+                </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
+    <!-- Buttons Bottom-->
+
+    <!-- Scripts -->
+    <div class="scripts">
+        {{>scripts}}
+    </div>
+    <!-- /Scrips -->
+
+</body>
+</html>

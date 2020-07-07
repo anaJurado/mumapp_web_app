@@ -13,40 +13,110 @@
 <!-- /Head -->
 
 <body>
-
-    <!-- Navbar Auth-->
-    <nav id="navbar-main" class="navbar navbar-horizontal navbar-transparent navbar-main navbar-expand-lg navbar-light">
-        <div class="container">
-            {{#admin}}
-            <div class="navbar" id="navbar-admin">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="admin.html" style="background-color: red;">
-                            <span class="nav-link-inner--text">ADMIN</span>
-                        </a>
-                    </li>
-                </ul>
+    <!-- Main content -->
+    <div class="main-content" id="panel">
+        <div class="row" class="text-center" style="padding-top: 30px;">
+            <div class="col-lg-4"></div>
+            <div class="col-lg-4">
+                <h1>ADMIN PANEL</h1>
             </div>
-            {{/admin}}
-
-            {{>navbar_auth}}
-
+            <div class="col-lg-4"></div>
         </div>
-    </nav>
-    <!-- /Navbar Auth-->
-
-
-    <h2>ADMIN PAGE</h2>
-    <!-- Footer -->
-    <div class="footer nav-footer">
-        {{>footer}}
+        <hr>
+        <div class="row">
+            <div class="col-lg-1"></div>
+            <div class="col-lg-10">
+                <h2>USERS</h2>
+                <div id="display-users">
+                    <ul>
+                    {{#allUser}}
+                    <li>
+                        <a class="btn btn-link" href="/user/{{id}}">{{name}}</a>
+                    </li>
+                    {{/allUser}}
+                </ul>
+                </div>
+                <div id="create-user">
+                    <a class="btn btn-primary" href="/newUser">CREATE USER</a>
+                </div>
+            </div>
+            <div class="col-lg-1"></div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-lg-1"></div>
+            <div class="col-lg-10">
+                <h2>MUSIC</h2>
+                <div id="display-music">
+                    <ul>
+                        {{#allMusic}}
+                        <li>
+                            <a class="btn btn-link text-capitalize" href="/music/{{id}}">{{styleName}}</a>
+                        </li>
+                        {{/allMusic}}
+                    </ul>
+                </div>
+                <div id="create-music">
+                    <a class="btn btn-primary" href="/newMusic">CREATE MUSIC</a>
+                </div>
+            </div>
+            <div class="col-lg-1"></div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-lg-1"></div>
+            <div class="col-lg-10">
+                <h2>CITY</h2>
+                <div id="display-city">
+                    {{#allCity}}
+                    <li>
+                        <a class="btn btn-link text-uppercase" href="/city/{{id}}">{{cityName}}</a>
+                    </li>
+                    {{/allCity}}
+                    </ul>
+                </div>
+                <div id="create-city">
+                    <a class="btn btn-primary" href="/newCity">CREATE CITY</a>
+                </div>
+            </div>
+            <div class="col-lg-1"></div>
+        </div>
     </div>
-    <!-- /Footer -->
+    <!-- /Main content -->
+
+    <hr>
+
+    <!-- Buttons Bottom-->
+    <div class="row">
+        <div class="col-lg-1"></div>
+        <div class="col-lg-10">
+            <div class="section-buttons">
+        <div class="navbar" >
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/profile">
+                        <button type="button" class="btn btn-primary">BACK TO PROFILE</button>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/dashboard">
+                        <button type="button" class="btn btn-primary">BACK TO DASHBOARD</button>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
+    <!-- Buttons Bottom-->
+
 
     <!-- Scripts -->
     <div class="scripts">
         {{>scripts}}
     </div>
     <!-- /Scrips -->
+
 </body>
 </html>

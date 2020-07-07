@@ -1,0 +1,82 @@
+<!--
+=========================================================
+* THEME: Argon Dashboard - v1.2.0
+=========================================================
+* Product Page: https://www.creative-tim.com/product/argon-dashboard
+* Copyright  Creative Tim (http://www.creative-tim.com)
+=========================================================
+-->
+<!DOCTYPE html>
+<html lang="en">
+<!-- Head -->
+{{>head}}
+
+<!-- /Head -->
+<body>
+<div class="main-content" id="panel">
+    <div class="row" style="padding-top: 30px;">
+        <div class="col-lg-4"></div>
+        <div class="col-lg-4">
+            <h1>ADMIN PANEL - MUSIC </h1>
+        </div>
+        <div class="col-lg-4"></div>
+    </div>
+    <hr>
+    {{#music}}<h2>UPDATE MUSIC: {{styleName}}</h2>{{/music}}
+    {{^music}}<h2>NEW MUSIC</h2>{{/music}}
+    <div class="row">
+        <div class="col-lg-12">
+            <div id="update-music">
+                <form action="/saveMusic" method="post">
+                    <div class="form-group">
+                        {{#music}}
+                        <input type="hidden" name="id" value="{{id}}" class="form-control"/>
+                        <label class="form-control-label" style="padding-right: 15px;">Music Name: <b>{{styleName}}</b></label>
+                        {{/music}}
+                        {{^music}}
+                        <label for="styleName" class="form-control-label" style="padding-right: 15px;">Music Name:   </label>
+                        <input type="text" id="styleName" name="styleName" class="form-control" value="">
+                        {{/music}}
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-outline-success" value="SAVE">
+                        <input type="hidden" name="_csrf" value="{{token}}"/>
+                    </div>
+                    {{#music}}
+                    <div class="form-group">
+                        <label style="padding-right: 15px;">MUSIC ID:<b>{{id}}</b></label><br>
+                        <a class="btn btn-danger" href="/deleteMusic/{{id}}">DELETE MUSIC STYLE</a>
+                    </div>
+                    {{/music}}
+                </form>
+            </div>
+        </div>
+    </div>
+    <hr>
+</div>
+
+
+<!-- Buttons Bottom-->
+<div class="row">
+    <div class="col-lg-1"></div>
+    <div class="col-lg-10">
+        <div class="section-buttons">
+            <div class="navbar" >
+                <a class="nav-link" href="/admin">
+                    <button type="button" class="btn btn-primary">BACK TO ADMIN</button>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-1"></div>
+</div>
+<!-- Buttons Bottom-->
+
+<!-- Scripts -->
+<div class="scripts">
+    {{>scripts}}
+</div>
+<!-- /Scrips -->
+
+</body>
+</html>
