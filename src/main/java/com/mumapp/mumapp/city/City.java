@@ -19,8 +19,7 @@ public class City {
     private String continent;
 
     @JsonIgnore
-    @OneToMany(mappedBy = "city",
-               cascade = CascadeType.ALL)
+    @OneToMany
     private Set<MusicCity> musicCitySet;
 
 
