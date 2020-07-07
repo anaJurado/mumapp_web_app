@@ -1,5 +1,7 @@
 package com.mumapp.mumapp.webapp;
 
+import com.mumapp.mumapp.city.City;
+import com.mumapp.mumapp.music.Music;
 import com.mumapp.mumapp.user.UserComponent;
 import com.mumapp.mumapp.user.UserRepository;
 import com.mumapp.mumapp.city.CityService;
@@ -11,6 +13,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import com.mumapp.mumapp.user.User;
+import org.springframework.web.bind.annotation.PostMapping;
+
 import java.util.Optional;
 
 @Controller
@@ -89,6 +93,65 @@ public class AppControllers {
         return "admin";
     }
 
+    @GetMapping("/user/new")
+    public String newUser(Model model) {
+        return "updateUserForm";
+    }
+
+    @GetMapping("/user/{id}")
+    public String updateUser(Model model, @PathVariable long id) {
+
+        Optional<User> user = Optional.ofNullable(userRepository.findById(id));
+        if(user.isPresent()) {
+            model.addAttribute("user", user.get());
+        }
+        return "updateUserForm";
+    }
+
+    @PostMapping("/saveUser")
+    public String saveUser(Model model, User user) {
+
+        userRepository.save(user);
+
+        return "info_updated";
+    }
+
+    @GetMapping("/deleteUser/{id}")
+    public String deleteUser(Model model, @PathVariable long id) {
+
+        userRepository.deleteById(id);
+
+/*        userRepository.deleteMusicByUserId(id);
+        userRepository.deleteCityByUserId(id);*/
+
+        return "info_updated";
+    }
+
+
+
+    @GetMapping("/admin/music/{id}")
+    public String updateMusic(Model model, @PathVariable long id) {
+
+        Optional<Music> music = musicService.findById(id);
+
+        if(music.isPresent()) {
+            model.addAttribute("music", music.get());
+        }
+
+        return "updateMusicForm";
+    }
+
+    @GetMapping("/admin/city/{id}")
+    public String updateCity(Model model, @PathVariable long id) {
+
+        Optional<City> city = cityService.findById(id);
+
+        if(city.isPresent()) {
+            model.addAttribute("city", city.get());
+        }
+
+        return "updateCityForm";
+    }
 
 
     // PROFILE VIEW
