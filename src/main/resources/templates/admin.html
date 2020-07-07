@@ -51,7 +51,7 @@
                     <ul>
                         {{#allMusic}}
                         <li>
-                            <a class="btn btn-link" href="/music/{{id}}">{{styleName}}</a>
+                            <a class="btn btn-link text-capitalize" href="/music/{{id}}">{{styleName}}</a>
                         </li>
                         {{/allMusic}}
                     </ul>
@@ -68,8 +68,15 @@
             <div class="col-lg-10">
                 <h2>CITY</h2>
                 <div id="display-city">
+                    {{#allCity}}
+                    <li>
+                        <a class="btn btn-link text-uppercase" href="/city/{{id}}">{{cityName}}</a>
+                    </li>
+                    {{/allCity}}
+                    </ul>
                 </div>
                 <div id="create-city">
+                    <a class="btn btn-primary" href="/newCity">CREATE CITY</a>
                 </div>
             </div>
             <div class="col-lg-1"></div>

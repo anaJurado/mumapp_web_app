@@ -167,25 +167,37 @@ public class AppControllers {
     }
 
 
-
-
-
-
-
-
-
-    @GetMapping("/admin/city/{id}")
-    public String updateCity(Model model, @PathVariable long id) {
-
-        Optional<City> city = cityService.findById(id);
-
-        if(city.isPresent()) {
-            model.addAttribute("city", city.get());
-        }
-
+    // ADMIN VIEW - CITY
+    @GetMapping("/newCity")
+    public String newcity(Model model) {
         return "updateCityForm";
     }
 
+    @PostMapping("/saveCity")
+    public String saveCity(Model model, City city) {
+
+        cityService.save(city);
+
+        return "info_updated";
+    }
+
+    @GetMapping("/city/{id}")
+    public String updateCity(Model model, @PathVariable long id) {
+
+        Optional<City> city = (cityService.findById(id));
+        if(city.isPresent()) {
+            model.addAttribute("city", city.get());
+        }
+        return "updateCityForm";
+    }
+
+    @GetMapping("/deleteCity/{id}")
+    public String deleteCity(Model model, @PathVariable long id) {
+
+        cityService.deleteById(id);
+
+        return "info_updated";
+    }
 
     // PROFILE VIEW
     @GetMapping("/profile")
