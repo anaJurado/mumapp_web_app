@@ -19,7 +19,7 @@ public class City {
     private String continent;
 
     @JsonIgnore
-    @OneToMany(mappedBy = "city")
+    @OneToMany
     private Set<MusicCity> musicCitySet;
 
 

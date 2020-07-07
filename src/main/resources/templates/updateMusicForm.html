@@ -29,14 +29,10 @@
             <div id="update-music">
                 <form action="/saveMusic" method="post">
                     <div class="form-group">
-                        {{#music}}
-                        <input type="hidden" name="id" value="{{id}}" class="form-control"/>
-                        <label class="form-control-label" style="padding-right: 15px;">Music Name: <b>{{styleName}}</b></label>
-                        {{/music}}
-                        {{^music}}
-                        <label for="styleName" class="form-control-label" style="padding-right: 15px;">Music Name:   </label>
-                        <input type="text" id="styleName" name="styleName" class="form-control" value="">
-                        {{/music}}
+                        {{#music}}<input type="hidden" name="id" value="{{id}}" class="form-control"/>{{/music}}
+                        {{#music}}<input type="hidden" name="id" value="{{musicCitySet}}" class="form-control"/>{{/music}}
+                        <label for="styleName" class="form-control-label" style="padding-right: 15px;">Style Name:   </label>
+                        <input type="text" id="styleName" name="styleName" class="form-control" {{#music}}value="{{styleName}}"{{/music}}>
                     </div>
                     <div class="form-group">
                         <input type="submit" class="btn btn-outline-success" value="SAVE">

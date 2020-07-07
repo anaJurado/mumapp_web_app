@@ -19,9 +19,9 @@ public class Music {
 
     @JsonIgnore
     @OneToMany(
-            mappedBy = "music",
-            cascade = CascadeType.ALL,
-            orphanRemoval = true
+            mappedBy = "music"
+/*            cascade = CascadeType.ALL,
+            orphanRemoval = true*/
     )
     private Set<MusicCity> musicCitySet;
 
@@ -31,6 +31,11 @@ public class Music {
     public Music(String styleName) {
         this.styleName = styleName;
         musicCitySet = new HashSet<>();
+    }
+
+    public Music(String styleName, Set<MusicCity> musicCitySet) {
+        this.styleName = styleName;
+        this.musicCitySet = musicCitySet;
     }
 
     public Long getId() {

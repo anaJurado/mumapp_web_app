@@ -28,30 +28,34 @@
                 <div id="update-user">
                     <form action="/saveUser" method="post">
                         <div class="form-group">
+                            {{#user}}<input type="hidden" name="id" value="{{id}}" class="form-control"/>{{/user}}
+                            {{#user}}<input type="hidden" name="roles" value="{{roles}}" class="form-control"/>{{/user}}
+                            {{#user}}<input type="hidden" name="musicSet" value="{{musicSet}}" class="form-control"/>{{/user}}
+                            {{#user}}<input type="hidden" name="citySet" value="{{citySet}}" class="form-control"/>{{/user}}
                             {{#user}}
-                                <input type="hidden" name="id" value="{{id}}" class="form-control"/>
                                 <label class="form-control-label" style="padding-right: 15px;">User Name: <b>{{name}}</b></label>
                             {{/user}}
                             {{^user}}
-                                <label for="userName" class="form-control-label" style="padding-right: 15px;">User Name:   </label>
-                                <input type="text" id="userName" name="userName" class="form-control" value="">
+                                <label for="name" class="form-control-label" style="padding-right: 15px;">User Name:   </label>
+                                <input type="text" id="name" name="name" class="form-control" value="">
                             {{/user}}
                         </div>
                         <div class="form-group">
-                            <label for="update-firstName" class="form-control-label" style="padding-right: 15px;">First Name:   </label>
-                            <input type="text" id="update-firstName" name="update-firstName" class="form-control" {{#user}}value="{{firstName}}"{{/user}}>
+                            <label for="firstName" class="form-control-label" style="padding-right: 15px;">First Name:   </label>
+                            <input type="text" id="firstName" name="firstName" class="form-control" {{#user}}value="{{firstName}}"{{/user}}>
                         </div>
                         <div class="form-group">
-                            <label for="update-lastName" class="form-control-label" style="padding-right: 15px;">Last Name:   </label>
-                            <input type="text" id="update-lastName" name="update-lastName" class="form-control" {{#user}}value="{{lastName}}"{{/user}}>
+                            <label for="lastName" class="form-control-label" style="padding-right: 15px;">Last Name:   </label>
+                            <input type="text" id="lastName" name="lastName" class="form-control" {{#user}}value="{{lastName}}"{{/user}}>
                         </div>
                         <div class="form-group">
-                            <label for="update-email" class="form-control-label" style="padding-right: 15px;">Email:   </label>
-                            <input type="text" id="update-email" name="update-email" class="form-control" {{#user}}value="{{email}}"{{/user}}>
+                            <label for="email" class="form-control-label" style="padding-right: 15px;">Email:   </label>
+                            <input type="text" id="email" name="email" class="form-control" {{#user}}value="{{email}}"{{/user}}>
                         </div>
                         <div class="form-group">
-                            <label for="update-password" class="form-control-label" style="padding-right: 15px;">Password:   </label>
-                            <input type="text" id="update-password" name="update-password" class="form-control" value="">
+                            <label for="passwordHash" class="form-control-label" style="padding-right: 15px;">Password:   </label>
+                            {{#user}}<input type="hidden" name="passwordHash" value="{{passwordHash}}" class="form-control"/>{{/user}}
+                            <input type="text" id="passwordHash" name="passwordHash" class="form-control" value="">
                         </div>
                         <div class="form-group">
                             <input type="submit" class="btn btn-outline-success" value="SAVE">

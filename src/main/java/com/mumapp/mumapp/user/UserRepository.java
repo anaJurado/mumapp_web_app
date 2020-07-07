@@ -14,14 +14,22 @@ public interface UserRepository extends JpaRepository<User, Long> {
     User findById(long id);
     User findByName(String name);
 
-/*    @Modifying
+
+
+    @Modifying
     @Query( value="DELETE FROM user_music WHERE user_id= ?1",
             nativeQuery=true)
-    void deleteMusicByUserId( long id);
+    void deleteUserMusic( long id);
 
     @Modifying
     @Query( value="DELETE FROM user_city WHERE user_id= ?1",
             nativeQuery=true)
-    void deleteCityByUserId( long id);*/
+    void deleteUserCity( long id);
+
+    @Modifying
+    @Query( value="DELETE FROM user_roles WHERE user_id= ?1",
+            nativeQuery=true)
+    void deleteUserRole( long id);
+
 
 }

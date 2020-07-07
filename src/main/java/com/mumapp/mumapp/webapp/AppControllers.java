@@ -6,15 +6,14 @@ import com.mumapp.mumapp.user.UserComponent;
 import com.mumapp.mumapp.user.UserRepository;
 import com.mumapp.mumapp.city.CityService;
 import com.mumapp.mumapp.music.MusicService;
+import com.mumapp.mumapp.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.*;
 import com.mumapp.mumapp.user.User;
-import org.springframework.web.bind.annotation.PostMapping;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.Optional;
 
 @Controller
@@ -25,6 +24,9 @@ public class AppControllers {
 
     @Autowired
     private UserRepository userRepository;
+
+    @Autowired
+    private UserService userService;
 
     @Autowired
     private MusicService musicService;
@@ -111,9 +113,17 @@ public class AppControllers {
     }
 
     @PostMapping("/saveUser")
-    public String saveUser(Model model, User user) {
+    public String saveUser(Model model, User user, HttpServletRequest request) {
 
-        userRepository.save(user);
+        //        userRepository.save(user);
+        if (user.getId() == Long.valueOf(0)){
+            String firstName = user.getFirstName();
+            String lastName = user.getLastName();
+            String name = user.getName();
+            String email = user.getEmail();
+            String pass = user.getPasswordHash();
+            userRepository.save(new User( firstName, lastName, name, email, pass, "ROLE_USER"));
+        }
 
         return "info_updated";
     }
@@ -121,14 +131,7 @@ public class AppControllers {
     @GetMapping("/deleteUser/{id}")
     public String deleteUser(Model model, @PathVariable long id) {
 
-        userRepository.deleteById(id);
-
-/*
-
-        userRepository.deleteMusicByUserId(id);
-        userRepository.deleteCityByUserId(id);
-
-*/
+        userService.deleteUserById(id);
 
         return "info_updated";
     }
@@ -161,7 +164,7 @@ public class AppControllers {
     @GetMapping("/deleteMusic/{id}")
     public String deleteMusic(Model model, @PathVariable long id) {
 
-        musicService.deleteById(id);
+        musicService.deleteMusicById(id);
 
         return "info_updated";
     }
@@ -169,7 +172,7 @@ public class AppControllers {
 
     // ADMIN VIEW - CITY
     @GetMapping("/newCity")
-    public String newcity(Model model) {
+    public String newCity(Model model) {
         return "updateCityForm";
     }
 
@@ -194,10 +197,13 @@ public class AppControllers {
     @GetMapping("/deleteCity/{id}")
     public String deleteCity(Model model, @PathVariable long id) {
 
-        cityService.deleteById(id);
+        cityService.deleteCityById(id);
 
         return "info_updated";
     }
+
+
+
 
     // PROFILE VIEW
     @GetMapping("/profile")
