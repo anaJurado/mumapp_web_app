@@ -93,7 +93,9 @@ public class AppControllers {
         return "admin";
     }
 
-    @GetMapping("/user/new")
+
+    // ADMIN VIEW - USER
+    @GetMapping("/newUser")
     public String newUser(Model model) {
         return "updateUserForm";
     }
@@ -121,8 +123,12 @@ public class AppControllers {
 
         userRepository.deleteById(id);
 
-/*        userRepository.deleteMusicByUserId(id);
-        userRepository.deleteCityByUserId(id);*/
+/*
+
+        userRepository.deleteMusicByUserId(id);
+        userRepository.deleteCityByUserId(id);
+
+*/
 
         return "info_updated";
     }
