@@ -166,7 +166,7 @@ public class AppControllers {
 
     // ADMIN VIEW - CITY
     @GetMapping("/newCity")
-    public String newcity(Model model) {
+    public String newCity(Model model) {
         return "updateCityForm";
     }
 
@@ -195,6 +195,9 @@ public class AppControllers {
 
         return "info_updated";
     }
+
+
+
 
     // PROFILE VIEW
     @GetMapping("/profile")
