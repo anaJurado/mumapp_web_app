@@ -12,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import com.mumapp.mumapp.user.User;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.Optional;
 
 @Controller
@@ -158,7 +159,7 @@ public class AppControllers {
     @GetMapping("/deleteMusic/{id}")
     public String deleteMusic(Model model, @PathVariable long id) {
 
-        musicService.deleteById(id);
+        musicService.deleteMusicById(id);
 
         return "info_updated";
     }

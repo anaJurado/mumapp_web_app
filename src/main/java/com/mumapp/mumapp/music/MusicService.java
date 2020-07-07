@@ -2,6 +2,7 @@ package com.mumapp.mumapp.music;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -17,9 +18,6 @@ public class MusicService {
         return musicRepository.findAll();
     }
 
-
-
-
     public Optional<Music> findById(long id) {
         return musicRepository.findById(id);
     }
@@ -27,7 +25,11 @@ public class MusicService {
     public void save(Music music) {
         musicRepository.save(music);
     }
-    public void deleteById(long id) {
+
+    @Transactional
+    public void deleteMusicById(long id) {
+        musicRepository.deleteMusicUser(id);
+        musicRepository.deleteMusicMusicCity(id);
         musicRepository.deleteById(id);
     }
 

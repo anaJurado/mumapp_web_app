@@ -100,7 +100,14 @@ public class DatabaseInitializer {
 
 
         admin.getMusicSet().add(disco);
+        admin.getMusicSet().add(urban);
+        admin.getMusicSet().add(acoustic);
+
         admin.getCitySet().add(helsinki);
+        admin.getCitySet().add(mexicocity);
+        admin.getCitySet().add(shanghai);
+        admin.getCitySet().add(capetown);
+
         userRepository.save(admin);
 
 /*        admin2.getMusicSet().add(disco);
