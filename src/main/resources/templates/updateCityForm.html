@@ -29,6 +29,7 @@
             <div id="update-music">
                 <form action="/saveCity" method="post">
                     <div class="form-group">
+                        {{#city}}<input type="hidden" name="id" value="{{id}}" class="form-control"/>{{/city}}
                         <label for="cityName" class="form-control-label" style="padding-right: 15px;">City Name:   </label>
                         <input type="text" id="cityName" name="cityName" class="form-control" {{#city}}value="{{cityName}}"{{/city}}>
                     </div>

@@ -20,7 +20,9 @@ public class CityService {
     public void save(City city) {
         cityRepository.save(city);
     }
-    public void deleteById(long id) {
+    public void deleteCityById(long id) {
+        cityRepository.deleteCityUser(id);
+        cityRepository.deleteCityMusicCity(id);
         cityRepository.deleteById(id);
     }
 
