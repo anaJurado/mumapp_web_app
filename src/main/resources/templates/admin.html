@@ -48,8 +48,16 @@
             <div class="col-lg-10">
                 <h2>MUSIC</h2>
                 <div id="display-music">
+                    <ul>
+                        {{#allMusic}}
+                        <li>
+                            <a class="btn btn-link" href="/music/{{id}}">{{styleName}}</a>
+                        </li>
+                        {{/allMusic}}
+                    </ul>
                 </div>
                 <div id="create-music">
+                    <a class="btn btn-primary" href="/newMusic">CREATE MUSIC</a>
                 </div>
             </div>
             <div class="col-lg-1"></div>

@@ -128,18 +128,45 @@ public class AppControllers {
     }
 
 
+    // ADMIN VIEW - MUSIC
+    @GetMapping("/newMusic")
+    public String newMusic(Model model) {
+        return "updateMusicForm";
+    }
 
-    @GetMapping("/admin/music/{id}")
+    @PostMapping("/saveMusic")
+    public String saveMusic(Model model, Music music) {
+
+        musicService.save(music);
+
+        return "info_updated";
+    }
+
+    @GetMapping("/music/{id}")
     public String updateMusic(Model model, @PathVariable long id) {
 
-        Optional<Music> music = musicService.findById(id);
-
+        Optional<Music> music = (musicService.findById(id));
         if(music.isPresent()) {
             model.addAttribute("music", music.get());
         }
-
         return "updateMusicForm";
     }
+
+    @GetMapping("/deleteMusic/{id}")
+    public String deleteMusic(Model model, @PathVariable long id) {
+
+        musicService.deleteById(id);
+
+        return "info_updated";
+    }
+
+
+
+
+
+
+
+
 
     @GetMapping("/admin/city/{id}")
     public String updateCity(Model model, @PathVariable long id) {

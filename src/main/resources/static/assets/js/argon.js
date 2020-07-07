@@ -1239,21 +1239,10 @@ GET: $(document).ready(
 // ADMIN FORMS
 //
 
-$(document).ready(function() {
-    $("#updateUserFormButton").click(function() {
-        $("#updateUser").toggle();
-    });
-});
 
 $(document).ready(function() {
-    $("#createUserFormButton").click(function() {
-        $("#createUser").toggle();
-    });
-});
-
-$(document).ready(function() {
-    $("#createMusicFormButton").click(function() {
-        $("#createMusic").toggle();
+    $("#updateCityFormButton").click(function() {
+        $("#updateCity").toggle();
     });
 });
 
