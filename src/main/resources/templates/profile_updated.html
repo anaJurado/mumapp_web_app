@@ -2,19 +2,48 @@
 =========================================================
 * THEME: Argon Dashboard - v1.2.0
 =========================================================
-* Product Page: https://www.creative-tim.com/product/argon-dashboard
-* Copyright  Creative Tim (http://www.creative-tim.com)
-=========================================================
 -->
 <!DOCTYPE html>
 <html lang="en">
-    <!-- Head -->
-    {{>head}}
-    <!-- /Head -->
+<!-- Head -->
+{{>head}}
+<!-- /Head -->
 
-    <body>
-        <h2>YOUR PROFILE HAS BEEN UPDATED</h2>
-        <a href="profile.html">GO BACK TO PROFILE</a>
-    </body>
+<body>
+<div class="update-body">
+    <div class="row">
+        <div class="col-xl-4"></div>
+        <div class="col-xl-4">
+            <div class="update-message">
+                <h2> Thanks for the new info!</h2>
+            </div>
+            <div class="update-image">
+                <img src="../assets/img/profileupdated_animal.png" style="max-width: 60%;height: auto;">
+            </div>
+            <div class="update-message">
+                <h2>Your info has been updated</h2>
+            </div>
+            <div class="update-button">
+                <a class="btn btn-primary" href="/profile">
+                    <span class="nav-link-inner--text">Back to PROFILE</span>
+                </a>
+            </div>
+        </div>
+        <div class="col-xl-4"></div>
+    </div>
+</div>
 
+
+<!-- Footer -->
+<div class="footer nav-footer">
+    {{>footer}}
+</div>
+<!-- /Footer -->
+
+<!-- Scripts -->
+<div class="scripts">
+    {{>scripts}}
+</div>
+<!-- /Scrips -->
+</body>
 </html>

@@ -11,24 +11,28 @@
 /* ERROR and LOGIN ERROR PAGE */
 
 .error-body{
-    background-color: #a8b3f0;
+    background-color: #adb5bd;
 }
-
-.error-message{
+.update-body{
+    background-color: #2dce89;
+}
+.error-message, .update-message{
     padding-top: 60px;
     text-align: center;
 }
-
-.error-image{
+.error-image, .update-image{
     text-align: center;
     padding-top: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-
-.error-button{
+.error-button, .update-button{
     text-align: center;
     padding-top: 60px;
     padding-bottom: 40px;
+}
+
+.navbar-horizontal .navbar-brand img {
+    height: 50px;
 }

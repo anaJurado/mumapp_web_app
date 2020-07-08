@@ -1,6 +1,7 @@
 package com.mumapp.mumapp.webapp;
 
 import com.mumapp.mumapp.city.City;
+import com.mumapp.mumapp.imageservice.ImageService;
 import com.mumapp.mumapp.music.Music;
 import com.mumapp.mumapp.user.UserComponent;
 import com.mumapp.mumapp.user.UserRepository;
@@ -12,9 +13,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import com.mumapp.mumapp.user.User;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.Optional;
+import java.io.IOException;
+import java.util.*;
 
 @Controller
 public class AppControllers {
@@ -34,13 +37,16 @@ public class AppControllers {
     @Autowired
     private CityService cityService;
 
+    @Autowired
+    private ImageService imgService;
+
     @ModelAttribute
     public void addUserToModel(Model model) {
         boolean logged = userComponent.getLoggedUser() != null;
         model.addAttribute("logged", logged);
-        if(logged) {
+        if (logged) {
             model.addAttribute("admin", userComponent.getLoggedUser().getRoles().contains("ROLE_ADMIN"));
-            model.addAttribute("userName",userComponent.getLoggedUser().getName());
+            model.addAttribute("userName", userComponent.getLoggedUser().getName());
         }
     }
 
@@ -79,7 +85,7 @@ public class AppControllers {
 
         //USER INFO
         Optional<User> user = userRepository.findById(id);
-        if(user.isPresent()) {
+        if (user.isPresent()) {
             model.addAttribute("user", user.get());
         }
 
@@ -106,7 +112,7 @@ public class AppControllers {
     public String updateUser(Model model, @PathVariable long id) {
 
         Optional<User> user = Optional.ofNullable(userRepository.findById(id));
-        if(user.isPresent()) {
+        if (user.isPresent()) {
             model.addAttribute("user", user.get());
         }
         return "updateUserForm";
@@ -115,17 +121,59 @@ public class AppControllers {
     @PostMapping("/saveUser")
     public String saveUser(Model model, User user, HttpServletRequest request) {
 
-        //        userRepository.save(user);
-        if (user.getId() == Long.valueOf(0)){
+        System.out.println("holaaaaaa");
+        // IF NEW USER
+        if (user.getId() == Long.valueOf(0)) {
             String firstName = user.getFirstName();
             String lastName = user.getLastName();
             String name = user.getName();
             String email = user.getEmail();
             String pass = user.getPasswordHash();
-            userRepository.save(new User( firstName, lastName, name, email, pass, "ROLE_USER"));
+            userRepository.save(new User(firstName, lastName, name, email, pass, "ROLE_USER"));
+        } else {
+
+            int x = 5;
+
+/*            Music someArray=[];
+            Set<Music> myMusicSet = new HashSet<>(Arrays.asList(someArray));*/
+
+            /*userRepository.save(user);*/
+
+
+
+            /*
+            Long updated_user_id = user.getId();
+            Optional<User> updated_user = userRepository.findById(updated_user_id);
+            Set<Music> music_set = userRepository.findById(updated_user_id).getMusicSet();
+            Set<City> city_set = userRepository.findById(updated_user_id).getCitySet();
+            List<String> roles = userRepository.findById(updated_user_id).getRoles();
+
+            user.setMusicSet(music_set);
+            user.setCitySet(city_set);
+            user.setRoles(roles);
+
+            Set<Music> updated_user_music_set = user.getMusicSet();
+            Set<City> updated_user_city_set = user.getCitySet();
+            Model a = model;
+            */
+
         }
 
         return "info_updated";
+    }
+
+    @PostMapping("/saveUserImage")
+    public String saveUserImage(Model model, User user,
+                                @RequestParam MultipartFile imageFile) throws IOException {
+
+        user.setImage(true);
+        userRepository.save(user);
+
+        Long id = user.getId();
+        imgService.saveImage("users", id, imageFile);
+
+        return "profile_updated";
+
     }
 
     @GetMapping("/deleteUser/{id}")
