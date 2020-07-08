@@ -24,7 +24,7 @@ public interface MusicRepository extends JpaRepository<Music, Long> {
              nativeQuery= true)
     List<Object> findTopPopularity();
 
-
+    // DELETE "ON CASCADE"
     @Modifying
     @Query( value="DELETE FROM user_music WHERE music_id= ?1",
             nativeQuery=true)
@@ -34,6 +34,24 @@ public interface MusicRepository extends JpaRepository<Music, Long> {
     @Query( value="DELETE FROM music_city WHERE music_id= ?1",
             nativeQuery=true)
     void deleteMusicMusicCity(long id);
+
+
+    // GENERATE RANDOM DATA
+    @Modifying
+    @Query( value="DELETE FROM music_city WHERE TRUE",
+            nativeQuery=true)
+    void truncateMusicCity();
+
+    @Modifying
+    @Query( value="INSERT INTO music_city (music_id, city_id) SELECT music.id music_id, city.id as city_id FROM music CROSS JOIN city",
+            nativeQuery=true)
+    void crossJoinMusicCity();
+
+    @Modifying
+    @Query( value="UPDATE music_city SET popularity_rate = 100 * RAND() WHERE 1",
+            nativeQuery=true)
+    void randomData();
+
 
 
 }
