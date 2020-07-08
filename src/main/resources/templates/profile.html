@@ -114,7 +114,15 @@
                         <div class="row justify-content-center">
                             <div class="col-lg-3 order-lg-2">
                                 <div class="card-profile-image">
-                                    <img src="../assets/img/theme/user_default.png" class="rounded-circle" style="border-radius: 0% !important;">
+
+                                    {{#user.image}}
+                                        <img src="../assets/img/theme/user_default.png" class="rounded-circle" style="border-radius: 0% !important;">
+                                    {{/user.image}}
+
+                                    {{^user.image}}
+                                        <img src='/images/users/image-{{user.id}}.jpg'/>
+                                    {{/user.image}}
+
                                 </div>
                             </div>
                         </div>
@@ -146,122 +154,141 @@
                             </div>
                         </div>
                         <div class="card-body">
-                            <!-- USER INFORMATION INFORMATION -->
-                            <form>
+                            <!-- FORM USER INFORMATION -->
+                            <form action="/saveUser" method="post">
                                 <div class="pl-lg-4">
-                                    <h6 class="heading-small text-muted mb-4">User information</h6>
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <label class="form-control-label">Username</label>
-                                                <h3>{{user.name}}</h3>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <label class="form-control-label" for="input-email">Email</label>
-
-                                                <input type="text" id="input-email" class="form-control" placeholder="Email" value="{{user.email}}" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <label class="form-control-label" for="input-first-name">First name</label>
-
-                                                <input type="text" id="input-first-name" class="form-control" placeholder="First name" value="{{user.firstName}}" />
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div class="form-group">
-                                                <label class="form-control-label" for="input-last-name">Last name</label>
-
-                                                <input type="text" id="input-last-name" class="form-control" placeholder="Last name" value="{{user.lastName}}"/>
-                                            </div>
-                                        </div>
-                                    </div>
-                                <hr class="my-4" />
-                                <!-- PREFERENCES -->
-                                    <h6 class="heading-small text-muted mb-4">Preferences</h6>
-                                    <!-- PREFERENCES: MUSIC -->
-                                    <div class="container">
+                                    <!-- USER INFORMATION -->
+                                    <div class="form-group" id="user-information">
+                                        <h6 class="heading-small text-muted mb-4">User information</h6>
                                         <div class="row">
-                                            <div class="form-group">
-                                                <label class="form-control-label">Music Styles</label>
-                                                <p>We recommend you to choose up to 10 music styles</p>
+                                            <div class="col-lg-6">
+                                                <div class="form-group">
+                                                    <label class="form-control-label">Username</label>
+                                                    <h3>{{user.name}}</h3>
+                                                </div>
                                             </div>
+                                            <div class="col-lg-6">
+                                                <div class="form-group">
+                                                    <label class="form-control-label" for="input-email">Email</label>
 
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-xl-6 order-xl-2 dropdown">
-                                                <button aria-expanded="true" aria-haspopup="true"
-                                                        class="btn btn-default dropdown-toggle" data-toggle="dropdown"
-                                                        id="dropdownMenuMUSIC" type="button">
-                                                    <i class="ni ni-note-03"></i>
-                                                    CHOOSE YOUR MUSIC
-                                                    <span class="caret"></span>
-                                                </button>
-                                                <ul aria-labelledby="dropdownMenu1"
-                                                    class="dropdown-menu checkbox-menu allow-focus">
-                                                    {{#allMusic}}
-                                                        <li><label style="text-transform: capitalize;"><input type="checkbox">{{styleName}}</label></li>
-                                                    {{/allMusic}}
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <p> </p>
-                                    <p> </p>
-                                    <!-- PREFERENCES: CITIES -->
-                                    <div class="container" style="padding-top: 20px;">
-                                        <div class="row">
-                                            <div class="form-group">
-                                                <label class="form-control-label">Cities</label>
-                                                <p>We recommend you to choose up to 5 cities</p>
+                                                    <input type="text" id="input-email" class="form-control" placeholder="Email" value="{{user.email}}" />
+                                                </div>
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-xl-12 order-xl-2 dropdown">
-                                                <button aria-expanded="true" aria-haspopup="true"
-                                                        class="btn btn-default dropdown-toggle" data-toggle="dropdown"
-                                                        id="dropdownMenuCITIES" type="button">
-                                                    <i class="ni ni-world-2"></i>
-                                                    CHOOSE YOUR CITIES
-                                                    <span class="caret"></span>
-                                                </button>
-                                                <ul aria-labelledby="dropdownMenu1"
-                                                    class="dropdown-menu checkbox-menu allow-focus">
-                                                    {{#allCity}}
-                                                    <li><label style="text-transform: capitalize;"><input type="checkbox">{{cityName}}   <small>({{country}})</small></label></li>
-                                                    {{/allCity}}
-                                                </ul>
+                                            <div class="col-lg-6">
+                                                <div class="form-group">
+                                                    <label class="form-control-label" for="input-first-name">First name</label>
+
+                                                    <input type="text" id="input-first-name" class="form-control" placeholder="First name" value="{{user.firstName}}" />
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="form-group">
+                                                    <label class="form-control-label" for="input-last-name">Last name</label>
+
+                                                    <input type="text" id="input-last-name" class="form-control" placeholder="Last name" value="{{user.lastName}}"/>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                     <hr class="my-4" />
-                                    <!-- UPLOAD IMAGE -->
-                                    <h6 class="heading-small text-muted mb-4">Profile image</h6>
-                                    <div class="pl-lg-4">
-                                        <div class="form-group">
-                                            <label class="form-control-label">Upload an image to complete your profile</label>
-                                            <div class="input-group">
-                                                    <span class="btn btn-default btn-file">
-                                                        <input type="file" id="imgInp">
-                                                    </span>
-                                                <input type="text" class="form-control" readonly>
+                                    <!-- PREFERENCES -->
+                                    <div class="form-group" id="preferences">
+                                        <h6 class="heading-small text-muted mb-4">Preferences</h6>
+                                        <!-- PREFERENCES: MUSIC -->
+                                        <div class="container" style="padding-top: 20px;">
+                                            <div class="row">
+                                                <div class="form-group">
+                                                    <label class="form-control-label">Music Styles</label>
+                                                    <p>We recommend you to choose up to 10 music styles</p>
+                                                </div>
+
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xl-6 order-xl-2 dropdown">
+                                                    <button aria-expanded="true" aria-haspopup="true"
+                                                            class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                                                            id="dropdownMenuMUSIC" type="button">
+                                                        <i class="ni ni-note-03"></i>
+                                                        CHOOSE YOUR MUSIC
+                                                        <span class="caret"></span>
+                                                    </button>
+                                                    <ul aria-labelledby="dropdownMenu1"
+                                                        class="dropdown-menu checkbox-menu allow-focus">
+                                                        {{#allMusic}}
+                                                            <li><label style="text-transform: capitalize;"><input type="checkbox">{{styleName}}</label></li>
+                                                        {{/allMusic}}
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- PREFERENCES: CITIES -->
+                                        <div class="container" style="padding-top: 20px;">
+                                            <div class="row">
+                                                <div class="form-group">
+                                                    <label class="form-control-label">Cities</label>
+                                                    <p>We recommend you to choose up to 5 cities</p>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-xl-12 order-xl-2 dropdown">
+                                                    <button aria-expanded="true" aria-haspopup="true"
+                                                            class="btn btn-default dropdown-toggle" data-toggle="dropdown"
+                                                            id="dropdownMenuCITIES" type="button">
+                                                        <i class="ni ni-world-2"></i>
+                                                        CHOOSE YOUR CITIES
+                                                        <span class="caret"></span>
+                                                    </button>
+                                                    <ul aria-labelledby="dropdownMenu1"
+                                                        class="dropdown-menu checkbox-menu allow-focus">
+                                                        {{#allCity}}
+                                                        <li><label style="text-transform: capitalize;"><input type="checkbox">{{cityName}}   <small>({{country}})</small></label></li>
+                                                        {{/allCity}}
+                                                    </ul>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <!-- SAVE BUTTON -->
                                     <hr class="my-4" />
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <button type="button" class="btn btn-primary">Save Changes</button>
-                                        </div>
+                                    <!-- SAVE DATA CHANGES-->
+                                    <div class="form-group">
+                                        <input type="submit" class="btn btn-outline-success" value="SAVE INFO">
+                                        <input type="hidden" name="_csrf" value="{{token}}"/>
                                     </div>
                                 </div>
                             </form>
+                            <!-- /FORM USER INFORMATION -->
+                            <hr class="my-4" />
+                            <!-- FORM USER IMAGE -->
+                            <form action="/saveUserImage" method="post" enctype="multipart/form-data">
+                                <div class="pl-lg-4">
+                                    {{#user}}
+                                    <input type="hidden" name="id" value="{{id}}" class="form-control"/>
+                                    <input type="hidden" name="firstName" value="{{firstName}}" class="form-control"/>
+                                    <input type="hidden" name="lastName" value="{{lastName}}" class="form-control"/>
+                                    <input type="hidden" name="name" value="{{name}}" class="form-control"/>
+                                    <input type="hidden" name="email" value="{{email}}" class="form-control"/>
+                                    <input type="hidden" name="passwordHash" value="{{passwordHash}}" class="form-control"/>
+                                    <input type="hidden" name="roles" value="{{roles}}" class="form-control"/>
+                                    {{/user}}
+                                    <div class="form-group" id="user-image">
+                                        <label class="form-control-label" for="basic-url">Upload your profile image</label>
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text" id="basic-addon3">IMAGE URL</span>
+                                            </div>
+                                            <input type="file" name="imageFile" accept=".jpg, .jpeg, .JPG, .JPEG, .png, .PNG"
+                                                   class="form-control" id="basic-url" aria-describedby="basic-addon3"/>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="submit" class="btn btn-outline-success" value="SAVE IMAGE">
+                                        <input type="hidden" name="_csrf" value="{{token}}"/>
+                                    </div>
+                                </div>
+                            </form>
+                            <!-- / FORM USER IMAGE -->
                         </div>
                     </div>
                 </div>

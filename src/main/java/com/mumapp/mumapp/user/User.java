@@ -20,6 +20,7 @@ public class User {
     private String lastName;
     private String name;
     private String email;
+    private boolean image;
 
     @JsonIgnore
     private String passwordHash;
@@ -95,6 +96,14 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public boolean hasImage() {
+        return image;
+    }
+
+    public void setImage(boolean img) {
+        this.image = img;
     }
 
     public String getPasswordHash() {
