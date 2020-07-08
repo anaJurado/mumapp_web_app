@@ -167,6 +167,8 @@ public class AppControllers {
                                 @RequestParam MultipartFile imageFile) throws IOException {
 
         user.setImage(true);
+        userRepository.save(user);
+
         Long id = user.getId();
         imgService.saveImage("users", id, imageFile);
 

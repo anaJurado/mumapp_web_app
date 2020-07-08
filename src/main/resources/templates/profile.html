@@ -51,12 +51,17 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <div class="media align-items-center">
-                          <span class="avatar avatar-lg rounded-circle">
-                            <img alt="Image placeholder" src="../assets/img/theme/user_default.png">
-                          </span>
-                                <div class="media-body  ml-2  d-none d-lg-block">
-                                    <span class="mb-0 text-sm  font-weight-bold">{{user.name}}</span>
-                                </div>
+                                  <span class="avatar avatar-lg rounded-circle">
+                                    {{#user.image}}
+                                      <img src="/images/users/image-{{user.id}}.jpg"/>
+                                    {{/user.image}}
+                                    {{^user.image}}
+                                      <img src="../assets/img/theme/user_default.png" class="rounded-circle" style="border-radius: 0% !important;">
+                                    {{/user.image}}
+                                  </span>
+                                    <div class="media-body  ml-2  d-none d-lg-block">
+                                        <span class="mb-0 text-sm  font-weight-bold">{{user.name}}</span>
+                                    </div>
                             </div>
                         </a>
                         <div class="dropdown-menu  dropdown-menu-right ">
@@ -114,15 +119,12 @@
                         <div class="row justify-content-center">
                             <div class="col-lg-3 order-lg-2">
                                 <div class="card-profile-image">
-
                                     {{#user.image}}
-                                        <img src="../assets/img/theme/user_default.png" class="rounded-circle" style="border-radius: 0% !important;">
+                                    <img src="/images/users/image-{{user.id}}.jpg"/>
                                     {{/user.image}}
-
                                     {{^user.image}}
-                                        <img src='/images/users/image-{{user.id}}.jpg'/>
+                                    <img src="../assets/img/theme/user_default.png" class="rounded-circle" style="border-radius: 0% !important;">
                                     {{/user.image}}
-
                                 </div>
                             </div>
                         </div>
