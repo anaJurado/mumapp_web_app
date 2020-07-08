@@ -35,6 +35,7 @@ public class MusicService {
 
     @Transactional
     public void getData(){
+        musicRepository.truncateMusicCity();
         musicRepository.crossJoinMusicCity();
         musicRepository.randomData();
     }
