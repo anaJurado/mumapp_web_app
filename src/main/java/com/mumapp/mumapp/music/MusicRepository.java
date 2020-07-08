@@ -36,4 +36,14 @@ public interface MusicRepository extends JpaRepository<Music, Long> {
     void deleteMusicMusicCity(long id);
 
 
+    @Modifying
+    @Query( value="INSERT INTO music_city (music_id, city_id) SELECT music.id music_id, city.id as city_id FROM music CROSS JOIN city",
+            nativeQuery=true)
+    void crossJoinMusicCity();
+
+    @Modifying
+    @Query( value="UPDATE music_city SET popularity_rate = 100 * RAND() WHERE 1",
+            nativeQuery=true)
+    void randomData();
+
 }
