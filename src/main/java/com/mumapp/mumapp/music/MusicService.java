@@ -33,6 +33,13 @@ public class MusicService {
         musicRepository.deleteById(id);
     }
 
+    @Transactional
+    public void getData(){
+        musicRepository.truncateMusicCity();
+        musicRepository.crossJoinMusicCity();
+        musicRepository.randomData();
+    }
+
 
 
 

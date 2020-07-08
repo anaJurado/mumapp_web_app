@@ -251,7 +251,13 @@ public class AppControllers {
     }
 
 
+    @GetMapping("/getData")
+    public String getData(Model model) {
 
+        musicService.getData();
+
+        return "profile_updated";
+    }
 
     // PROFILE VIEW
     @GetMapping("/profile")
