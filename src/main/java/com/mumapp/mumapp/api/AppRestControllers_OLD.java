@@ -17,8 +17,8 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("/api/")
-public class AppRestControllers {
+@RequestMapping("/api_not/")
+public class AppRestControllers_OLD {
 
     @Autowired
     private MusicService musicService;
