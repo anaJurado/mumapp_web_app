@@ -1,14 +1,14 @@
 package com.mumapp.mumapp.api;
 
 
+import com.mumapp.mumapp.city.City;
+import com.mumapp.mumapp.city.CityRepository;
+import com.mumapp.mumapp.city.CityService;
+import com.mumapp.mumapp.music.Music;
 import com.mumapp.mumapp.music.MusicRepository;
+import com.mumapp.mumapp.music.MusicService;
 import com.mumapp.mumapp.user.User;
 import com.mumapp.mumapp.user.UserRepository;
-import com.mumapp.mumapp.city.CityService;
-import com.mumapp.mumapp.city.City;
-import com.mumapp.mumapp.music.MusicService;
-import com.mumapp.mumapp.music.Music;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.transaction.annotation.Transactional;
@@ -34,6 +34,8 @@ public class AppAPIRestController {
 
     @Autowired
     private CityService cityService;
+    @Autowired
+    private CityRepository cityRepository;
 
 
     //**********//
@@ -123,7 +125,7 @@ public class AppAPIRestController {
         return musicService.findById(id);
     }
 
-    @GetMapping("/music/{style}")
+    @GetMapping("/music/style/{style}")
     public Optional<Music> getMusicByMusicStyle(@PathVariable String style) {
         return musicService.findByStyleName(style);
     }
@@ -148,6 +150,64 @@ public class AppAPIRestController {
         musicRepository.deleteById(id);
 
         return deletedMusic;
+    }
+
+    //***********//
+    //   CITY   //
+    //***********//
+
+    // GET ALL
+    @GetMapping("/city/all/name")
+    public Collection<String> getCityName() {
+        return cityService.findAll().stream().map(city -> city.getCityName()).collect(Collectors.toList());
+    }
+
+    @GetMapping("/city/all/id")
+    public List<Long> getCityId() {
+        return cityService.findAll().stream().map(city -> city.getId()).collect(Collectors.toList());
+    }
+
+    // POST
+    @PostMapping("/city")
+    @ResponseStatus(HttpStatus.CREATED)
+    public City createCity(@RequestBody City city) {
+        cityService.save(city);
+        System.out.println(city.getId());
+        return city;
+    }
+
+    // GET/DELETE/PUT city/{id}
+    @GetMapping("/city/{id}")
+    public Optional<City> getCityById(@PathVariable long id) {
+        return cityService.findById(id);
+    }
+
+    @GetMapping("/city/name/{name}")
+    public Optional<City> getCityByName(@PathVariable String name) {
+        return cityService.findByCityName(name);
+    }
+
+    @PutMapping("/city/{id}")
+    public City updateCityById(@PathVariable long id, @RequestBody City updatedCity) {
+        cityService.findById(id); //Returns with 404 if not found in database
+
+        updatedCity.setId(id);
+        cityService.save(updatedCity);
+        return updatedCity;
+    }
+
+    @Transactional
+    @DeleteMapping("/city/{id}")
+    public Optional<City> deleteCityById(@PathVariable long id){
+
+        Optional<City> deletedCity = cityService.findById(id);
+
+        cityRepository.deleteCityUser(id);
+        cityRepository.deleteCityMusicCity(id);
+        cityRepository.deleteById(id);
+
+
+        return deletedCity;
     }
 }
 
