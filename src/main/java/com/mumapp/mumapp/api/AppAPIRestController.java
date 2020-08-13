@@ -123,6 +123,11 @@ public class AppAPIRestController {
         return musicService.findById(id);
     }
 
+    @GetMapping("/music/{style}")
+    public Optional<Music> getMusicByMusicStyle(@PathVariable String style) {
+        return musicService.findByStyleName(style);
+    }
+
     @PutMapping("/music/{id}")
     public Music updateMusicById(@PathVariable long id, @RequestBody Music updatedMusic) {
         musicService.findById(id); //Returns with 404 if not found in database

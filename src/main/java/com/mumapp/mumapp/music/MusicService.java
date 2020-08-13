@@ -1,5 +1,6 @@
 package com.mumapp.mumapp.music;
 
+import com.mumapp.mumapp.city.City;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -14,8 +15,11 @@ public class MusicService {
     private MusicRepository musicRepository;
 
     public List<Music> findAll() {
-
         return musicRepository.findAll();
+    }
+
+    public Optional<Music> findByStyleName(String style) {
+        return musicRepository.findMusicByStyleName(style);
     }
 
     public Optional<Music> findById(long id) {
