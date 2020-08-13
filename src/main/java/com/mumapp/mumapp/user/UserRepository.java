@@ -11,10 +11,12 @@ import java.util.List;
 public interface UserRepository extends JpaRepository<User, Long> {
 
     List<User> findAll();
+
     User findById(long id);
+
+    User deleteUserById(long id);
+
     User findByName(String name);
-
-
 
     @Modifying
     @Query( value="DELETE FROM user_music WHERE user_id= ?1",

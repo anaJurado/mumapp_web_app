@@ -17,6 +17,11 @@ public class CityService {
         return cityRepository.findById(id);
     }
 
+    public Optional<City> findByCityName(String name) {
+
+        return cityRepository.findCityByCityName(name);
+    }
+
     public void save(City city) {
         cityRepository.save(city);
     }

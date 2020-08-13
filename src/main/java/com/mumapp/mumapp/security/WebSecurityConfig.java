@@ -12,6 +12,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     public UserRepositoryAuthProvider userRepoAuthProvider;
 
+/*  // FOR TESTING WITH POSTMAN
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http       //other configure params.
+                .csrf().disable();
+    }
+
+*/
     @Override
     protected void configure(HttpSecurity http) throws Exception {
 
