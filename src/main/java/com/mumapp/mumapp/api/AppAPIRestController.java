@@ -3,6 +3,10 @@ package com.mumapp.mumapp.api;
 
 import com.mumapp.mumapp.user.User;
 import com.mumapp.mumapp.user.UserRepository;
+import com.mumapp.mumapp.city.CityService;
+import com.mumapp.mumapp.city.City;
+import com.mumapp.mumapp.music.MusicService;
+import com.mumapp.mumapp.music.Music;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -10,6 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Collection;
+import java.util.Set;
 
 @RestController
 @RequestMapping("/api/")
@@ -24,6 +29,7 @@ public class AppAPIRestController {
     //**********//
     //   USER   //
     //**********//
+    // GET ALL
     @GetMapping("/user/all")
     public Collection<User> getUsers() {
         return userRepository.findAll();
@@ -44,15 +50,8 @@ public class AppAPIRestController {
         return userRepository.findById(id);
     }
 
-    @Transactional
-    @DeleteMapping("/user/{id}")
-    public String deleteUser(@PathVariable long id) {
-        userService.deleteUserById(id);
-        return "User deleted";
-    }
-
     @PutMapping("/user/{id}")  //    @PutMapping("/user/{id}")
-    public User updateUser(@PathVariable long id, @RequestBody User updatedUser) {
+    public User updateUserById(@PathVariable long id, @RequestBody User updatedUser) {
 
         userRepository.findById(id).getId(); //Returns with 404 if not found in database
 
@@ -61,9 +60,19 @@ public class AppAPIRestController {
         return updatedUser;
     }
 
+    @Transactional
+    @DeleteMapping("/user/{id}")
+    public User deleteUserById(@PathVariable long id) {
 
+        User deletedUser = userRepository.findById(id);
+        userRepository.deleteUserMusic(id);
+        userRepository.deleteUserCity(id);
+        userRepository.deleteUserRole(id);
+        userRepository.deleteById(id);
 
-    /*
+        return deletedUser;
+    }
+
     @GetMapping("/user/{id}/city")
     public Set<City> getUserCity(@PathVariable long id) {
         return (Set<City>) userRepository.findById(id).getCitySet();
@@ -73,7 +82,6 @@ public class AppAPIRestController {
     public Set<Music> getUserMusic(@PathVariable long id) {
         return (Set<Music>) userRepository.findById(id).getMusicSet();
     }
-    */
 
 
 
