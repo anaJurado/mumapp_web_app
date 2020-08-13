@@ -64,9 +64,7 @@ public class AppAPIRestController {
 
     @PutMapping("/user/{id}")
     public User updateUserById(@PathVariable long id, @RequestBody User updatedUser) {
-
         userRepository.findById(id).getId(); //Returns with 404 if not found in database
-
         updatedUser.setId(id);
         userRepository.save(updatedUser);
         return updatedUser;
@@ -75,13 +73,11 @@ public class AppAPIRestController {
     @Transactional
     @DeleteMapping("/user/{id}")
     public User deleteUserById(@PathVariable long id) {
-
         User deletedUser = userRepository.findById(id);
         userRepository.deleteUserMusic(id);
         userRepository.deleteUserCity(id);
         userRepository.deleteUserRole(id);
         userRepository.deleteById(id);
-
         return deletedUser;
     }
 
@@ -133,7 +129,6 @@ public class AppAPIRestController {
     @PutMapping("/music/{id}")
     public Music updateMusicById(@PathVariable long id, @RequestBody Music updatedMusic) {
         musicService.findById(id); //Returns with 404 if not found in database
-
         updatedMusic.setId(id);
         musicService.save(updatedMusic);
         return updatedMusic;
@@ -141,14 +136,11 @@ public class AppAPIRestController {
 
     @Transactional
     @DeleteMapping("/music/{id}")
-    public Optional<Music> deleteMusicById(@PathVariable long id){
-
+    public Optional<Music> deleteMusicById(@PathVariable long id) {
         Optional<Music> deletedMusic = musicService.findById(id);
-
         musicRepository.deleteMusicUser(id);
         musicRepository.deleteMusicMusicCity(id);
         musicRepository.deleteById(id);
-
         return deletedMusic;
     }
 
@@ -157,6 +149,11 @@ public class AppAPIRestController {
     //***********//
 
     // GET ALL
+    @GetMapping("/city/all")
+    public List<City> getAllCity() {
+        return cityService.findAll();
+    }
+
     @GetMapping("/city/all/name")
     public Collection<String> getCityName() {
         return cityService.findAll().stream().map(city -> city.getCityName()).collect(Collectors.toList());
@@ -190,7 +187,6 @@ public class AppAPIRestController {
     @PutMapping("/city/{id}")
     public City updateCityById(@PathVariable long id, @RequestBody City updatedCity) {
         cityService.findById(id); //Returns with 404 if not found in database
-
         updatedCity.setId(id);
         cityService.save(updatedCity);
         return updatedCity;
@@ -198,16 +194,36 @@ public class AppAPIRestController {
 
     @Transactional
     @DeleteMapping("/city/{id}")
-    public Optional<City> deleteCityById(@PathVariable long id){
-
+    public Optional<City> deleteCityById(@PathVariable long id) {
         Optional<City> deletedCity = cityService.findById(id);
-
         cityRepository.deleteCityUser(id);
         cityRepository.deleteCityMusicCity(id);
         cityRepository.deleteById(id);
-
-
         return deletedCity;
+    }
+
+    //**********************//
+    //   POPULARITY RATES   //
+    //**********************//
+
+    @GetMapping("/popularity")
+    public List<Object> getPopularity() {
+        return musicService.findPopularity();
+    }
+
+    @GetMapping("/popularity/top")
+    public List<Object> getTopPopularity() {
+        return musicService.findTopPopularity();
+    }
+
+    @GetMapping("/{id}/popularity/top")
+    public List<Object> getTopPopularityRateUserId(@PathVariable long id) {
+        return musicService.findTopPopularityRateByUserId(id);
+    }
+
+    @GetMapping("/{id}/popularity")
+    public List<Object> getPopularityRateUserId(@PathVariable long id) {
+        return musicService.findPopularityRateByUserId(id);
     }
 }
 

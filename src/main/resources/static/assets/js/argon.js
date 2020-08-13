@@ -1134,7 +1134,7 @@ GET: $(document).ready(
             charData.ratesValues.push(item[2]);
         }
 
-        // CREO AHORA EL CHART
+        // CREATE THE CHART
         var $chart = $('#chart-bars');
 
         // Init chart
@@ -1174,7 +1174,7 @@ GET: $(document).ready(
 
         $.ajax({
             type: "GET",
-            url: '/api/all/city',
+            url: '/api/city/all',
         })
             .done(function (data) {
                 if (console && console.log) {
@@ -1184,7 +1184,7 @@ GET: $(document).ready(
 
         $.ajax({
             type: "GET",
-            url: '/api/all/popularity/top',
+            url: '/api/popularity/top',
         })
             .done(function (data) {
                 if (console && console.log) {

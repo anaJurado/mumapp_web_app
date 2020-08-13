@@ -59,6 +59,10 @@ public class MusicService {
         return musicRepository.findTopPopularityRateByUserId(id);
     }
 
+    public List<Object> findPopularity() {
+        return musicRepository.findPopularity();
+    }
+
     public List<Object> findTopPopularity() {
         return musicRepository.findTopPopularity();
     }

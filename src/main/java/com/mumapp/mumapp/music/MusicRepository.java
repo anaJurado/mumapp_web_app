@@ -27,6 +27,10 @@ public interface MusicRepository extends JpaRepository<Music, Long> {
             nativeQuery = true)
     List<Object> findTopPopularityRateByUserId(long id);
 
+    @Query ( value="SELECT m.style_name, c.city_name, music_city.popularity_rate FROM music_city JOIN music m on music_city.music_id = m.id JOIN city c on music_city.city_id = c.id GROUP BY 1,2,3 ORDER BY music_city.popularity_rate DESC",
+            nativeQuery= true)
+    List<Object> findPopularity();
+
     @Query ( value="SELECT m.style_name, c.city_name, music_city.popularity_rate FROM music_city JOIN music m on music_city.music_id = m.id JOIN city c on music_city.city_id = c.id GROUP BY 1,2,3 ORDER BY music_city.popularity_rate DESC LIMIT 10",
              nativeQuery= true)
     List<Object> findTopPopularity();
