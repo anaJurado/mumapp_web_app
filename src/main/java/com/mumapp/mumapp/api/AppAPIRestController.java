@@ -208,20 +208,20 @@ public class AppAPIRestController {
     //   POPULARITY RATES   //
     //**********************//
 
+    @GetMapping("/popularity/pagination")
+    public Page<Object> getPopularityPagination(Pageable page){
+        return musicService.findPopularityPagination(page);
+    }
+
+    @GetMapping("/{id}/popularity/pagination")
+    public Page<Object> getPopularityRateUserIdPagination(@PathVariable long id, Pageable page) {
+        return musicService.findPopularityRateByUserIdPagination(id, page);
+    }
+
     @GetMapping("/popularity")
-    public Page<Object> getPopularity(Pageable page){
-        return musicService.findPopularity(page);
+    public List<Object> getPopularity() {
+        return musicService.findPopularity();
     }
-
-    @GetMapping("/{id}/popularity")
-    public Page<Object> getPopularityRateUserId(@PathVariable long id, Pageable page) {
-        return musicService.findPopularityRateByUserId(id, page);
-    }
-
-//    @GetMapping("/popularity")
-//    public List<Object> getPopularity() {
-//        return musicService.findPopularity();
-//    }
 
     @GetMapping("/popularity/top")
     public List<Object> getTopPopularity() {
@@ -233,10 +233,9 @@ public class AppAPIRestController {
         return musicService.findTopPopularityRateByUserId(id);
     }
 
-
-//    @GetMapping("/{id}/popularity")
-//    public List<Object> getPopularityRateUserId(@PathVariable long id) {
-//        return musicService.findPopularityRateByUserId(id);
-//    }
+    @GetMapping("/{id}/popularity")
+    public List<Object> getPopularityRateUserId(@PathVariable long id) {
+        return musicService.findPopularityRateByUserId(id);
+    }
 }
 

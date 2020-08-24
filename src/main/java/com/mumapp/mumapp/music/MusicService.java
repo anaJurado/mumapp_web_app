@@ -53,31 +53,28 @@ public class MusicService {
     }
 
 
-    public Page<Object> findPopularityRateByUserId(long id, Pageable page) {
-        return musicRepository.findPopularityRateByUserId(id,page);
+    public Page<Object> findPopularityRateByUserIdPagination(long id, Pageable page) {
+        return musicRepository.findPopularityRateByUserIdPagination(id,page);
     }
 
-    public Page<Object> findPopularity(Pageable page) {
-        return musicRepository.findPopularity(page);
+    public Page<Object> findPopularityPagination(Pageable page) {
+        return musicRepository.findPopularityPagination(page);
     }
 
-//    public List<Object> findPopularityRateByUserId(long id) {
-//        return musicRepository.findPopularityRateByUserId(id);
-//    }
+    public List<Object> findPopularityRateByUserId(long id) {
+        return musicRepository.findPopularityRateByUserId(id);
+    }
 
     public List<Object> findTopPopularityRateByUserId(long id) {
         return musicRepository.findTopPopularityRateByUserId(id);
     }
 
-//    public List<Object> findPopularity() {
-//        return musicRepository.findPopularity();
-//    }
+    public List<Object> findPopularity() {
+        return musicRepository.findPopularity();
+    }
 
     public List<Object> findTopPopularity() {
         return musicRepository.findTopPopularity();
     }
-
-
-
 
 }

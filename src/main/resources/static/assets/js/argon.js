@@ -1116,7 +1116,6 @@ GET: $(document).ready(
         })
             .done(function (data) {
                 if (console && console.log) {
-                    console.log(" userPopRate: ", data);
                     // INFO: data format: [music_id, city_id, popularity_rate]
                     userPopRate=data;
                     userPopRate.forEach(deconstructData);
@@ -1184,7 +1183,7 @@ GET: $(document).ready(
 
         $.ajax({
             type: "GET",
-            url: '/api/popularity/top',
+            url: '/api/popularity/pagination',
         })
             .done(function (data) {
                 if (console && console.log) {
@@ -1194,7 +1193,7 @@ GET: $(document).ready(
 
         $.ajax({
             type: "GET",
-            url: '/api/'+userId+'/popularity/top',
+            url: '/api/'+userId+'/popularity/pagination',
         })
             .done(function (data) {
                 if (console && console.log) {
