@@ -10,6 +10,8 @@ import com.mumapp.mumapp.music.MusicService;
 import com.mumapp.mumapp.user.User;
 import com.mumapp.mumapp.user.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
@@ -207,9 +209,19 @@ public class AppAPIRestController {
     //**********************//
 
     @GetMapping("/popularity")
-    public List<Object> getPopularity() {
-        return musicService.findPopularity();
+    public Page<Object> getPopularity(Pageable page){
+        return musicService.findPopularity(page);
     }
+
+    @GetMapping("/{id}/popularity")
+    public Page<Object> getPopularityRateUserId(@PathVariable long id, Pageable page) {
+        return musicService.findPopularityRateByUserId(id, page);
+    }
+
+//    @GetMapping("/popularity")
+//    public List<Object> getPopularity() {
+//        return musicService.findPopularity();
+//    }
 
     @GetMapping("/popularity/top")
     public List<Object> getTopPopularity() {
@@ -221,9 +233,10 @@ public class AppAPIRestController {
         return musicService.findTopPopularityRateByUserId(id);
     }
 
-    @GetMapping("/{id}/popularity")
-    public List<Object> getPopularityRateUserId(@PathVariable long id) {
-        return musicService.findPopularityRateByUserId(id);
-    }
+
+//    @GetMapping("/{id}/popularity")
+//    public List<Object> getPopularityRateUserId(@PathVariable long id) {
+//        return musicService.findPopularityRateByUserId(id);
+//    }
 }
 

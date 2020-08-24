@@ -1,7 +1,8 @@
 package com.mumapp.mumapp.music;
 
-import com.mumapp.mumapp.city.City;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -51,17 +52,26 @@ public class MusicService {
         return musicRepository.findByMusicIdAndCityId(musicId, cityId);
     }
 
-    public List<Object> findPopularityRateByUserId(long id) {
-        return musicRepository.findPopularityRateByUserId(id);
+
+    public Page<Object> findPopularityRateByUserId(long id, Pageable page) {
+        return musicRepository.findPopularityRateByUserId(id,page);
     }
+
+    public Page<Object> findPopularity(Pageable page) {
+        return musicRepository.findPopularity(page);
+    }
+
+//    public List<Object> findPopularityRateByUserId(long id) {
+//        return musicRepository.findPopularityRateByUserId(id);
+//    }
 
     public List<Object> findTopPopularityRateByUserId(long id) {
         return musicRepository.findTopPopularityRateByUserId(id);
     }
 
-    public List<Object> findPopularity() {
-        return musicRepository.findPopularity();
-    }
+//    public List<Object> findPopularity() {
+//        return musicRepository.findPopularity();
+//    }
 
     public List<Object> findTopPopularity() {
         return musicRepository.findTopPopularity();
