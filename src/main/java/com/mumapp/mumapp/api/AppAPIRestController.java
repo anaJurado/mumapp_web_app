@@ -10,6 +10,8 @@ import com.mumapp.mumapp.music.MusicService;
 import com.mumapp.mumapp.user.User;
 import com.mumapp.mumapp.user.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
@@ -205,6 +207,16 @@ public class AppAPIRestController {
     //**********************//
     //   POPULARITY RATES   //
     //**********************//
+
+    @GetMapping("/world/popularity/pagination")
+    public Page<Object> getPopularityPagination(Pageable page){
+        return musicService.findPopularityPagination(page);
+    }
+
+    @GetMapping("/{id}/popularity/pagination")
+    public Page<Object> getPopularityRateUserIdPagination(@PathVariable long id, Pageable page) {
+        return musicService.findPopularityRateByUserIdPagination(id, page);
+    }
 
     @GetMapping("/popularity")
     public List<Object> getPopularity() {

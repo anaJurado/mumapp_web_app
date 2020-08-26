@@ -1,7 +1,10 @@
 package com.mumapp.mumapp.music;
 
-import com.mumapp.mumapp.city.City;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -44,11 +47,16 @@ public class MusicService {
         musicRepository.randomData();
     }
 
-
-
-
     public int findByMusicIdAndCityId(long musicId, long cityId){
         return musicRepository.findByMusicIdAndCityId(musicId, cityId);
+    }
+
+    public Page<Object> findPopularityRateByUserIdPagination(long id, Pageable page) {
+        return musicRepository.findPopularityRateByUserIdPagination(id,page);
+    }
+
+    public Page<Object> findPopularityPagination(Pageable page) {
+        return musicRepository.findPopularityPagination(page);
     }
 
     public List<Object> findPopularityRateByUserId(long id) {
@@ -66,8 +74,5 @@ public class MusicService {
     public List<Object> findTopPopularity() {
         return musicRepository.findTopPopularity();
     }
-
-
-
 
 }

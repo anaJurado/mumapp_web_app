@@ -1116,7 +1116,6 @@ GET: $(document).ready(
         })
             .done(function (data) {
                 if (console && console.log) {
-                    console.log(" userPopRate: ", data);
                     // INFO: data format: [music_id, city_id, popularity_rate]
                     userPopRate=data;
                     userPopRate.forEach(deconstructData);
