@@ -208,7 +208,7 @@ public class AppAPIRestController {
     //   POPULARITY RATES   //
     //**********************//
 
-    @GetMapping("/popularity/pagination")
+    @GetMapping("/world/popularity/pagination")
     public Page<Object> getPopularityPagination(Pageable page){
         return musicService.findPopularityPagination(page);
     }

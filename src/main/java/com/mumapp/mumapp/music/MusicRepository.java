@@ -1,7 +1,9 @@
 package com.mumapp.mumapp.music;
 
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -24,7 +26,8 @@ public interface MusicRepository extends JpaRepository<Music, Long> {
             nativeQuery = true)
     Page<Object> findPopularityRateByUserIdPagination(long id, Pageable page);
 
-    @Query ( value="SELECT m.style_name, c.city_name, music_city.popularity_rate FROM music_city JOIN music m on music_city.music_id = m.id JOIN city c on music_city.city_id = c.id GROUP BY 1,2,3 ORDER BY music_city.popularity_rate DESC /*#pageable*/",
+    @Query ( value="SELECT m.style_name, c.city_name, music_city.popularity_rate FROM music_city JOIN music m on music_city.music_id = m.id JOIN city c on music_city.city_id = c.id ORDER BY music_city.popularity_rate DESC",
+            countQuery = "SELECT count(*) FROM music_city JOIN music m on music_city.music_id = m.id JOIN city c on music_city.city_id = c.id ORDER BY music_city.popularity_rate DESC",
             nativeQuery= true)
     Page<Object> findPopularityPagination(Pageable page);
 

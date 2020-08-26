@@ -1183,7 +1183,7 @@ GET: $(document).ready(
 
         $.ajax({
             type: "GET",
-            url: '/api/popularity/pagination',
+            url: '/api/world/popularity/pagination',
         })
             .done(function (data) {
                 if (console && console.log) {
