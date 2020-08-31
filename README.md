@@ -37,10 +37,14 @@ The application contemplates three types of users:
 ### Images
 Every registed user and admin user have the option to upload a profile image to be used in the profile page and top navbar
 
+![](https://github.com/anaJurado/mumapp_web_app/blob/update_readme/documents/profile_image.png)
+
 ### Graphics
 In the dashboard view we can find a bar graphic showing:
 - *X axis:* music and city tuples chosen by the user
 - *Y axis:* Popularity rate between 0 and 100
+
+![](https://github.com/anaJurado/mumapp_web_app/blob/update_readme/documents/graphic_bar.png)
 
 There is a couple of tables that show data as well in the dashboard page.
 
