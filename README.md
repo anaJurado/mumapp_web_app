@@ -86,3 +86,11 @@ As the popularity rate is randomly generated and can be "refresh" by the user, w
     void randomData();
 
 More advance queries can be found in MusicRepository.java
+
+### Web Navigation
+Here is a scheme of the navigation that is possible to do in the app differentiating by the different users roles
+![](https://github.com/anaJurado/mumapp_web_app/blob/update_readme/documents/mumapp-web navigation_non-registered_user.png)
+![](https://github.com/anaJurado/mumapp_web_app/blob/update_readme/documents/mumapp-web navigation_admin.png)
+
+You can also see it here:
+
