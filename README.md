@@ -100,13 +100,13 @@ You can also see it here:  [Web navigation pdf document](documents/mumapp-web_na
 
 ![](documents/mumappdb_database_uml_diagram.png)
 
-You can also see it here:  [Data Base Diagram UML](documents/SCHEMA:mumappdb.uml)
+You can also download the uml file here:  [Data Base Diagram UML](documents/SCHEMA:mumappdb.uml)
 
 ### Class Diagram
 
-![](documents/mumappdb_class_diagram.png)
+![](documents/mumapp_class_diagram.png)
 
-You can also see it here:  [Class Diagram UML](documents/mumapp_class_diagram.uml)
+You can also download the uml file here:  [Class Diagram UML](documents/mumapp_class_diagram.uml)
 
 
 ### Development Instructions
