@@ -89,8 +89,31 @@ More advance queries can be found in MusicRepository.java
 
 ### Web Navigation
 Here is a scheme of the navigation that is possible to do in the app differentiating by the different users roles
-![](https://github.com/anaJurado/mumapp_web_app/blob/update_readme/documents/mumapp-web_navigation_non-registered_user.png)
-![](https://github.com/anaJurado/mumapp_web_app/blob/update_readme/documents/mumapp-web_navigation_admin.png)
 
-You can also see it here:
+![](documents/mumapp-web_navigation_non-registered_user.png)
+![](documents/mumapp-web_navigation_admin.png)
 
+
+You can also see it here:  [Web navigation pdf document](documents/mumapp-web_navigation.pdf)
+
+### Data Base Diagram
+
+![](documents/mumappdb_database_uml_diagram.png)
+
+You can also see it here:  [Data Base Diagram UML](documents/SCHEMA:mumappdb.uml)
+
+### Class Diagram
+
+![](documents/mumappdb_class_diagram.png)
+
+You can also see it here:  [Class Diagram UML](documents/mumapp_class_diagram.uml)
+
+
+### Development Instructions
+
+Here are the developer instructions
+
+---
+## Bugs
+
+### Update / Modify USER
