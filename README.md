@@ -18,11 +18,11 @@ You can also check the info of the most popular music styles all around the glob
 In the dashboard page you can find the information about the music styles and cities the user has chosen as well as the information about the top ten popular music styles in the cities
 There is also a button **GET DATA** that the user can use whenever he/she wants to refresh the data.
 
-
+![](documents/mumapp_user_dashboard-full.png)
 
 ### Profile
 In the profile page the user can see the personal data and update it as he/she wants. There is also the possibility to upload a profile image.
-
+![](documents/mummap_user_profile-full.png)
 
 ---
 
@@ -38,6 +38,12 @@ A music style can be chosen by n users and every style is related to every city.
 A city can be chosen by n users and every city is related to every music style.
 Every musical style is related to every cities sharing one attribute, the popularity rate of that style in that city.
 
+### Frontend theme
+I've used a free theme template for the frontend side by Creative Tim:
+**Theme:** https://www.creative-tim.com/product/argon-dashboard
+**Live preview:** https://demos.creative-tim.com/argon-dashboard/index.html?_ga=2.159075512.384130023.1599379603-2127710504.1590785900
+**Docs:** https://demos.creative-tim.com/argon-dashboard/docs/getting-started/overview.html?_ga=2.159075512.384130023.1599379603-2127710504.1590785900
+
 ### User permissions
 The application contemplates three types of users:
 - **Not registed:** Only have access to the main page and login page
@@ -47,14 +53,14 @@ The application contemplates three types of users:
 ### Images
 Every registed user and admin user have the option to upload a profile image to be used in the profile page and top navbar
 
-![](https://github.com/anaJurado/mumapp_web_app/blob/update_readme/documents/profile_image.png)
+![](documents/profile_image.png)
 
 ### Graphics
 In the dashboard view we can find a bar graphic showing:
 - **X axis:** music and city tuples chosen by the user
 - **Y axis:** Popularity rate between 0 and 100
 
-![](https://github.com/anaJurado/mumapp_web_app/blob/update_readme/documents/graphic_bar.png)
+![](documents/graphic_bar.png)
 
 There is a couple of tables that show data as well in the dashboard page.
 
@@ -101,7 +107,6 @@ Here is a scheme of the navigation that is possible to do in the app differentia
 ![](documents/mumapp-web_navigation_non-registered_user.png)
 ![](documents/mumapp-web_navigation_admin.png)
 
-
 You can also see it here:  [Web navigation pdf document](documents/mumapp-web_navigation.pdf)
 
 ### Data Base Diagram
@@ -115,7 +120,6 @@ You can also download the uml file here:  [Data Base Diagram UML](documents/SCHE
 ![](documents/mumapp_class_diagram.png)
 
 You can also download the uml file here:  [Class Diagram UML](documents/mumapp_class_diagram.uml)
-
 
 ### Development Instructions
 
