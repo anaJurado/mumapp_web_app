@@ -84,13 +84,13 @@ public class AppControllers {
         Long id = userComponent.getLoggedUser().getId();
 
         //USER INFO
-        Optional<User> user = userRepository.findById(id);
+        Optional<User> user = Optional.ofNullable(userService.findById(id));
         if (user.isPresent()) {
             model.addAttribute("user", user.get());
         }
 
         // ALL USERS
-        model.addAttribute("allUser", userRepository.findAll());
+        model.addAttribute("allUser", userService.findAll());
 
         //MUSIC INFO
         model.addAttribute("allMusic", musicService.findAll());
@@ -111,7 +111,7 @@ public class AppControllers {
     @GetMapping("/user/{id}")
     public String updateUser(Model model, @PathVariable long id) {
 
-        Optional<User> user = Optional.ofNullable(userRepository.findById(id));
+        Optional<User> user = Optional.ofNullable(userService.findById(id));
         if (user.isPresent()) {
             model.addAttribute("user", user.get());
         }
@@ -130,7 +130,7 @@ public class AppControllers {
             String name = user.getName();
             String email = user.getEmail();
             String pass = user.getPasswordHash();
-            userRepository.save(new User(firstName, lastName, name, email, pass, "ROLE_USER"));
+            userService.save(new User(firstName, lastName, name, email, pass, "ROLE_USER"));
         }
 
         return "info_updated";
@@ -141,7 +141,7 @@ public class AppControllers {
                                 @RequestParam MultipartFile imageFile) throws IOException {
 
         user.setImage(true);
-        userRepository.save(user);
+        userService.save(user);
 
         Long id = user.getId();
         imgService.saveImage("users", id, imageFile);
@@ -219,7 +219,7 @@ public class AppControllers {
     @GetMapping("/deleteCity/{id}")
     public String deleteCity(Model model, @PathVariable long id) {
 
-        cityService.deleteCityById(id);
+        cityService.deleteById(id);
 
         return "info_updated";
     }
