@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>com.mumapp.mumapp.musiccity.MusicCity</OriginalElement>
+  <nodes>
+    <node x="394.5534188034186" y="622.0">com.mumapp.mumapp.music.MusicRepository</node>
+    <node x="548.3125" y="821.0">com.mumapp.mumapp.music.Music</node>
+    <node x="2143.261752136752" y="418.0">com.mumapp.mumapp.user.UserService</node>
+    <node x="901.2617521367519" y="204.0">org.springframework.security.authentication.AuthenticationProvider</node>
+    <node x="2653.261752136752" y="418.0">org.springframework.web.bind.annotation.RequestMapping</node>
+    <node x="2418.465811965812" y="316.0">org.springframework.stereotype.Controller</node>
+    <node x="216.5534188034186" y="622.0">com.mumapp.mumapp.user.UserRepository</node>
+    <node x="293.80448717948707" y="316.0">org.springframework.data.repository.CrudRepository</node>
+    <node x="0.0" y="204.0">org.springframework.data.repository.NoRepositoryBean</node>
+    <node x="0.0" y="923.0">org.springframework.web.servlet.handler.HandlerInterceptorAdapter</node>
+    <node x="948.5117521367519" y="316.0">com.mumapp.mumapp.security.UserRepositoryAuthProvider</node>
+    <node x="919.3125" y="821.0">com.mumapp.mumapp.Application</node>
+    <node x="607.3044871794871" y="316.0">org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter</node>
+    <node x="1665.261752136752" y="418.0">com.mumapp.mumapp.imageservice.ImageService</node>
+    <node x="289.0" y="719.0">javax.persistence.Table</node>
+    <node x="1937.965811965812" y="316.0">org.springframework.stereotype.Service</node>
+    <node x="447.26175213675185" y="204.0">org.springframework.data.repository.Repository</node>
+    <node x="174.26175213675185" y="102.0">org.springframework.security.config.annotation.SecurityConfigurer</node>
+    <node x="2548.3044871794873" y="520.0">com.mumapp.mumapp.api.AppAPIRestController</node>
+    <node x="1389.511752136752" y="316.0">com.mumapp.mumapp.DatabaseInitializer</node>
+    <node x="27.5" y="719.0">org.springframework.web.servlet.HandlerInterceptor</node>
+    <node x="2564.465811965812" y="316.0">com.mumapp.mumapp.user.UserComponent</node>
+    <node x="1335.0699786324785" y="102.0">org.springframework.stereotype.Indexed</node>
+    <node x="1981.261752136752" y="418.0">com.mumapp.mumapp.music.MusicService</node>
+    <node x="1827.261752136752" y="418.0">com.mumapp.mumapp.city.CityService</node>
+    <node x="602.8363095238095" y="719.0">javax.persistence.Entity</node>
+    <node x="794.2617521367519" y="204.0">org.springframework.core.annotation.Order</node>
+    <node x="880.3125" y="719.0">org.springframework.boot.autoconfigure.SpringBootApplication</node>
+    <node x="170.01923076923072" y="418.0">org.springframework.data.repository.PagingAndSortingRepository</node>
+    <node x="12.0" y="1025.0">com.mumapp.mumapp.security.CSRFHandlerInterceptor</node>
+    <node x="2475.261752136752" y="418.0">org.springframework.web.bind.annotation.RestController</node>
+    <node x="755.3125" y="821.0">com.mumapp.mumapp.user.User</node>
+    <node x="215.26175213675185" y="204.0">org.springframework.security.config.annotation.web.WebSecurityConfigurer</node>
+    <node x="396.0" y="719.0">java.io.Serializable</node>
+    <node x="1219.511752136752" y="316.0">org.springframework.context.annotation.Configuration</node>
+    <node x="238.26175213675185" y="0.0">org.springframework.security.config.annotation.SecurityBuilder</node>
+    <node x="441.0192307692307" y="418.0">org.springframework.data.repository.query.QueryByExampleExecutor</node>
+    <node x="1720.403311965812" y="204.0">org.springframework.stereotype.Component</node>
+    <node x="2605.965811965812" y="204.0">org.springframework.web.context.annotation.SessionScope</node>
+    <node x="1235.511752136752" y="418.0">com.mumapp.mumapp.security.CSRFHandlerConfiguration</node>
+    <node x="655.3125" y="821.0">com.mumapp.mumapp.city.City</node>
+    <node x="8.0" y="821.0">org.springframework.web.servlet.AsyncHandlerInterceptor</node>
+    <node x="2297.261752136752" y="418.0">com.mumapp.mumapp.webapp.AppControllers</node>
+    <node x="1606.511752136752" y="316.0">org.springframework.web.servlet.config.annotation.WebMvcConfigurer</node>
+    <node x="38.55341880341848" y="622.0">com.mumapp.mumapp.city.CityRepository</node>
+    <node x="397.39285714285717" y="821.0">com.mumapp.mumapp.musiccity.MusicCity</node>
+    <node x="222.5534188034186" y="520.0">org.springframework.data.jpa.repository.JpaRepository</node>
+    <node x="695.5544871794871" y="418.0">com.mumapp.mumapp.security.WebSecurityConfig</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.mumapp.mumapp.music.Music" target="javax.persistence.Entity">
+      <point x="0.0" y="-26.0" />
+      <point x="591.8125" y="801.0" />
+      <point x="638.4613095238095" y="801.0" />
+      <point x="-11.875" y="26.0" />
+    </edge>
+    <edge source="com.mumapp.mumapp.musiccity.MusicCity" target="javax.persistence.Table">
+      <point x="-39.66666666666663" y="-26.0" />
+      <point x="417.22619047619054" y="801.0" />
+      <point x="332.5" y="801.0" />
+      <point x="0.0" y="26.0" />
+    </edge>
+    <edge source="com.mumapp.mumapp.music.MusicRepository" target="org.springframework.data.jpa.repository.JpaRepository">
+      <point x="0.0" y="-26.0" />
+      <point x="477.5534188034186" y="597.0" />
+      <point x="347.5534188034186" y="597.0" />
+      <point x="50.0" y="26.0" />
+    </edge>
+    <edge source="com.mumapp.mumapp.city.CityService" target="org.springframework.stereotype.Service">
+      <point x="0.0" y="-26.0" />
+      <point x="1894.261752136752" y="398.0" />
+      <point x="1976.590811965812" y="398.0" />
+      <point x="-12.875" y="26.0" />
+    </edge>
+    <edge source="com.mumapp.mumapp.security.CSRFHandlerInterceptor" target="org.springframework.web.servlet.handler.HandlerInterceptorAdapter">
+      <point x="0.0" y="-26.0" />
+      <point x="0.0" y="26.0" />
+    </edge>
+    <edge source="com.mumapp.mumapp.api.AppAPIRestController" target="org.springframework.web.bind.annotation.RequestMapping">
+      <point x="51.25" y="-26.0" />
+      <point x="2702.0544871794873" y="495.0" />
+      <point x="2732.261752136752" y="495.0" />
+      <point x="0.0" y="26.0" />
+    </edge>
+    <edge source="com.mumapp.mumapp.security.WebSecurityConfig" target="org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter">
+      <point x="-45.25" y="-26.0" />
+      <point x="0.0" y="26.0" />
+    </edge>
+    <edge source="com.mumapp.mumapp.security.CSRFHandlerConfiguration" target="org.springframework.context.annotation.Configuration">
+      <point x="-59.0" y="-26.0" />
+      <point x="0.0" y="26.0" />
+    </edge>
+    <edge source="org.springframework.data.jpa.repository.JpaRepository" target="org.springframework.data.repository.NoRepositoryBean">
+      <point x="-50.0" y="-26.0" />
+      <point x="247.5534188034186" y="495.0" />
+      <point x="44.375" y="495.0" />
+      <point x="44.375" y="296.0" />
+      <point x="28.833333333333485" y="296.0" />
+      <point x="-57.666666666666515" y="26.0" />
+    </edge>
+    <edge source="com.mumapp.mumapp.security.UserRepositoryAuthProvider" target="org.springframework.stereotype.Component">
+      <point x="62.75" y="-26.0" />
+      <point x="1136.761752136752" y="276.0" />
+      <point x="1730.3199786324785" y="276.0" />
+      <point x="-49.58333333333337" y="26.0" />
+    </edge>
+    <edge source="org.springframework.data.repository.PagingAndSortingRepository" target="org.springframework.data.repository.CrudRepository">
+      <point x="62.75" y="-26.0" />
+      <point x="358.2692307692307" y="398.0" />
+      <point x="372.80448717948707" y="398.0" />
+      <point x="0.0" y="26.0" />
+    </edge>
+    <edge source="org.springframework.security.config.annotation.SecurityConfigurer" target="org.springframework.security.config.annotation.SecurityBuilder">
+      <point x="0.0" y="-26.0" />
+      <point x="268.76175213675185" y="77.0" />
+      <point x="279.76175213675185" y="77.0" />
+      <point x="-41.5" y="26.0" />
+    </edge>
+    <edge source="com.mumapp.mumapp.webapp.AppControllers" target="org.springframework.stereotype.Controller">
+      <point x="0.0" y="-26.0" />
+      <point x="2376.261752136752" y="398.0" />
+      <point x="2449.965811965812" y="398.0" />
+      <point x="-31.5" y="26.0" />
+    </edge>
+    <edge source="com.mumapp.mumapp.api.AppAPIRestController" target="org.springframework.web.bind.annotation.RestController">
+      <point x="-51.25" y="-26.0" />
+      <point x="2599.5544871794873" y="495.0" />
+      <point x="2554.261752136752" y="495.0" />
+      <point x="0.0" y="26.0" />
+    </edge>
+    <edge source="com.mumapp.mumapp.musiccity.MusicCity" target="javax.persistence.Entity">
+      <point x="39.66666666666663" y="-26.0" />
+      <point x="496.5595238095238" y="791.0" />
+      <point x="614.7113095238095" y="791.0" />
+      <point x="-35.625" y="26.0" />
+    </edge>
+    <edge source="com.mumapp.mumapp.imageservice.ImageService" target="org.springframework.context.annotation.Configuration">
+      <point x="-47.33333333333326" y="-26.0" />
+      <point x="1688.9284188034185" y="388.0" />
+      <point x="1344.511752136752" y="388.0" />
+      <point x="50.0" y="26.0" />
+    </edge>
+    <edge source="org.springframework.web.servlet.AsyncHandlerInterceptor" target="org.springframework.web.servlet.HandlerInterceptor">
+      <point x="0.0" y="-26.0" />
+      <point x="0.0" y="26.0" />
+    </edge>
+    <edge source="com.mumapp.mumapp.user.UserComponent" target="org.springframework.stereotype.Component">
+      <point x="-37.5" y="-26.0" />
+      <point x="2601.965811965812" y="276.0" />
+      <point x="1829.4866452991453" y="276.0" />
+      <point x="49.58333333333326" y="26.0" />
+    </edge>
+    <edge source="org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter" target="org.springframework.core.annotation.Order">
+      <point x="66.75" y="-26.0" />
+      <point x="807.5544871794871" y="296.0" />
+      <point x="837.7617521367519" y="296.0" />
+      <point x="0.0" y="26.0" />
+    </edge>
+    <edge source="org.springframework.data.jpa.repository.JpaRepository" target="org.springframework.data.repository.query.QueryByExampleExecutor">
+      <point x="50.0" y="-26.0" />
+      <point x="347.5534188034186" y="495.0" />
+      <point x="551.0192307692307" y="495.0" />
+      <point x="0.0" y="26.0" />
+    </edge>
+    <edge source="org.springframework.stereotype.Service" target="org.springframework.stereotype.Component">
+      <point x="0.0" y="-26.0" />
+      <point x="1989.465811965812" y="296.0" />
+      <point x="1789.8199786324788" y="296.0" />
+      <point x="9.916666666666742" y="26.0" />
+    </edge>
+    <edge source="org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter" target="org.springframework.security.config.annotation.web.WebSecurityConfigurer">
+      <point x="-66.75" y="-26.0" />
+      <point x="674.0544871794871" y="286.0" />
+      <point x="321.26175213675185" y="286.0" />
+      <point x="0.0" y="26.0" />
+    </edge>
+    <edge source="com.mumapp.mumapp.user.UserService" target="org.springframework.stereotype.Service">
+      <point x="0.0" y="-26.0" />
+      <point x="2210.261752136752" y="388.0" />
+      <point x="2028.090811965812" y="388.0" />
+      <point x="38.625" y="26.0" />
+    </edge>
+    <edge source="com.mumapp.mumapp.musiccity.MusicCity" target="java.io.Serializable">
+      <point x="0.0" y="-26.0" />
+      <point x="456.89285714285717" y="801.0" />
+      <point x="467.0" y="801.0" />
+      <point x="0.0" y="26.0" />
+    </edge>
+    <edge source="org.springframework.data.repository.Repository" target="org.springframework.stereotype.Indexed">
+      <point x="0.0" y="-26.0" />
+      <point x="510.26175213675185" y="179.0" />
+      <point x="1360.8199786324785" y="179.0" />
+      <point x="-25.75" y="26.0" />
+    </edge>
+    <edge source="org.springframework.web.bind.annotation.RestController" target="org.springframework.stereotype.Controller">
+      <point x="0.0" y="-26.0" />
+      <point x="2554.261752136752" y="398.0" />
+      <point x="2512.965811965812" y="398.0" />
+      <point x="31.5" y="26.0" />
+    </edge>
+    <edge source="com.mumapp.mumapp.DatabaseInitializer" target="org.springframework.stereotype.Component">
+      <point x="0.0" y="-26.0" />
+      <point x="1488.011752136752" y="296.0" />
+      <point x="1769.9866452991453" y="296.0" />
+      <point x="-9.916666666666742" y="26.0" />
+    </edge>
+    <edge source="org.springframework.stereotype.Component" target="org.springframework.stereotype.Indexed">
+      <point x="0.0" y="-26.0" />
+      <point x="1779.903311965812" y="179.0" />
+      <point x="1412.3199786324785" y="179.0" />
+      <point x="25.75" y="26.0" />
+    </edge>
+    <edge source="org.springframework.data.repository.CrudRepository" target="org.springframework.data.repository.Repository">
+      <point x="39.5" y="-26.0" />
+      <point x="412.30448717948707" y="296.0" />
+      <point x="510.26175213675185" y="296.0" />
+      <point x="0.0" y="26.0" />
+    </edge>
+    <edge source="com.mumapp.mumapp.security.UserRepositoryAuthProvider" target="org.springframework.security.authentication.AuthenticationProvider">
+      <point x="-62.75" y="-26.0" />
+      <point x="0.0" y="26.0" />
+    </edge>
+    <edge source="com.mumapp.mumapp.imageservice.ImageService" target="org.springframework.web.servlet.config.annotation.WebMvcConfigurer">
+      <point x="0.0" y="-26.0" />
+      <point x="43.25" y="26.0" />
+    </edge>
+    <edge source="org.springframework.security.config.annotation.web.WebSecurityConfigurer" target="org.springframework.security.config.annotation.SecurityBuilder">
+      <point x="53.0" y="-26.0" />
+      <point x="373.76175213675185" y="77.0" />
+      <point x="362.76175213675185" y="77.0" />
+      <point x="41.5" y="26.0" />
+    </edge>
+    <edge source="org.springframework.web.servlet.handler.HandlerInterceptorAdapter" target="org.springframework.web.servlet.AsyncHandlerInterceptor">
+      <point x="0.0" y="-26.0" />
+      <point x="0.0" y="26.0" />
+    </edge>
+    <edge source="com.mumapp.mumapp.user.UserRepository" target="org.springframework.data.jpa.repository.JpaRepository">
+      <point x="0.0" y="-26.0" />
+      <point x="295.5534188034186" y="597.0" />
+      <point x="297.5534188034186" y="597.0" />
+      <point x="0.0" y="26.0" />
+    </edge>
+    <edge source="com.mumapp.mumapp.city.City" target="javax.persistence.Entity">
+      <point x="0.0" y="-26.0" />
+      <point x="695.3125" y="801.0" />
+      <point x="662.2113095238095" y="801.0" />
+      <point x="11.875" y="26.0" />
+    </edge>
+    <edge source="com.mumapp.mumapp.security.CSRFHandlerConfiguration" target="org.springframework.web.servlet.config.annotation.WebMvcConfigurer">
+      <point x="59.0" y="-26.0" />
+      <point x="1412.511752136752" y="398.0" />
+      <point x="1649.761752136752" y="398.0" />
+      <point x="-43.25" y="26.0" />
+    </edge>
+    <edge source="com.mumapp.mumapp.imageservice.ImageService" target="org.springframework.stereotype.Service">
+      <point x="47.33333333333326" y="-26.0" />
+      <point x="1783.595085470085" y="388.0" />
+      <point x="1950.840811965812" y="388.0" />
+      <point x="-38.625" y="26.0" />
+    </edge>
+    <edge source="com.mumapp.mumapp.Application" target="org.springframework.boot.autoconfigure.SpringBootApplication">
+      <point x="0.0" y="-26.0" />
+      <point x="0.0" y="26.0" />
+    </edge>
+    <edge source="org.springframework.data.repository.PagingAndSortingRepository" target="org.springframework.data.repository.NoRepositoryBean">
+      <point x="-62.75" y="-26.0" />
+      <point x="232.76923076923072" y="398.0" />
+      <point x="86.5" y="398.0" />
+      <point x="0.0" y="26.0" />
+    </edge>
+    <edge source="org.springframework.stereotype.Controller" target="org.springframework.stereotype.Component">
+      <point x="0.0" y="-26.0" />
+      <point x="2481.465811965812" y="286.0" />
+      <point x="1809.653311965812" y="286.0" />
+      <point x="29.75" y="26.0" />
+    </edge>
+    <edge source="com.mumapp.mumapp.user.User" target="javax.persistence.Entity">
+      <point x="0.0" y="-26.0" />
+      <point x="795.3125" y="791.0" />
+      <point x="685.9613095238095" y="791.0" />
+      <point x="35.625" y="26.0" />
+    </edge>
+    <edge source="com.mumapp.mumapp.city.CityRepository" target="org.springframework.data.jpa.repository.JpaRepository">
+      <point x="0.0" y="-26.0" />
+      <point x="117.55341880341848" y="597.0" />
+      <point x="247.5534188034186" y="597.0" />
+      <point x="-50.0" y="26.0" />
+    </edge>
+    <edge source="com.mumapp.mumapp.security.WebSecurityConfig" target="org.springframework.context.annotation.Configuration">
+      <point x="45.25" y="-26.0" />
+      <point x="831.3044871794871" y="398.0" />
+      <point x="1244.511752136752" y="398.0" />
+      <point x="-50.0" y="26.0" />
+    </edge>
+    <edge source="com.mumapp.mumapp.music.MusicService" target="org.springframework.stereotype.Service">
+      <point x="0.0" y="-26.0" />
+      <point x="2052.261752136752" y="398.0" />
+      <point x="2002.340811965812" y="398.0" />
+      <point x="12.875" y="26.0" />
+    </edge>
+    <edge source="org.springframework.context.annotation.Configuration" target="org.springframework.stereotype.Component">
+      <point x="0.0" y="-26.0" />
+      <point x="1294.511752136752" y="286.0" />
+      <point x="1750.153311965812" y="286.0" />
+      <point x="-29.75" y="26.0" />
+    </edge>
+    <edge source="org.springframework.security.config.annotation.web.WebSecurityConfigurer" target="org.springframework.security.config.annotation.SecurityConfigurer">
+      <point x="-53.0" y="-26.0" />
+      <point x="0.0" y="26.0" />
+    </edge>
+    <edge source="org.springframework.data.jpa.repository.JpaRepository" target="org.springframework.data.repository.PagingAndSortingRepository">
+      <point x="0.0" y="-26.0" />
+      <point x="297.5534188034186" y="495.0" />
+      <point x="295.5192307692307" y="495.0" />
+      <point x="0.0" y="26.0" />
+    </edge>
+    <edge source="com.mumapp.mumapp.user.UserComponent" target="org.springframework.web.context.annotation.SessionScope">
+      <point x="37.5" y="-26.0" />
+      <point x="0.0" y="26.0" />
+    </edge>
+    <edge source="org.springframework.data.repository.CrudRepository" target="org.springframework.data.repository.NoRepositoryBean">
+      <point x="-39.5" y="-26.0" />
+      <point x="333.30448717948707" y="296.0" />
+      <point x="144.16666666666652" y="296.0" />
+      <point x="57.666666666666515" y="26.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.4593926553672316" x="1406.0" y="538.5" />
+  <SelectedNodes />
+  <Categories />
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

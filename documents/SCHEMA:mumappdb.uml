@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>DATABASE</ID>
+  <OriginalElement>dd265b9d-6ae9-4020-8143-db1776e18beb.SCHEMA:mumappdb</OriginalElement>
+  <nodes>
+    <node x="632.2962962962963" y="277.0">dd265b9d-6ae9-4020-8143-db1776e18beb.TABLE:mumappdb.user_roles</node>
+    <node x="300.13425925925924" y="277.0">dd265b9d-6ae9-4020-8143-db1776e18beb.TABLE:mumappdb.user_city</node>
+    <node x="487.13425925925924" y="0.0">dd265b9d-6ae9-4020-8143-db1776e18beb.TABLE:mumappdb.user</node>
+    <node x="449.587962962963" y="277.0">dd265b9d-6ae9-4020-8143-db1776e18beb.TABLE:mumappdb.user_music</node>
+    <node x="436.1538461538461" y="552.3846153846154">dd265b9d-6ae9-4020-8143-db1776e18beb.TABLE:mumappdb.hibernate_sequence</node>
+    <node x="-20.192307692307708" y="425.4615384615384">dd265b9d-6ae9-4020-8143-db1776e18beb.TABLE:mumappdb.city_music_city_set</node>
+    <node x="249.400641025641" y="30.384615384615387">dd265b9d-6ae9-4020-8143-db1776e18beb.TABLE:mumappdb.music</node>
+    <node x="116.13425925925924" y="256.0">dd265b9d-6ae9-4020-8143-db1776e18beb.TABLE:mumappdb.music_city</node>
+    <node x="-34.916666666666686" y="25.0">dd265b9d-6ae9-4020-8143-db1776e18beb.TABLE:mumappdb.city</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="dd265b9d-6ae9-4020-8143-db1776e18beb.TABLE:mumappdb.user_roles" target="dd265b9d-6ae9-4020-8143-db1776e18beb.TABLE:mumappdb.user">
+      <point x="0.0" y="-38.0" />
+      <point x="708.7962962962963" y="236.0" />
+      <point x="673.8009259259259" y="236.0" />
+      <point x="74.66666666666663" y="103.0" />
+    </edge>
+    <edge source="dd265b9d-6ae9-4020-8143-db1776e18beb.TABLE:mumappdb.user_city" target="dd265b9d-6ae9-4020-8143-db1776e18beb.TABLE:mumappdb.city">
+      <point x="-30.5" y="-38.0" />
+      <point x="330.63425925925924" y="226.0" />
+      <point x="184.74999999999997" y="226.0" />
+      <point x="62.66666666666666" y="70.0" />
+    </edge>
+    <edge source="dd265b9d-6ae9-4020-8143-db1776e18beb.TABLE:mumappdb.music_city" target="dd265b9d-6ae9-4020-8143-db1776e18beb.TABLE:mumappdb.music">
+      <point x="39.0" y="-59.0" />
+      <point x="232.67272079772079" y="239.84615384615387" />
+      <point x="298.40064102564105" y="239.0769230769231" />
+      <point x="-49.0" y="48.0" />
+    </edge>
+    <edge source="dd265b9d-6ae9-4020-8143-db1776e18beb.TABLE:mumappdb.city_music_city_set" target="dd265b9d-6ae9-4020-8143-db1776e18beb.TABLE:mumappdb.city">
+      <point x="-59.5" y="-49.0" />
+      <point x="40.15384615384613" y="352.7692307692308" />
+      <point x="-6.050925925925924" y="353.0" />
+      <point x="-6.050925925925924" y="324.2307692307693" />
+      <point x="-5.891025641025678" y="236.46153846153845" />
+      <point x="-62.666666666666686" y="70.0" />
+    </edge>
+    <edge source="dd265b9d-6ae9-4020-8143-db1776e18beb.TABLE:mumappdb.user_music" target="dd265b9d-6ae9-4020-8143-db1776e18beb.TABLE:mumappdb.user">
+      <point x="33.25" y="-38.0" />
+      <point x="549.337962962963" y="236.0" />
+      <point x="599.1342592592592" y="236.0" />
+      <point x="0.0" y="103.0" />
+    </edge>
+    <edge source="dd265b9d-6ae9-4020-8143-db1776e18beb.TABLE:mumappdb.city_music_city_set" target="dd265b9d-6ae9-4020-8143-db1776e18beb.TABLE:mumappdb.music_city">
+      <point x="59.5" y="-49.0" />
+      <point x="140.0" y="409.0" />
+      <point x="202.13425925925924" y="399.0" />
+      <point x="0.0" y="59.0" />
+    </edge>
+    <edge source="dd265b9d-6ae9-4020-8143-db1776e18beb.TABLE:mumappdb.user_music" target="dd265b9d-6ae9-4020-8143-db1776e18beb.TABLE:mumappdb.music">
+      <point x="-33.25" y="-38.0" />
+      <point x="482.837962962963" y="226.0" />
+      <point x="396.40064102564105" y="226.76923076923077" />
+      <point x="49.0" y="48.0" />
+    </edge>
+    <edge source="dd265b9d-6ae9-4020-8143-db1776e18beb.TABLE:mumappdb.music_city" target="dd265b9d-6ae9-4020-8143-db1776e18beb.TABLE:mumappdb.city">
+      <point x="-39.0" y="-59.0" />
+      <point x="154.67272079772079" y="236.0" />
+      <point x="122.08333333333331" y="236.0" />
+      <point x="0.0" y="70.0" />
+    </edge>
+    <edge source="dd265b9d-6ae9-4020-8143-db1776e18beb.TABLE:mumappdb.user_city" target="dd265b9d-6ae9-4020-8143-db1776e18beb.TABLE:mumappdb.user">
+      <point x="30.5" y="-38.0" />
+      <point x="391.63425925925924" y="236.0" />
+      <point x="524.4675925925926" y="236.0" />
+      <point x="-74.66666666666663" y="103.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.3000000000000003" x="277.1538461538461" y="248.4615384615384" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Key columns</Category>
+    <Category>Columns</Category>
+    <Category>Virtual foreign keys</Category>
+  </Categories>
+</Diagram>
+

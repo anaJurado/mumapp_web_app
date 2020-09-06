@@ -110,16 +110,6 @@ public class DatabaseInitializer {
 
         userRepository.save(admin);
 
-/*        admin2.getMusicSet().add(disco);
-        admin2.getCitySet().add(helsinki);
-        userRepository.save(admin2);
-
-        admin3.getMusicSet().add(disco);
-        admin3.getCitySet().add(helsinki);
-        userRepository.save(admin3);
-        */
-
-
         // USER - MUSIC(5) - CITY(5) ANA
         ana.getMusicSet().add(jazz);
         ana.getMusicSet().add(soul);
@@ -171,18 +161,6 @@ public class DatabaseInitializer {
 
         userRepository.save(maria);
 
-
-        // USER - JUANA
-
-
-/*
-        INSERT INTO music_city (music_id, city_id)
-        SELECT music.id as music_id, city.id as city_id
-        FROM music CROSS JOIN city;
-
-        UPDATE music_city SET popularity_rate = 100 * RAND() WHERE 1;
-*/
-
- }
+    }
 
 }
