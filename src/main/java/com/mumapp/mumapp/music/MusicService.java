@@ -80,4 +80,11 @@ public class MusicService {
         musicRepository.deleteById(id);
     }
 
+    @Transactional
+    public void generateRandomData(){
+        musicRepository.truncateMusicCity();
+        musicRepository.crossJoinMusicCity();
+        musicRepository.randomData();
+    }
+
 }

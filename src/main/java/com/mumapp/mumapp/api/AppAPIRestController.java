@@ -218,14 +218,24 @@ public class AppAPIRestController {
         return musicService.findTopPopularity();
     }
 
+    @GetMapping("/{id}/popularity")
+    public List<Object> getPopularityRateUserId(@PathVariable long id) {
+        return musicService.findPopularityRateByUserId(id);
+    }
+
     @GetMapping("/{id}/popularity/top")
     public List<Object> getTopPopularityRateUserId(@PathVariable long id) {
         return musicService.findTopPopularityRateByUserId(id);
     }
 
-    @GetMapping("/{id}/popularity")
-    public List<Object> getPopularityRateUserId(@PathVariable long id) {
-        return musicService.findPopularityRateByUserId(id);
+    //**********************//
+    //   GENERATE DATA      //
+    //**********************//
+
+    @PostMapping("/generateData")
+    public String generateMusicCityData() {
+        musicService.generateRandomData();
+        return "Data has been generated";
     }
 }
 
