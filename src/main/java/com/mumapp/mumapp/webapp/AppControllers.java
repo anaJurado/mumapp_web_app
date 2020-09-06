@@ -1,23 +1,23 @@
 package com.mumapp.mumapp.webapp;
 
 import com.mumapp.mumapp.city.City;
+import com.mumapp.mumapp.city.CityService;
 import com.mumapp.mumapp.imageservice.ImageService;
 import com.mumapp.mumapp.music.Music;
+import com.mumapp.mumapp.music.MusicService;
+import com.mumapp.mumapp.user.User;
 import com.mumapp.mumapp.user.UserComponent;
 import com.mumapp.mumapp.user.UserRepository;
-import com.mumapp.mumapp.city.CityService;
-import com.mumapp.mumapp.music.MusicService;
 import com.mumapp.mumapp.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import com.mumapp.mumapp.user.User;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
-import java.util.*;
+import java.util.Optional;
 
 @Controller
 public class AppControllers {
@@ -118,10 +118,11 @@ public class AppControllers {
         return "updateUserForm";
     }
 
+    // TODO
+    // SAVEUSER doesnt work properly. I need a DTO class to manage user BUT I don't know hot to do it
     @PostMapping("/saveUser")
     public String saveUser(Model model, User user, HttpServletRequest request) {
 
-        System.out.println("holaaaaaa");
         // IF NEW USER
         if (user.getId() == Long.valueOf(0)) {
             String firstName = user.getFirstName();
@@ -130,33 +131,6 @@ public class AppControllers {
             String email = user.getEmail();
             String pass = user.getPasswordHash();
             userRepository.save(new User(firstName, lastName, name, email, pass, "ROLE_USER"));
-        } else {
-
-            int x = 5;
-
-/*            Music someArray=[];
-            Set<Music> myMusicSet = new HashSet<>(Arrays.asList(someArray));*/
-
-            /*userRepository.save(user);*/
-
-
-
-            /*
-            Long updated_user_id = user.getId();
-            Optional<User> updated_user = userRepository.findById(updated_user_id);
-            Set<Music> music_set = userRepository.findById(updated_user_id).getMusicSet();
-            Set<City> city_set = userRepository.findById(updated_user_id).getCitySet();
-            List<String> roles = userRepository.findById(updated_user_id).getRoles();
-
-            user.setMusicSet(music_set);
-            user.setCitySet(city_set);
-            user.setRoles(roles);
-
-            Set<Music> updated_user_music_set = user.getMusicSet();
-            Set<City> updated_user_city_set = user.getCitySet();
-            Model a = model;
-            */
-
         }
 
         return "info_updated";
@@ -203,7 +177,7 @@ public class AppControllers {
     public String updateMusic(Model model, @PathVariable long id) {
 
         Optional<Music> music = (musicService.findById(id));
-        if(music.isPresent()) {
+        if (music.isPresent()) {
             model.addAttribute("music", music.get());
         }
         return "updateMusicForm";
@@ -236,7 +210,7 @@ public class AppControllers {
     public String updateCity(Model model, @PathVariable long id) {
 
         Optional<City> city = (cityService.findById(id));
-        if(city.isPresent()) {
+        if (city.isPresent()) {
             model.addAttribute("city", city.get());
         }
         return "updateCityForm";
@@ -261,13 +235,13 @@ public class AppControllers {
 
     // PROFILE VIEW
     @GetMapping("/profile")
-    public String profileView(Model model){
+    public String profileView(Model model) {
         Long id = userComponent.getLoggedUser().getId();
 
         //USER INFO
         Optional<User> user = userRepository.findById(id);
 
-        if(user.isPresent()) {
+        if (user.isPresent()) {
             model.addAttribute("user", user.get());
             model.addAttribute("userMusic", user.get().getMusicSet());
             model.addAttribute("userCity", user.get().getCitySet());
@@ -284,7 +258,7 @@ public class AppControllers {
 
     // DASHBOARD VIEW
     @GetMapping("/dashboard")
-    public String dashboardView(Model model){
+    public String dashboardView(Model model) {
         Long id;
         id = userComponent.getLoggedUser().getId();
 

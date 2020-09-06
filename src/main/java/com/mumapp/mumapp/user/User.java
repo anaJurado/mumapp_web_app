@@ -122,20 +122,6 @@ public class User {
         this.roles = roles;
     }
 
-/*
-    public Set<Long> citySetIds{
-        get {
-            return citySet.toArray().map(city -> city.id);
-        }
-    }
-
-    public Set<Long> musicSetIds {
-        get {
-            return musicSet.toArray().map(music -> music.id);
-        }
-    }
-*/
-
     public Set<Music> getMusicSet() {
         return musicSet;
     }

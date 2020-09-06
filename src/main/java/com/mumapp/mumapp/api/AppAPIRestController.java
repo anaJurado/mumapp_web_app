@@ -64,6 +64,8 @@ public class AppAPIRestController {
         return userRepository.findById(id);
     }
 
+    // TODO
+    // updatedUser doesnt work properly. I need a DTO class to manage user BUT I don't know hot to do it
     @PutMapping("/user/{id}")
     public User updateUserById(@PathVariable long id, @RequestBody User updatedUser) {
         userRepository.findById(id).getId(); //Returns with 404 if not found in database
@@ -85,12 +87,12 @@ public class AppAPIRestController {
 
     @GetMapping("/user/{id}/city")
     public Set<City> getUserCity(@PathVariable long id) {
-        return (Set<City>) userRepository.findById(id).getCitySet();
+        return userRepository.findById(id).getCitySet();
     }
 
     @GetMapping("user/{id}/music")
     public Set<Music> getUserMusic(@PathVariable long id) {
-        return (Set<Music>) userRepository.findById(id).getMusicSet();
+        return userRepository.findById(id).getMusicSet();
     }
 
     //***********//
@@ -209,7 +211,7 @@ public class AppAPIRestController {
     //**********************//
 
     @GetMapping("/world/popularity/pagination")
-    public Page<Object> getPopularityPagination(Pageable page){
+    public Page<Object> getPopularityPagination(Pageable page) {
         return musicService.findPopularityPagination(page);
     }
 

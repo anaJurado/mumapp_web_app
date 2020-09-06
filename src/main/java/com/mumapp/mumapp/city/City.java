@@ -23,7 +23,8 @@ public class City {
     private Set<MusicCity> musicCitySet;
 
 
-    public City() {}
+    public City() {
+    }
 
     public City(String cityName, String country, String continent) {
         this.cityName = cityName;

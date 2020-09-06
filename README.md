@@ -185,6 +185,6 @@ In **AppAPIRestController.java**:
 ```
     
 ### logout
-
+Logout functionality doesn't work properly. Once you clicked in logout you can comeback to yout user profile typing the url so it seem that the session doesn't finished properly.
 
 ---

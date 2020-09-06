@@ -2,9 +2,7 @@ package com.mumapp.mumapp.music;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -41,18 +39,18 @@ public class MusicService {
     }
 
     @Transactional
-    public void getData(){
+    public void getData() {
         musicRepository.truncateMusicCity();
         musicRepository.crossJoinMusicCity();
         musicRepository.randomData();
     }
 
-    public int findByMusicIdAndCityId(long musicId, long cityId){
+    public int findByMusicIdAndCityId(long musicId, long cityId) {
         return musicRepository.findByMusicIdAndCityId(musicId, cityId);
     }
 
     public Page<Object> findPopularityRateByUserIdPagination(long id, Pageable page) {
-        return musicRepository.findPopularityRateByUserIdPagination(id,page);
+        return musicRepository.findPopularityRateByUserIdPagination(id, page);
     }
 
     public Page<Object> findPopularityPagination(Pageable page) {

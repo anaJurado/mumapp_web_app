@@ -12,14 +12,16 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     public UserRepositoryAuthProvider userRepoAuthProvider;
 
-/*  // FOR TESTING WITH POSTMAN
-    @Override
-    protected void configure(HttpSecurity http) throws Exception {
-        http       //other configure params.
-                .csrf().disable();
-    }
+    /*
 
-*/
+        // FOR TESTING WITH POSTMAN
+        @Override
+        protected void configure(HttpSecurity http) throws Exception {
+            http       //other configure params.
+                    .csrf().disable();
+        }
+
+    */
     @Override
     protected void configure(HttpSecurity http) throws Exception {
 
@@ -46,7 +48,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
         http.authorizeRequests().antMatchers("/saveMusic").hasAnyRole("ADMIN", "USER");
         http.authorizeRequests().antMatchers("/music/{id}").hasAnyRole("ADMIN", "USER");
-        
+
         http.authorizeRequests().antMatchers("/newCity").hasAnyRole("ADMIN");
         http.authorizeRequests().antMatchers("/deleteCity/{id}").hasAnyRole("ADMIN");
 
