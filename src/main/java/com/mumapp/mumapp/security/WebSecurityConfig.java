@@ -12,16 +12,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     public UserRepositoryAuthProvider userRepoAuthProvider;
 
-    /*
 
-        // FOR TESTING WITH POSTMAN
-        @Override
-        protected void configure(HttpSecurity http) throws Exception {
-            http       //other configure params.
-                    .csrf().disable();
-        }
+    // FOR TESTING WITH POSTMAN. Please, comment this method and uncomment the next one when not testing API.
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http       //other configure params.
+                .csrf().disable();
+    }
 
-    */
+/*
     @Override
     protected void configure(HttpSecurity http) throws Exception {
 
@@ -68,6 +67,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.logout().logoutSuccessUrl("/");
     }
 
+ */
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         // Database authentication provider
