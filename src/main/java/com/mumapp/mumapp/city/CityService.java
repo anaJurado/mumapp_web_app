@@ -27,7 +27,7 @@ public class CityService {
     }
 
     @Transactional
-    public void deleteCityById(long id) {
+    public void deleteById(long id) {
         cityRepository.deleteCityUser(id);
         cityRepository.deleteCityMusicCity(id);
         cityRepository.deleteById(id);

@@ -2,10 +2,8 @@ package com.mumapp.mumapp.api;
 
 
 import com.mumapp.mumapp.city.City;
-import com.mumapp.mumapp.city.CityRepository;
 import com.mumapp.mumapp.city.CityService;
 import com.mumapp.mumapp.music.Music;
-import com.mumapp.mumapp.music.MusicRepository;
 import com.mumapp.mumapp.music.MusicService;
 import com.mumapp.mumapp.user.User;
 import com.mumapp.mumapp.user.UserService;
@@ -31,13 +29,9 @@ public class AppAPIRestController {
 
     @Autowired
     private MusicService musicService;
-    @Autowired
-    private MusicRepository musicRepository;
 
     @Autowired
     private CityService cityService;
-    @Autowired
-    private CityRepository cityRepository;
 
 
     //**********//
@@ -111,6 +105,7 @@ public class AppAPIRestController {
 
     @GetMapping("/music/{id}")
     public Optional<Music> getMusicById(@PathVariable long id) {
+
         return musicService.findById(id);
     }
 
@@ -147,7 +142,6 @@ public class AppAPIRestController {
     //   CITY   //
     //***********//
 
-    // GET ALL
     @GetMapping("/city/all")
     public List<City> getAllCity() {
         return cityService.findAll();
@@ -163,16 +157,6 @@ public class AppAPIRestController {
         return cityService.findAll().stream().map(city -> city.getId()).collect(Collectors.toList());
     }
 
-    // POST
-    @PostMapping("/city")
-    @ResponseStatus(HttpStatus.CREATED)
-    public City createCity(@RequestBody City city) {
-        cityService.save(city);
-        System.out.println(city.getId());
-        return city;
-    }
-
-    // GET/DELETE/PUT city/{id}
     @GetMapping("/city/{id}")
     public Optional<City> getCityById(@PathVariable long id) {
         return cityService.findById(id);
@@ -181,6 +165,14 @@ public class AppAPIRestController {
     @GetMapping("/city/name/{name}")
     public Optional<City> getCityByName(@PathVariable String name) {
         return cityService.findByCityName(name);
+    }
+
+    @PostMapping("/city")
+    @ResponseStatus(HttpStatus.CREATED)
+    public City createCity(@RequestBody City city) {
+        cityService.save(city);
+        System.out.println(city.getId());
+        return city;
     }
 
     @PutMapping("/city/{id}")
@@ -195,9 +187,10 @@ public class AppAPIRestController {
     @DeleteMapping("/city/{id}")
     public Optional<City> deleteCityById(@PathVariable long id) {
         Optional<City> deletedCity = cityService.findById(id);
-        cityRepository.deleteCityUser(id);
-        cityRepository.deleteCityMusicCity(id);
-        cityRepository.deleteById(id);
+        cityService.deleteById(id);
+//        cityRepository.deleteCityUser(id);
+//        cityRepository.deleteCityMusicCity(id);
+//        cityRepository.deleteById(id);
         return deletedCity;
     }
 
