@@ -188,3 +188,16 @@ In **AppAPIRestController.java**:
 Logout functionality doesn't work properly. Once you clicked in logout you can comeback to yout user profile typing the url so it seem that the session doesn't finished properly.
 
 ---
+
+## FASE 3
+### API
+The API class was created in the previous fase but in this fase I have updated it and make sure that AppController and AppAPIRestController were using the Service layer to avoid duplicated code.
+In this link you can find the API documentation.
+
+[API Postman Collection](documents/api.postman_collection.json)
+
+**Note:** In order to be able to test the API in POSTMAN I had to disable the CSFR protection and the HTPPS.
+I had problem creating the Security certificate and this app is using a local made certificate so that gives some problems.
+
+![](documents/keytool_certificate_problems_1.png) 
+![](documents/keytool_certificate_problems_2.png) 

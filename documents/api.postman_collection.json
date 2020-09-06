@@ -1,0 +1,3104 @@
+{
+	"info": {
+		"_postman_id": "edadb509-a391-4fad-b01d-52827e669a47",
+		"name": "api.postman_collection.json",
+		"description": "Mummap app API collection.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET - http://localhost:8443/api/user/all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8443/api/user/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"user",
+						"all"
+					]
+				},
+				"description": "Get all registered and admin users info"
+			},
+			"response": [
+				{
+					"name": "http://localhost:8443/api/user/all",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8443/api/user/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"api",
+								"user",
+								"all"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 06 Sep 2020 13:57:02 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 51,\n        \"firstName\": \"admin_First\",\n        \"lastName\": \"admin_Last\",\n        \"name\": \"admin\",\n        \"email\": \"admin@mumapp.not\",\n        \"roles\": [\n            \"ROLE_ADMIN\",\n            \"ROLE_USER\"\n        ],\n        \"musicSet\": [\n            {\n                \"id\": 5,\n                \"styleName\": \"r and b\"\n            },\n            {\n                \"id\": 20,\n                \"styleName\": \"urban\"\n            },\n            {\n                \"id\": 21,\n                \"styleName\": \"disco\"\n            },\n            {\n                \"id\": 24,\n                \"styleName\": \"acoustic\"\n            }\n        ],\n        \"citySet\": [\n            {\n                \"id\": 29,\n                \"cityName\": \"helsinki\",\n                \"country\": \"finland\",\n                \"continent\": \"europe\"\n            },\n            {\n                \"id\": 41,\n                \"cityName\": \"shanghai\",\n                \"country\": \"china\",\n                \"continent\": \"asia\"\n            },\n            {\n                \"id\": 44,\n                \"cityName\": \"cape town\",\n                \"country\": \"south africa\",\n                \"continent\": \"africa\"\n            },\n            {\n                \"id\": 35,\n                \"cityName\": \"mexico city\",\n                \"country\": \"mexico\",\n                \"continent\": \"america\"\n            }\n        ]\n    },\n    {\n        \"id\": 52,\n        \"firstName\": \"admin2\",\n        \"lastName\": \"admin2\",\n        \"name\": \"admin2\",\n        \"email\": \"admin2@mumapp.not\",\n        \"roles\": [\n            \"ROLE_ADMIN\",\n            \"ROLE_USER\"\n        ],\n        \"musicSet\": [\n            {\n                \"id\": 22,\n                \"styleName\": \"singer-songwriter\"\n            },\n            {\n                \"id\": 19,\n                \"styleName\": \"electronic\"\n            },\n            {\n                \"id\": 2,\n                \"styleName\": \"blues\"\n            }\n        ],\n        \"citySet\": [\n            {\n                \"id\": 31,\n                \"cityName\": \"amsterdam\",\n                \"country\": \"netherlands\",\n                \"continent\": \"europe\"\n            },\n            {\n                \"id\": 27,\n                \"cityName\": \"barcelona\",\n                \"country\": \"spain\",\n                \"continent\": \"europe\"\n            },\n            {\n                \"id\": 28,\n                \"cityName\": \"rome\",\n                \"country\": \"italy\",\n                \"continent\": \"europe\"\n            }\n        ]\n    },\n    {\n        \"id\": 53,\n        \"firstName\": \"ana\",\n        \"lastName\": \"j\",\n        \"name\": \"anita\",\n        \"email\": \"ana@mumapp.not\",\n        \"roles\": [\n            \"ROLE_USER\"\n        ],\n        \"musicSet\": [\n            {\n                \"id\": 5,\n                \"styleName\": \"r and b\"\n            },\n            {\n                \"id\": 14,\n                \"styleName\": \"classical\"\n            },\n            {\n                \"id\": 1,\n                \"styleName\": \"jazz\"\n            },\n            {\n                \"id\": 3,\n                \"styleName\": \"funk\"\n            },\n            {\n                \"id\": 4,\n                \"styleName\": \"soul\"\n            }\n        ],\n        \"citySet\": [\n            {\n                \"id\": 45,\n                \"cityName\": \"cairo\",\n                \"country\": \"egypt\",\n                \"continent\": \"africa\"\n            },\n            {\n                \"id\": 32,\n                \"cityName\": \"new york\",\n                \"country\": \"usa\",\n                \"continent\": \"america\"\n            },\n            {\n                \"id\": 48,\n                \"cityName\": \"sidney\",\n                \"country\": \"australia\",\n                \"continent\": \"oceania\"\n            },\n            {\n                \"id\": 30,\n                \"cityName\": \"dublin\",\n                \"country\": \"ireland\",\n                \"continent\": \"europe\"\n            },\n            {\n                \"id\": 26,\n                \"cityName\": \"madrid\",\n                \"country\": \"spain\",\n                \"continent\": \"europe\"\n            }\n        ]\n    },\n    {\n        \"id\": 54,\n        \"firstName\": \"maria\",\n        \"lastName\": \"k\",\n        \"name\": \"maria\",\n        \"email\": \"mimi@mumapp.not\",\n        \"roles\": [\n            \"ROLE_USER\"\n        ],\n        \"musicSet\": [\n            {\n                \"id\": 1,\n                \"styleName\": \"jazz\"\n            },\n            {\n                \"id\": 15,\n                \"styleName\": \"tv and film\"\n            },\n            {\n                \"id\": 6,\n                \"styleName\": \"latin\"\n            },\n            {\n                \"id\": 10,\n                \"styleName\": \"metal\"\n            },\n            {\n                \"id\": 12,\n                \"styleName\": \"country\"\n            },\n            {\n                \"id\": 7,\n                \"styleName\": \"indie\"\n            },\n            {\n                \"id\": 9,\n                \"styleName\": \"rock\"\n            },\n            {\n                \"id\": 13,\n                \"styleName\": \"trap\"\n            },\n            {\n                \"id\": 11,\n                \"styleName\": \"punk\"\n            },\n            {\n                \"id\": 8,\n                \"styleName\": \"pop\"\n            }\n        ],\n        \"citySet\": [\n            {\n                \"id\": 37,\n                \"cityName\": \"santiago\",\n                \"country\": \"chile\",\n                \"continent\": \"america\"\n            },\n            {\n                \"id\": 36,\n                \"cityName\": \"buenos aires\",\n                \"country\": \"argentina\",\n                \"continent\": \"america\"\n            },\n            {\n                \"id\": 38,\n                \"cityName\": \"tokyo\",\n                \"country\": \"japan\",\n                \"continent\": \"asia\"\n            }\n        ]\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "POST - http://localhost:8443/api/user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"firstName\": \"new_admin\",\n        \"lastName\": \"new_admin_Last\",\n        \"name\": \"new_admin_new\",\n        \"email\": \"new_admin@mumapp.not\",\n        \"roles\": [\n            \"ROLE_ADMIN\",\n            \"ROLE_USER\"\n        ],\n        \"musicSet\": [\n            {\n                \"id\": 5,\n                \"styleName\": \"r and b\"\n            },\n            {\n                \"id\": 20,\n                \"styleName\": \"urban\"\n            }\n        ],\n        \"citySet\": [\n            {\n                \"id\": 29,\n                \"cityName\": \"helsinki\",\n                \"country\": \"finland\",\n                \"continent\": \"europe\"\n            },\n            {\n                \"id\": 44,\n                \"cityName\": \"cape town\",\n                \"country\": \"south africa\",\n                \"continent\": \"africa\"\n            }\n        ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8443/api/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"user"
+					]
+				},
+				"description": "Create a new user (new_admin)"
+			},
+			"response": [
+				{
+					"name": "POST - http://localhost:8443/api/user",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"firstName\": \"new_admin\",\n        \"lastName\": \"new_admin_Last\",\n        \"name\": \"new_admin_new\",\n        \"email\": \"new_admin@mumapp.not\",\n        \"roles\": [\n            \"ROLE_ADMIN\",\n            \"ROLE_USER\"\n        ],\n        \"musicSet\": [\n            {\n                \"id\": 5,\n                \"styleName\": \"r and b\"\n            },\n            {\n                \"id\": 20,\n                \"styleName\": \"urban\"\n            }\n        ],\n        \"citySet\": [\n            {\n                \"id\": 29,\n                \"cityName\": \"helsinki\",\n                \"country\": \"finland\",\n                \"continent\": \"europe\"\n            },\n            {\n                \"id\": 44,\n                \"cityName\": \"cape town\",\n                \"country\": \"south africa\",\n                \"continent\": \"africa\"\n            }\n        ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8443/api/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"api",
+								"user"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 06 Sep 2020 14:03:12 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 0,\n    \"firstName\": \"new_admin\",\n    \"lastName\": \"new_admin_Last\",\n    \"name\": \"new_admin_new\",\n    \"email\": \"new_admin@mumapp.not\",\n    \"roles\": [\n        \"ROLE_ADMIN\",\n        \"ROLE_USER\"\n    ],\n    \"musicSet\": [\n        {\n            \"id\": 5,\n            \"styleName\": \"r and b\"\n        },\n        {\n            \"id\": 20,\n            \"styleName\": \"urban\"\n        }\n    ],\n    \"citySet\": [\n        {\n            \"id\": 29,\n            \"cityName\": \"helsinki\",\n            \"country\": \"finland\",\n            \"continent\": \"europe\"\n        },\n        {\n            \"id\": 44,\n            \"cityName\": \"cape town\",\n            \"country\": \"south africa\",\n            \"continent\": \"africa\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "GET - http://localhost:8443/api/user/53",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8443/api/user/53",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"user",
+						"53"
+					]
+				},
+				"description": "Get info user by id"
+			},
+			"response": [
+				{
+					"name": "GET - http://localhost:8443/api/user/53",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8443/api/user/53",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"api",
+								"user",
+								"53"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 06 Sep 2020 14:04:44 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 53,\n    \"firstName\": \"ana\",\n    \"lastName\": \"j\",\n    \"name\": \"anita\",\n    \"email\": \"ana@mumapp.not\",\n    \"roles\": [\n        \"ROLE_USER\"\n    ],\n    \"musicSet\": [\n        {\n            \"id\": 14,\n            \"styleName\": \"classical\"\n        },\n        {\n            \"id\": 1,\n            \"styleName\": \"jazz\"\n        },\n        {\n            \"id\": 4,\n            \"styleName\": \"soul\"\n        },\n        {\n            \"id\": 3,\n            \"styleName\": \"funk\"\n        },\n        {\n            \"id\": 5,\n            \"styleName\": \"r and b\"\n        }\n    ],\n    \"citySet\": [\n        {\n            \"id\": 26,\n            \"cityName\": \"madrid\",\n            \"country\": \"spain\",\n            \"continent\": \"europe\"\n        },\n        {\n            \"id\": 30,\n            \"cityName\": \"dublin\",\n            \"country\": \"ireland\",\n            \"continent\": \"europe\"\n        },\n        {\n            \"id\": 45,\n            \"cityName\": \"cairo\",\n            \"country\": \"egypt\",\n            \"continent\": \"africa\"\n        },\n        {\n            \"id\": 48,\n            \"cityName\": \"sidney\",\n            \"country\": \"australia\",\n            \"continent\": \"oceania\"\n        },\n        {\n            \"id\": 32,\n            \"cityName\": \"new york\",\n            \"country\": \"usa\",\n            \"continent\": \"america\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "PUT - http://localhost:8443/api/user/55",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 55,\n    \"firstName\": \"abc\",\n    \"lastName\": \"xyz\",\n    \"name\": \"new_admin_new\",\n    \"email\": \"new_admin@mumapp.not\",\n    \"roles\": [\n        \"ROLE_ADMIN\",\n        \"ROLE_USER\"\n    ],\n    \"musicSet\": [\n        {\n            \"id\": 8,\n            \"styleName\": \"pop\"\n        },\n        {\n            \"id\": 20,\n            \"styleName\": \"urban\"\n        }\n    ],\n    \"citySet\": [\n        {\n            \"id\": 29,\n            \"cityName\": \"helsinki\",\n            \"country\": \"finland\",\n            \"continent\": \"europe\"\n        },\n        {\n            \"id\": 30,\n            \"cityName\": \"dublin\",\n            \"country\": \"ireland\",\n            \"continent\": \"europe\"\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8443/api/user/55",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"user",
+						"55"
+					]
+				},
+				"description": "Update user info (updated first name, last name, one music style and one city)"
+			},
+			"response": [
+				{
+					"name": "http://localhost:8443/api/user/55",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 55,\n    \"firstName\": \"abc\",\n    \"lastName\": \"xyz\",\n    \"name\": \"new_admin_new\",\n    \"email\": \"new_admin@mumapp.not\",\n    \"roles\": [\n        \"ROLE_ADMIN\",\n        \"ROLE_USER\"\n    ],\n    \"musicSet\": [\n        {\n            \"id\": 8,\n            \"styleName\": \"pop\"\n        },\n        {\n            \"id\": 20,\n            \"styleName\": \"urban\"\n        }\n    ],\n    \"citySet\": [\n        {\n            \"id\": 29,\n            \"cityName\": \"helsinki\",\n            \"country\": \"finland\",\n            \"continent\": \"europe\"\n        },\n        {\n            \"id\": 30,\n            \"cityName\": \"dublin\",\n            \"country\": \"ireland\",\n            \"continent\": \"europe\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8443/api/user/55",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"api",
+								"user",
+								"55"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 06 Sep 2020 14:08:16 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 55,\n    \"firstName\": \"abc\",\n    \"lastName\": \"xyz\",\n    \"name\": \"new_admin_new\",\n    \"email\": \"new_admin@mumapp.not\",\n    \"roles\": [\n        \"ROLE_ADMIN\",\n        \"ROLE_USER\"\n    ],\n    \"musicSet\": [\n        {\n            \"id\": 20,\n            \"styleName\": \"urban\"\n        },\n        {\n            \"id\": 8,\n            \"styleName\": \"pop\"\n        }\n    ],\n    \"citySet\": [\n        {\n            \"id\": 29,\n            \"cityName\": \"helsinki\",\n            \"country\": \"finland\",\n            \"continent\": \"europe\"\n        },\n        {\n            \"id\": 30,\n            \"cityName\": \"dublin\",\n            \"country\": \"ireland\",\n            \"continent\": \"europe\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "DELETE - http://localhost:8443/api/user/55",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8443/api/user/55",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"user",
+						"55"
+					]
+				},
+				"description": "Delete user by id"
+			},
+			"response": [
+				{
+					"name": "DELETE - http://localhost:8443/api/user/55",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8443/api/user/55",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"api",
+								"user",
+								"55"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 06 Sep 2020 14:35:15 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 55,\n    \"firstName\": \"abc\",\n    \"lastName\": \"xyz\",\n    \"name\": \"new_admin_new\",\n    \"email\": \"new_admin@mumapp.not\",\n    \"roles\": [\n        \"ROLE_ADMIN\",\n        \"ROLE_USER\"\n    ],\n    \"musicSet\": [],\n    \"citySet\": []\n}"
+				}
+			]
+		},
+		{
+			"name": "GET -  http://localhost:8443/api/user/55/city",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8443/api/user/53/music",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"user",
+						"53",
+						"music"
+					]
+				},
+				"description": "Get user_music by user id"
+			},
+			"response": [
+				{
+					"name": "DELETE - http://localhost:8443/api/user/55",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8443/api/user/55",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"api",
+								"user",
+								"55"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 06 Sep 2020 14:35:15 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 55,\n    \"firstName\": \"abc\",\n    \"lastName\": \"xyz\",\n    \"name\": \"new_admin_new\",\n    \"email\": \"new_admin@mumapp.not\",\n    \"roles\": [\n        \"ROLE_ADMIN\",\n        \"ROLE_USER\"\n    ],\n    \"musicSet\": [],\n    \"citySet\": []\n}"
+				},
+				{
+					"name": "GET -  http://localhost:8443/api/user/55/music",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8443/api/user/53/music",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"api",
+								"user",
+								"53",
+								"music"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 06 Sep 2020 14:36:14 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 3,\n        \"styleName\": \"funk\"\n    },\n    {\n        \"id\": 5,\n        \"styleName\": \"r and b\"\n    },\n    {\n        \"id\": 4,\n        \"styleName\": \"soul\"\n    },\n    {\n        \"id\": 14,\n        \"styleName\": \"classical\"\n    },\n    {\n        \"id\": 1,\n        \"styleName\": \"jazz\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "GET -  http://localhost:8443/api/user/55/city",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8443/api/user/53/city",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"user",
+						"53",
+						"city"
+					]
+				},
+				"description": "Get user_city by user id"
+			},
+			"response": [
+				{
+					"name": "GET -  http://localhost:8443/api/user/55/music",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8443/api/user/53/music",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"api",
+								"user",
+								"53",
+								"music"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 06 Sep 2020 14:36:14 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 3,\n        \"styleName\": \"funk\"\n    },\n    {\n        \"id\": 5,\n        \"styleName\": \"r and b\"\n    },\n    {\n        \"id\": 4,\n        \"styleName\": \"soul\"\n    },\n    {\n        \"id\": 14,\n        \"styleName\": \"classical\"\n    },\n    {\n        \"id\": 1,\n        \"styleName\": \"jazz\"\n    }\n]"
+				},
+				{
+					"name": "DELETE - http://localhost:8443/api/user/55",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8443/api/user/55",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"api",
+								"user",
+								"55"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 06 Sep 2020 14:35:15 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 55,\n    \"firstName\": \"abc\",\n    \"lastName\": \"xyz\",\n    \"name\": \"new_admin_new\",\n    \"email\": \"new_admin@mumapp.not\",\n    \"roles\": [\n        \"ROLE_ADMIN\",\n        \"ROLE_USER\"\n    ],\n    \"musicSet\": [],\n    \"citySet\": []\n}"
+				},
+				{
+					"name": "GET -  http://localhost:8443/api/user/55/city",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8443/api/user/53/city",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"api",
+								"user",
+								"53",
+								"city"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 06 Sep 2020 14:37:13 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 30,\n        \"cityName\": \"dublin\",\n        \"country\": \"ireland\",\n        \"continent\": \"europe\"\n    },\n    {\n        \"id\": 48,\n        \"cityName\": \"sidney\",\n        \"country\": \"australia\",\n        \"continent\": \"oceania\"\n    },\n    {\n        \"id\": 32,\n        \"cityName\": \"new york\",\n        \"country\": \"usa\",\n        \"continent\": \"america\"\n    },\n    {\n        \"id\": 26,\n        \"cityName\": \"madrid\",\n        \"country\": \"spain\",\n        \"continent\": \"europe\"\n    },\n    {\n        \"id\": 45,\n        \"cityName\": \"cairo\",\n        \"country\": \"egypt\",\n        \"continent\": \"africa\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "GET - http://localhost:8443/api/music/all/style",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8443/api/music/all/style",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"music",
+						"all",
+						"style"
+					]
+				},
+				"description": "Get all music styles list"
+			},
+			"response": [
+				{
+					"name": "GET - http://localhost:8443/api/music/all/style",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8443/api/music/all/style",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"api",
+								"music",
+								"all",
+								"style"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 06 Sep 2020 15:00:12 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    \"jazz\",\n    \"blues\",\n    \"funk\",\n    \"soul\",\n    \"r and b\",\n    \"latin\",\n    \"indie\",\n    \"pop\",\n    \"rock\",\n    \"metal\",\n    \"punk\",\n    \"country\",\n    \"trap\",\n    \"classical\",\n    \"tv and film\",\n    \"romantic\",\n    \"bolero\",\n    \"cumbia\",\n    \"electronic\",\n    \"urban\",\n    \"disco\",\n    \"singer-songwriter\",\n    \"cover\",\n    \"acoustic\",\n    \"bossa-nova\",\n    \"black metal\"\n]"
+				}
+			]
+		},
+		{
+			"name": "GET - http://localhost:8443/api/music/all/id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8443/api/music/all/id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"music",
+						"all",
+						"id"
+					]
+				},
+				"description": "Get a list of all music ids"
+			},
+			"response": [
+				{
+					"name": "GET - http://localhost:8443/api/music/all/id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8443/api/music/all/id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"api",
+								"music",
+								"all",
+								"id"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 06 Sep 2020 15:00:57 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    1,\n    2,\n    3,\n    4,\n    5,\n    6,\n    7,\n    8,\n    9,\n    10,\n    11,\n    12,\n    13,\n    14,\n    15,\n    16,\n    17,\n    18,\n    19,\n    20,\n    21,\n    22,\n    23,\n    24,\n    25,\n    56\n]"
+				}
+			]
+		},
+		{
+			"name": "GET - http://localhost:8443/api/music/1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8443/api/music/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"music",
+						"1"
+					]
+				},
+				"description": "Get music by id"
+			},
+			"response": [
+				{
+					"name": "GET - http://localhost:8443/api/music/all/id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8443/api/music/all/id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"api",
+								"music",
+								"all",
+								"id"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 06 Sep 2020 15:00:57 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    1,\n    2,\n    3,\n    4,\n    5,\n    6,\n    7,\n    8,\n    9,\n    10,\n    11,\n    12,\n    13,\n    14,\n    15,\n    16,\n    17,\n    18,\n    19,\n    20,\n    21,\n    22,\n    23,\n    24,\n    25,\n    56\n]"
+				},
+				{
+					"name": "GET - http://localhost:8443/api/music/1",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8443/api/music/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"api",
+								"music",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 06 Sep 2020 15:04:20 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"styleName\": \"jazz\"\n}"
+				}
+			]
+		},
+		{
+			"name": "GET - http://localhost:8443/api/music/style/jazz",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8443/api/music/style/jazz",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"music",
+						"style",
+						"jazz"
+					]
+				},
+				"description": "Get music by style name"
+			},
+			"response": [
+				{
+					"name": "GET - http://localhost:8443/api/music/1",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8443/api/music/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"api",
+								"music",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 06 Sep 2020 15:04:20 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"styleName\": \"jazz\"\n}"
+				},
+				{
+					"name": "GET - http://localhost:8443/api/music/all/id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8443/api/music/all/id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"api",
+								"music",
+								"all",
+								"id"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 06 Sep 2020 15:00:57 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    1,\n    2,\n    3,\n    4,\n    5,\n    6,\n    7,\n    8,\n    9,\n    10,\n    11,\n    12,\n    13,\n    14,\n    15,\n    16,\n    17,\n    18,\n    19,\n    20,\n    21,\n    22,\n    23,\n    24,\n    25,\n    56\n]"
+				},
+				{
+					"name": "GET - http://localhost:8443/api/music/style/jazz",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8443/api/music/style/jazz",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"api",
+								"music",
+								"style",
+								"jazz"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 06 Sep 2020 15:05:25 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"styleName\": \"jazz\"\n}"
+				}
+			]
+		},
+		{
+			"name": "POST - http://localhost:8443/api/music",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"styleName\": \"black metal\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8443/api/music",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"music"
+					]
+				},
+				"description": "Create a new music entity"
+			},
+			"response": [
+				{
+					"name": "POST - http://localhost:8443/api/music",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"styleName\": \"black metal\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8443/api/music",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"api",
+								"music"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 06 Sep 2020 15:06:58 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 0,\n    \"styleName\": \"black metal\"\n}"
+				}
+			]
+		},
+		{
+			"name": "PUT - http://localhost:8443/api/music/57",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"styleName\": \"hard metal\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8443/api/music/57",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"music",
+						"57"
+					]
+				},
+				"description": "Update music by id (from \"black metal\", to \"hard metal)"
+			},
+			"response": [
+				{
+					"name": "PUT - http://localhost:8443/api/music/57",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"styleName\": \"hard metal\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8443/api/music/57",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"api",
+								"music",
+								"57"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 06 Sep 2020 15:09:10 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 57,\n    \"styleName\": \"hard metal\"\n}"
+				}
+			]
+		},
+		{
+			"name": "DELETE - http://localhost:8443/api/music/56",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8443/api/music/56",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"music",
+						"56"
+					]
+				},
+				"description": "Delete music by id"
+			},
+			"response": [
+				{
+					"name": "DELETE - http://localhost:8443/api/music/56",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8443/api/music/56",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"api",
+								"music",
+								"56"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 06 Sep 2020 15:15:04 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 56,\n    \"styleName\": \"black metal\"\n}"
+				}
+			]
+		},
+		{
+			"name": "GET - http://localhost:8443/api/city/all",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8443/api/city/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"city",
+						"all"
+					]
+				},
+				"description": "Get all cities"
+			},
+			"response": [
+				{
+					"name": "GET - http://localhost:8443/api/city/all",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8443/api/city/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"api",
+								"city",
+								"all"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 06 Sep 2020 15:26:45 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 26,\n        \"cityName\": \"madrid\",\n        \"country\": \"spain\",\n        \"continent\": \"europe\"\n    },\n    {\n        \"id\": 27,\n        \"cityName\": \"barcelona\",\n        \"country\": \"spain\",\n        \"continent\": \"europe\"\n    },\n    {\n        \"id\": 28,\n        \"cityName\": \"rome\",\n        \"country\": \"italy\",\n        \"continent\": \"europe\"\n    },\n    {\n        \"id\": 29,\n        \"cityName\": \"helsinki\",\n        \"country\": \"finland\",\n        \"continent\": \"europe\"\n    },\n    {\n        \"id\": 30,\n        \"cityName\": \"dublin\",\n        \"country\": \"ireland\",\n        \"continent\": \"europe\"\n    },\n    {\n        \"id\": 31,\n        \"cityName\": \"amsterdam\",\n        \"country\": \"netherlands\",\n        \"continent\": \"europe\"\n    },\n    {\n        \"id\": 32,\n        \"cityName\": \"new york\",\n        \"country\": \"usa\",\n        \"continent\": \"america\"\n    },\n    {\n        \"id\": 33,\n        \"cityName\": \"l.a.\",\n        \"country\": \"usa\",\n        \"continent\": \"america\"\n    },\n    {\n        \"id\": 34,\n        \"cityName\": \"vancouver\",\n        \"country\": \"canada\",\n        \"continent\": \"america\"\n    },\n    {\n        \"id\": 35,\n        \"cityName\": \"mexico city\",\n        \"country\": \"mexico\",\n        \"continent\": \"america\"\n    },\n    {\n        \"id\": 36,\n        \"cityName\": \"buenos aires\",\n        \"country\": \"argentina\",\n        \"continent\": \"america\"\n    },\n    {\n        \"id\": 37,\n        \"cityName\": \"santiago\",\n        \"country\": \"chile\",\n        \"continent\": \"america\"\n    },\n    {\n        \"id\": 38,\n        \"cityName\": \"tokyo\",\n        \"country\": \"japan\",\n        \"continent\": \"asia\"\n    },\n    {\n        \"id\": 39,\n        \"cityName\": \"manila\",\n        \"country\": \"philippines\",\n        \"continent\": \"asia\"\n    },\n    {\n        \"id\": 40,\n        \"cityName\": \"beijing\",\n        \"country\": \"china\",\n        \"continent\": \"asia\"\n    },\n    {\n        \"id\": 41,\n        \"cityName\": \"shanghai\",\n        \"country\": \"china\",\n        \"continent\": \"asia\"\n    },\n    {\n        \"id\": 42,\n        \"cityName\": \"mumbai\",\n        \"country\": \"india\",\n        \"continent\": \"asia\"\n    },\n    {\n        \"id\": 43,\n        \"cityName\": \"nairobi\",\n        \"country\": \"kenya\",\n        \"continent\": \"africa\"\n    },\n    {\n        \"id\": 44,\n        \"cityName\": \"cape town\",\n        \"country\": \"south africa\",\n        \"continent\": \"africa\"\n    },\n    {\n        \"id\": 45,\n        \"cityName\": \"cairo\",\n        \"country\": \"egypt\",\n        \"continent\": \"africa\"\n    },\n    {\n        \"id\": 46,\n        \"cityName\": \"luanda\",\n        \"country\": \"angola\",\n        \"continent\": \"africa\"\n    },\n    {\n        \"id\": 47,\n        \"cityName\": \"tunis\",\n        \"country\": \"tunisia\",\n        \"continent\": \"africa\"\n    },\n    {\n        \"id\": 48,\n        \"cityName\": \"sidney\",\n        \"country\": \"australia\",\n        \"continent\": \"oceania\"\n    },\n    {\n        \"id\": 49,\n        \"cityName\": \"brisbane\",\n        \"country\": \"australia\",\n        \"continent\": \"oceania\"\n    },\n    {\n        \"id\": 50,\n        \"cityName\": \"wellington\",\n        \"country\": \"new zealand\",\n        \"continent\": \"oceania\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "GET- http://localhost:8443/api/city/all/name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8443/api/city/all/name",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"city",
+						"all",
+						"name"
+					]
+				},
+				"description": "List of all the citie's names"
+			},
+			"response": [
+				{
+					"name": "GET- http://localhost:8443/api/city/all/name",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8443/api/city/all/name",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"api",
+								"city",
+								"all",
+								"name"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 06 Sep 2020 15:27:20 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    \"madrid\",\n    \"barcelona\",\n    \"rome\",\n    \"helsinki\",\n    \"dublin\",\n    \"amsterdam\",\n    \"new york\",\n    \"l.a.\",\n    \"vancouver\",\n    \"mexico city\",\n    \"buenos aires\",\n    \"santiago\",\n    \"tokyo\",\n    \"manila\",\n    \"beijing\",\n    \"shanghai\",\n    \"mumbai\",\n    \"nairobi\",\n    \"cape town\",\n    \"cairo\",\n    \"luanda\",\n    \"tunis\",\n    \"sidney\",\n    \"brisbane\",\n    \"wellington\"\n]"
+				}
+			]
+		},
+		{
+			"name": "GET - http://localhost:8443/api/city/all/id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8443/api/city/all/id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"city",
+						"all",
+						"id"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "http://localhost:8443/api/city/all/id",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8443/api/city/all/id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"api",
+								"city",
+								"all",
+								"id"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 06 Sep 2020 15:27:55 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    26,\n    27,\n    28,\n    29,\n    30,\n    31,\n    32,\n    33,\n    34,\n    35,\n    36,\n    37,\n    38,\n    39,\n    40,\n    41,\n    42,\n    43,\n    44,\n    45,\n    46,\n    47,\n    48,\n    49,\n    50\n]"
+				}
+			]
+		},
+		{
+			"name": "GET - http://localhost:8443/api/city/26",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8443/api/city/26",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"city",
+						"26"
+					]
+				},
+				"description": "Get one city info by city id"
+			},
+			"response": [
+				{
+					"name": "GET - http://localhost:8443/api/city/26",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8443/api/city/26",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"api",
+								"city",
+								"26"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 06 Sep 2020 15:28:51 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 26,\n    \"cityName\": \"madrid\",\n    \"country\": \"spain\",\n    \"continent\": \"europe\"\n}"
+				}
+			]
+		},
+		{
+			"name": "GET - http://localhost:8443/api/city/name/barcelona",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8443/api/city/name/barcelona",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"city",
+						"name",
+						"barcelona"
+					]
+				},
+				"description": "Get city info by city name"
+			},
+			"response": [
+				{
+					"name": "http://localhost:8443/api/city/name/barcelona",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8443/api/city/name/barcelona",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"api",
+								"city",
+								"name",
+								"barcelona"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 06 Sep 2020 15:29:34 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 27,\n    \"cityName\": \"barcelona\",\n    \"country\": \"spain\",\n    \"continent\": \"europe\"\n}"
+				}
+			]
+		},
+		{
+			"name": "POST - http://localhost:8443/api/city",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"cityName\": \"gijón\",\n    \"country\": \"spain\",\n    \"continent\": \"europe\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8443/api/city",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"city"
+					]
+				},
+				"description": "Create a new city"
+			},
+			"response": [
+				{
+					"name": "POST - http://localhost:8443/api/city",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"cityName\": \"gijón\",\n    \"country\": \"spain\",\n    \"continent\": \"europe\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8443/api/city",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"api",
+								"city"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 06 Sep 2020 15:31:28 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 0,\n    \"cityName\": \"gijón\",\n    \"country\": \"spain\",\n    \"continent\": \"europe\"\n}"
+				}
+			]
+		},
+		{
+			"name": "PUT - http://localhost:8443/api/city/58",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"cityName\": \"oviedo\",\n    \"country\": \"spain\",\n    \"continent\": \"europe\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8443/api/city/58",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"city",
+						"58"
+					]
+				},
+				"description": "Update city by id"
+			},
+			"response": [
+				{
+					"name": "PUT - http://localhost:8443/api/city/58",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"cityName\": \"oviedo\",\n    \"country\": \"spain\",\n    \"continent\": \"europe\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8443/api/city/58",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"api",
+								"city",
+								"58"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 06 Sep 2020 15:32:51 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 58,\n    \"cityName\": \"oviedo\",\n    \"country\": \"spain\",\n    \"continent\": \"europe\"\n}"
+				}
+			]
+		},
+		{
+			"name": "DELETE - http://localhost:8443/api/city/58",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8443/api/city/58",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"city",
+						"58"
+					]
+				},
+				"description": "Delete city by id"
+			},
+			"response": [
+				{
+					"name": "DELETE - http://localhost:8443/api/city/58",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8443/api/city/58",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"api",
+								"city",
+								"58"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 06 Sep 2020 15:33:37 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 58,\n    \"cityName\": \"oviedo\",\n    \"country\": \"spain\",\n    \"continent\": \"europe\"\n}"
+				}
+			]
+		},
+		{
+			"name": "http://localhost:8443/api/world/popularity/pagination",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8443/api/world/popularity/pagination",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"world",
+						"popularity",
+						"pagination"
+					]
+				},
+				"description": "Get list of most popular style/city combos. Possibility to paginate."
+			},
+			"response": [
+				{
+					"name": "http://localhost:8443/api/world/popularity/pagination",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8443/api/world/popularity/pagination",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"api",
+								"world",
+								"popularity",
+								"pagination"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 06 Sep 2020 15:47:30 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"content\": [\n        [\n            \"classical\",\n            \"rome\",\n            100\n        ],\n        [\n            \"r and b\",\n            \"madrid\",\n            100\n        ],\n        [\n            \"classical\",\n            \"new york\",\n            99\n        ],\n        [\n            \"romantic\",\n            \"vancouver\",\n            99\n        ],\n        [\n            \"country\",\n            \"tokyo\",\n            99\n        ],\n        [\n            \"tv and film\",\n            \"madrid\",\n            99\n        ],\n        [\n            \"acoustic\",\n            \"vancouver\",\n            99\n        ],\n        [\n            \"jazz\",\n            \"new york\",\n            99\n        ],\n        [\n            \"electronic\",\n            \"amsterdam\",\n            98\n        ],\n        [\n            \"metal\",\n            \"vancouver\",\n            98\n        ],\n        [\n            \"bolero\",\n            \"brisbane\",\n            98\n        ],\n        [\n            \"pop\",\n            \"brisbane\",\n            98\n        ],\n        [\n            \"soul\",\n            \"barcelona\",\n            98\n        ],\n        [\n            \"bolero\",\n            \"cairo\",\n            98\n        ],\n        [\n            \"jazz\",\n            \"helsinki\",\n            97\n        ],\n        [\n            \"country\",\n            \"madrid\",\n            97\n        ],\n        [\n            \"r and b\",\n            \"nairobi\",\n            97\n        ],\n        [\n            \"cumbia\",\n            \"mumbai\",\n            97\n        ],\n        [\n            \"cover\",\n            \"cairo\",\n            97\n        ],\n        [\n            \"funk\",\n            \"santiago\",\n            97\n        ]\n    ],\n    \"pageable\": {\n        \"sort\": {\n            \"unsorted\": true,\n            \"sorted\": false,\n            \"empty\": true\n        },\n        \"offset\": 0,\n        \"pageNumber\": 0,\n        \"pageSize\": 20,\n        \"paged\": true,\n        \"unpaged\": false\n    },\n    \"last\": false,\n    \"totalElements\": 650,\n    \"totalPages\": 33,\n    \"size\": 20,\n    \"number\": 0,\n    \"sort\": {\n        \"unsorted\": true,\n        \"sorted\": false,\n        \"empty\": true\n    },\n    \"first\": true,\n    \"numberOfElements\": 20,\n    \"empty\": false\n}"
+				}
+			]
+		},
+		{
+			"name": "http://localhost:8443/api/world/popularity/pagination?size=10",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8443/api/world/popularity/pagination?size=10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"world",
+						"popularity",
+						"pagination"
+					],
+					"query": [
+						{
+							"key": "size",
+							"value": "10"
+						}
+					]
+				},
+				"description": "Get all popularity style/city ordered by descending popularity rate with pagination size = 10"
+			},
+			"response": [
+				{
+					"name": "http://localhost:8443/api/world/popularity/pagination?size=10",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8443/api/world/popularity/pagination?size=10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"api",
+								"world",
+								"popularity",
+								"pagination"
+							],
+							"query": [
+								{
+									"key": "size",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 06 Sep 2020 15:48:43 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"content\": [\n        [\n            \"r and b\",\n            \"madrid\",\n            100\n        ],\n        [\n            \"classical\",\n            \"rome\",\n            100\n        ],\n        [\n            \"tv and film\",\n            \"madrid\",\n            99\n        ],\n        [\n            \"jazz\",\n            \"new york\",\n            99\n        ],\n        [\n            \"romantic\",\n            \"vancouver\",\n            99\n        ],\n        [\n            \"country\",\n            \"tokyo\",\n            99\n        ],\n        [\n            \"acoustic\",\n            \"vancouver\",\n            99\n        ],\n        [\n            \"classical\",\n            \"new york\",\n            99\n        ],\n        [\n            \"metal\",\n            \"vancouver\",\n            98\n        ],\n        [\n            \"soul\",\n            \"barcelona\",\n            98\n        ]\n    ],\n    \"pageable\": {\n        \"sort\": {\n            \"unsorted\": true,\n            \"sorted\": false,\n            \"empty\": true\n        },\n        \"offset\": 0,\n        \"pageNumber\": 0,\n        \"pageSize\": 10,\n        \"paged\": true,\n        \"unpaged\": false\n    },\n    \"last\": false,\n    \"totalElements\": 650,\n    \"totalPages\": 65,\n    \"size\": 10,\n    \"number\": 0,\n    \"sort\": {\n        \"unsorted\": true,\n        \"sorted\": false,\n        \"empty\": true\n    },\n    \"first\": true,\n    \"numberOfElements\": 10,\n    \"empty\": false\n}"
+				}
+			]
+		},
+		{
+			"name": "http://localhost:8443/api/51/popularity/pagination",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8443/api/51/popularity/pagination",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"51",
+						"popularity",
+						"pagination"
+					]
+				},
+				"description": "Get style/city tupla ordered by descending popularity rate."
+			},
+			"response": [
+				{
+					"name": "http://localhost:8443/api/51/popularity/pagination",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8443/api/51/popularity/pagination",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"api",
+								"51",
+								"popularity",
+								"pagination"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 06 Sep 2020 15:50:24 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"content\": [\n        [\n            \"r and b\",\n            \"helsinki\",\n            44\n        ],\n        [\n            \"r and b\",\n            \"mexico city\",\n            18\n        ],\n        [\n            \"r and b\",\n            \"shanghai\",\n            48\n        ],\n        [\n            \"r and b\",\n            \"cape town\",\n            43\n        ],\n        [\n            \"urban\",\n            \"helsinki\",\n            37\n        ],\n        [\n            \"urban\",\n            \"mexico city\",\n            35\n        ],\n        [\n            \"urban\",\n            \"shanghai\",\n            54\n        ],\n        [\n            \"urban\",\n            \"cape town\",\n            18\n        ],\n        [\n            \"disco\",\n            \"helsinki\",\n            79\n        ],\n        [\n            \"disco\",\n            \"mexico city\",\n            62\n        ],\n        [\n            \"disco\",\n            \"shanghai\",\n            32\n        ],\n        [\n            \"disco\",\n            \"cape town\",\n            33\n        ],\n        [\n            \"acoustic\",\n            \"helsinki\",\n            24\n        ],\n        [\n            \"acoustic\",\n            \"mexico city\",\n            61\n        ],\n        [\n            \"acoustic\",\n            \"shanghai\",\n            75\n        ],\n        [\n            \"acoustic\",\n            \"cape town\",\n            53\n        ]\n    ],\n    \"pageable\": {\n        \"sort\": {\n            \"unsorted\": true,\n            \"sorted\": false,\n            \"empty\": true\n        },\n        \"offset\": 0,\n        \"pageNumber\": 0,\n        \"pageSize\": 20,\n        \"paged\": true,\n        \"unpaged\": false\n    },\n    \"last\": true,\n    \"totalElements\": 16,\n    \"totalPages\": 1,\n    \"size\": 20,\n    \"number\": 0,\n    \"sort\": {\n        \"unsorted\": true,\n        \"sorted\": false,\n        \"empty\": true\n    },\n    \"first\": true,\n    \"numberOfElements\": 16,\n    \"empty\": false\n}"
+				}
+			]
+		},
+		{
+			"name": "http://localhost:8443/api/popularity",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8443/api/popularity",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"popularity"
+					]
+				},
+				"description": "List of all style/city tuples ordered descending by popularity rate"
+			},
+			"response": [
+				{
+					"name": "http://localhost:8443/api/popularity",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8443/api/popularity",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"api",
+								"popularity"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 06 Sep 2020 15:54:03 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    [\n        \"r and b\",\n        \"madrid\",\n        100\n    ],\n    [\n        \"classical\",\n        \"rome\",\n        100\n    ],\n    [\n        \"tv and film\",\n        \"madrid\",\n        99\n    ],\n    [\n        \"jazz\",\n        \"new york\",\n        99\n    ],\n    [\n        \"classical\",\n        \"new york\",\n        99\n    ],\n    [\n        \"romantic\",\n        \"vancouver\",\n        99\n    ],\n    [\n        \"acoustic\",\n        \"vancouver\",\n        99\n    ],\n    [\n        \"country\",\n        \"tokyo\",\n        99\n    ],\n    [\n        \"soul\",\n        \"barcelona\",\n        98\n    ],\n    [\n        \"electronic\",\n        \"amsterdam\",\n        98\n    ],\n    [\n        \"metal\",\n        \"vancouver\",\n        98\n    ],\n    [\n        \"bolero\",\n        \"cairo\",\n        98\n    ],\n    [\n        \"pop\",\n        \"brisbane\",\n        98\n    ],\n    [\n        \"bolero\",\n        \"brisbane\",\n        98\n    ],\n    [\n        \"country\",\n        \"madrid\",\n        97\n    ],\n    [\n        \"jazz\",\n        \"helsinki\",\n        97\n    ],\n    [\n        \"funk\",\n        \"santiago\",\n        97\n    ],\n    [\n        \"rock\",\n        \"santiago\",\n        97\n    ],\n    [\n        \"cumbia\",\n        \"mumbai\",\n        97\n    ],\n    [\n        \"r and b\",\n        \"nairobi\",\n        97\n    ],\n    [\n        \"cover\",\n        \"cairo\",\n        97\n    ],\n    [\n        \"trap\",\n        \"wellington\",\n        97\n    ],\n    [\n        \"acoustic\",\n        \"wellington\",\n        97\n    ],\n    [\n        \"indie\",\n        \"madrid\",\n        96\n    ],\n    [\n        \"indie\",\n        \"helsinki\",\n        96\n    ],\n    [\n        \"r and b\",\n        \"amsterdam\",\n        96\n    ],\n    [\n        \"pop\",\n        \"new york\",\n        96\n    ],\n    [\n        \"tv and film\",\n        \"l.a.\",\n        96\n    ],\n    [\n        \"jazz\",\n        \"vancouver\",\n        96\n    ],\n    [\n        \"acoustic\",\n        \"manila\",\n        96\n    ],\n    [\n        \"romantic\",\n        \"shanghai\",\n        96\n    ],\n    [\n        \"singer-songwriter\",\n        \"mumbai\",\n        96\n    ],\n    [\n        \"cover\",\n        \"tunis\",\n        96\n    ],\n    [\n        \"soul\",\n        \"madrid\",\n        95\n    ],\n    [\n        \"trap\",\n        \"barcelona\",\n        95\n    ],\n    [\n        \"pop\",\n        \"manila\",\n        95\n    ],\n    [\n        \"cumbia\",\n        \"manila\",\n        95\n    ],\n    [\n        \"electronic\",\n        \"beijing\",\n        95\n    ],\n    [\n        \"urban\",\n        \"nairobi\",\n        95\n    ],\n    [\n        \"bossa-nova\",\n        \"luanda\",\n        95\n    ],\n    [\n        \"trap\",\n        \"amsterdam\",\n        94\n    ],\n    [\n        \"urban\",\n        \"amsterdam\",\n        94\n    ],\n    [\n        \"romantic\",\n        \"tunis\",\n        94\n    ],\n    [\n        \"classical\",\n        \"sidney\",\n        94\n    ],\n    [\n        \"trap\",\n        \"rome\",\n        93\n    ],\n    [\n        \"classical\",\n        \"helsinki\",\n        93\n    ],\n    [\n        \"hard metal\",\n        \"dublin\",\n        93\n    ],\n    [\n        \"funk\",\n        \"buenos aires\",\n        93\n    ],\n    [\n        \"blues\",\n        \"tokyo\",\n        93\n    ],\n    [\n        \"cover\",\n        \"vancouver\",\n        92\n    ],\n    [\n        \"metal\",\n        \"shanghai\",\n        92\n    ],\n    [\n        \"jazz\",\n        \"mumbai\",\n        92\n    ],\n    [\n        \"country\",\n        \"mumbai\",\n        92\n    ],\n    [\n        \"latin\",\n        \"nairobi\",\n        92\n    ],\n    [\n        \"funk\",\n        \"tunis\",\n        92\n    ],\n    [\n        \"electronic\",\n        \"rome\",\n        91\n    ],\n    [\n        \"cover\",\n        \"rome\",\n        91\n    ],\n    [\n        \"blues\",\n        \"dublin\",\n        91\n    ],\n    [\n        \"singer-songwriter\",\n        \"new york\",\n        91\n    ],\n    [\n        \"rock\",\n        \"buenos aires\",\n        91\n    ],\n    [\n        \"tv and film\",\n        \"santiago\",\n        91\n    ],\n    [\n        \"bolero\",\n        \"nairobi\",\n        91\n    ],\n    [\n        \"bolero\",\n        \"dublin\",\n        90\n    ],\n    [\n        \"bolero\",\n        \"amsterdam\",\n        90\n    ],\n    [\n        \"trap\",\n        \"mexico city\",\n        90\n    ],\n    [\n        \"hard metal\",\n        \"manila\",\n        90\n    ],\n    [\n        \"jazz\",\n        \"nairobi\",\n        90\n    ],\n    [\n        \"rock\",\n        \"cape town\",\n        90\n    ],\n    [\n        \"metal\",\n        \"luanda\",\n        90\n    ],\n    [\n        \"bossa-nova\",\n        \"tunis\",\n        90\n    ],\n    [\n        \"bossa-nova\",\n        \"helsinki\",\n        89\n    ],\n    [\n        \"jazz\",\n        \"shanghai\",\n        89\n    ],\n    [\n        \"cumbia\",\n        \"wellington\",\n        89\n    ],\n    [\n        \"jazz\",\n        \"rome\",\n        88\n    ],\n    [\n        \"hard metal\",\n        \"rome\",\n        88\n    ],\n    [\n        \"cumbia\",\n        \"dublin\",\n        88\n    ],\n    [\n        \"electronic\",\n        \"l.a.\",\n        88\n    ],\n    [\n        \"punk\",\n        \"tokyo\",\n        88\n    ],\n    [\n        \"classical\",\n        \"cape town\",\n        88\n    ],\n    [\n        \"metal\",\n        \"cairo\",\n        88\n    ],\n    [\n        \"tv and film\",\n        \"rome\",\n        87\n    ],\n    [\n        \"trap\",\n        \"new york\",\n        87\n    ],\n    [\n        \"classical\",\n        \"mexico city\",\n        87\n    ],\n    [\n        \"romantic\",\n        \"buenos aires\",\n        87\n    ],\n    [\n        \"disco\",\n        \"beijing\",\n        87\n    ],\n    [\n        \"r and b\",\n        \"dublin\",\n        86\n    ],\n    [\n        \"indie\",\n        \"santiago\",\n        86\n    ],\n    [\n        \"cover\",\n        \"tokyo\",\n        86\n    ],\n    [\n        \"latin\",\n        \"beijing\",\n        86\n    ],\n    [\n        \"singer-songwriter\",\n        \"beijing\",\n        86\n    ],\n    [\n        \"punk\",\n        \"mumbai\",\n        86\n    ],\n    [\n        \"cumbia\",\n        \"nairobi\",\n        86\n    ],\n    [\n        \"classical\",\n        \"cairo\",\n        86\n    ],\n    [\n        \"metal\",\n        \"tunis\",\n        86\n    ],\n    [\n        \"hard metal\",\n        \"tunis\",\n        86\n    ],\n    [\n        \"jazz\",\n        \"sidney\",\n        86\n    ],\n    [\n        \"latin\",\n        \"sidney\",\n        86\n    ],\n    [\n        \"trap\",\n        \"brisbane\",\n        86\n    ],\n    [\n        \"hard metal\",\n        \"brisbane\",\n        86\n    ],\n    [\n        \"tv and film\",\n        \"wellington\",\n        86\n    ],\n    [\n        \"disco\",\n        \"rome\",\n        85\n    ],\n    [\n        \"electronic\",\n        \"mexico city\",\n        85\n    ],\n    [\n        \"cumbia\",\n        \"santiago\",\n        85\n    ],\n    [\n        \"metal\",\n        \"beijing\",\n        85\n    ],\n    [\n        \"rock\",\n        \"tunis\",\n        85\n    ],\n    [\n        \"singer-songwriter\",\n        \"brisbane\",\n        85\n    ],\n    [\n        \"rock\",\n        \"wellington\",\n        85\n    ],\n    [\n        \"romantic\",\n        \"rome\",\n        84\n    ],\n    [\n        \"cover\",\n        \"amsterdam\",\n        84\n    ],\n    [\n        \"country\",\n        \"santiago\",\n        84\n    ],\n    [\n        \"romantic\",\n        \"santiago\",\n        84\n    ],\n    [\n        \"indie\",\n        \"beijing\",\n        84\n    ],\n    [\n        \"soul\",\n        \"shanghai\",\n        84\n    ],\n    [\n        \"punk\",\n        \"nairobi\",\n        84\n    ],\n    [\n        \"acoustic\",\n        \"cairo\",\n        84\n    ],\n    [\n        \"bossa-nova\",\n        \"wellington\",\n        84\n    ],\n    [\n        \"hard metal\",\n        \"wellington\",\n        84\n    ],\n    [\n        \"soul\",\n        \"dublin\",\n        83\n    ],\n    [\n        \"disco\",\n        \"l.a.\",\n        83\n    ],\n    [\n        \"classical\",\n        \"manila\",\n        83\n    ],\n    [\n        \"cover\",\n        \"nairobi\",\n        83\n    ],\n    [\n        \"acoustic\",\n        \"barcelona\",\n        82\n    ],\n    [\n        \"cover\",\n        \"mexico city\",\n        82\n    ],\n    [\n        \"indie\",\n        \"tunis\",\n        82\n    ],\n    [\n        \"trap\",\n        \"helsinki\",\n        81\n    ],\n    [\n        \"cumbia\",\n        \"helsinki\",\n        81\n    ],\n    [\n        \"urban\",\n        \"dublin\",\n        81\n    ],\n    [\n        \"metal\",\n        \"amsterdam\",\n        81\n    ],\n    [\n        \"bolero\",\n        \"new york\",\n        81\n    ],\n    [\n        \"hard metal\",\n        \"new york\",\n        81\n    ],\n    [\n        \"funk\",\n        \"luanda\",\n        81\n    ],\n    [\n        \"cover\",\n        \"barcelona\",\n        80\n    ],\n    [\n        \"hard metal\",\n        \"tokyo\",\n        80\n    ],\n    [\n        \"hard metal\",\n        \"shanghai\",\n        80\n    ],\n    [\n        \"classical\",\n        \"tunis\",\n        80\n    ],\n    [\n        \"soul\",\n        \"brisbane\",\n        80\n    ],\n    [\n        \"disco\",\n        \"helsinki\",\n        79\n    ],\n    [\n        \"rock\",\n        \"amsterdam\",\n        79\n    ],\n    [\n        \"cover\",\n        \"manila\",\n        79\n    ],\n    [\n        \"tv and film\",\n        \"luanda\",\n        79\n    ],\n    [\n        \"urban\",\n        \"luanda\",\n        79\n    ],\n    [\n        \"tv and film\",\n        \"sidney\",\n        79\n    ],\n    [\n        \"classical\",\n        \"wellington\",\n        79\n    ],\n    [\n        \"r and b\",\n        \"rome\",\n        78\n    ],\n    [\n        \"punk\",\n        \"rome\",\n        78\n    ],\n    [\n        \"pop\",\n        \"dublin\",\n        78\n    ],\n    [\n        \"electronic\",\n        \"dublin\",\n        78\n    ],\n    [\n        \"acoustic\",\n        \"dublin\",\n        78\n    ],\n    [\n        \"romantic\",\n        \"new york\",\n        78\n    ],\n    [\n        \"rock\",\n        \"manila\",\n        78\n    ],\n    [\n        \"bolero\",\n        \"manila\",\n        78\n    ],\n    [\n        \"bossa-nova\",\n        \"manila\",\n        78\n    ],\n    [\n        \"funk\",\n        \"beijing\",\n        78\n    ],\n    [\n        \"r and b\",\n        \"wellington\",\n        78\n    ],\n    [\n        \"metal\",\n        \"madrid\",\n        77\n    ],\n    [\n        \"indie\",\n        \"vancouver\",\n        77\n    ],\n    [\n        \"jazz\",\n        \"cape town\",\n        77\n    ],\n    [\n        \"cover\",\n        \"luanda\",\n        77\n    ],\n    [\n        \"country\",\n        \"sidney\",\n        77\n    ],\n    [\n        \"latin\",\n        \"helsinki\",\n        76\n    ],\n    [\n        \"punk\",\n        \"dublin\",\n        76\n    ],\n    [\n        \"country\",\n        \"amsterdam\",\n        76\n    ],\n    [\n        \"cumbia\",\n        \"l.a.\",\n        76\n    ],\n    [\n        \"soul\",\n        \"mexico city\",\n        76\n    ],\n    [\n        \"bossa-nova\",\n        \"buenos aires\",\n        76\n    ],\n    [\n        \"blues\",\n        \"brisbane\",\n        76\n    ],\n    [\n        \"electronic\",\n        \"barcelona\",\n        75\n    ],\n    [\n        \"acoustic\",\n        \"tokyo\",\n        75\n    ],\n    [\n        \"acoustic\",\n        \"shanghai\",\n        75\n    ],\n    [\n        \"romantic\",\n        \"nairobi\",\n        75\n    ],\n    [\n        \"r and b\",\n        \"luanda\",\n        75\n    ],\n    [\n        \"cumbia\",\n        \"tunis\",\n        75\n    ],\n    [\n        \"urban\",\n        \"tunis\",\n        75\n    ],\n    [\n        \"soul\",\n        \"l.a.\",\n        74\n    ],\n    [\n        \"metal\",\n        \"buenos aires\",\n        74\n    ],\n    [\n        \"soul\",\n        \"santiago\",\n        74\n    ],\n    [\n        \"punk\",\n        \"santiago\",\n        74\n    ],\n    [\n        \"funk\",\n        \"shanghai\",\n        74\n    ],\n    [\n        \"latin\",\n        \"mumbai\",\n        74\n    ],\n    [\n        \"rock\",\n        \"cairo\",\n        74\n    ],\n    [\n        \"blues\",\n        \"rome\",\n        73\n    ],\n    [\n        \"jazz\",\n        \"santiago\",\n        73\n    ],\n    [\n        \"romantic\",\n        \"mumbai\",\n        73\n    ],\n    [\n        \"punk\",\n        \"luanda\",\n        73\n    ],\n    [\n        \"trap\",\n        \"luanda\",\n        73\n    ],\n    [\n        \"cumbia\",\n        \"vancouver\",\n        72\n    ],\n    [\n        \"r and b\",\n        \"buenos aires\",\n        72\n    ],\n    [\n        \"latin\",\n        \"buenos aires\",\n        72\n    ],\n    [\n        \"indie\",\n        \"manila\",\n        72\n    ],\n    [\n        \"bolero\",\n        \"beijing\",\n        72\n    ],\n    [\n        \"bossa-nova\",\n        \"amsterdam\",\n        71\n    ],\n    [\n        \"punk\",\n        \"l.a.\",\n        71\n    ],\n    [\n        \"bossa-nova\",\n        \"vancouver\",\n        71\n    ],\n    [\n        \"latin\",\n        \"mexico city\",\n        71\n    ],\n    [\n        \"hard metal\",\n        \"mumbai\",\n        71\n    ],\n    [\n        \"pop\",\n        \"luanda\",\n        71\n    ],\n    [\n        \"indie\",\n        \"brisbane\",\n        71\n    ],\n    [\n        \"urban\",\n        \"brisbane\",\n        71\n    ],\n    [\n        \"indie\",\n        \"rome\",\n        70\n    ],\n    [\n        \"tv and film\",\n        \"dublin\",\n        70\n    ],\n    [\n        \"blues\",\n        \"new york\",\n        70\n    ],\n    [\n        \"electronic\",\n        \"vancouver\",\n        70\n    ],\n    [\n        \"pop\",\n        \"buenos aires\",\n        69\n    ],\n    [\n        \"metal\",\n        \"santiago\",\n        69\n    ],\n    [\n        \"romantic\",\n        \"beijing\",\n        69\n    ],\n    [\n        \"tv and film\",\n        \"cape town\",\n        69\n    ],\n    [\n        \"cover\",\n        \"cape town\",\n        69\n    ],\n    [\n        \"punk\",\n        \"brisbane\",\n        69\n    ],\n    [\n        \"bolero\",\n        \"wellington\",\n        69\n    ],\n    [\n        \"urban\",\n        \"barcelona\",\n        68\n    ],\n    [\n        \"funk\",\n        \"rome\",\n        68\n    ],\n    [\n        \"urban\",\n        \"rome\",\n        68\n    ],\n    [\n        \"classical\",\n        \"dublin\",\n        68\n    ],\n    [\n        \"bossa-nova\",\n        \"dublin\",\n        68\n    ],\n    [\n        \"disco\",\n        \"amsterdam\",\n        68\n    ],\n    [\n        \"country\",\n        \"l.a.\",\n        68\n    ],\n    [\n        \"soul\",\n        \"beijing\",\n        68\n    ],\n    [\n        \"country\",\n        \"cape town\",\n        68\n    ],\n    [\n        \"classical\",\n        \"luanda\",\n        68\n    ],\n    [\n        \"indie\",\n        \"dublin\",\n        67\n    ],\n    [\n        \"funk\",\n        \"amsterdam\",\n        67\n    ],\n    [\n        \"disco\",\n        \"manila\",\n        67\n    ],\n    [\n        \"indie\",\n        \"mumbai\",\n        67\n    ],\n    [\n        \"blues\",\n        \"madrid\",\n        66\n    ],\n    [\n        \"acoustic\",\n        \"madrid\",\n        66\n    ],\n    [\n        \"bolero\",\n        \"barcelona\",\n        66\n    ],\n    [\n        \"tv and film\",\n        \"helsinki\",\n        66\n    ],\n    [\n        \"pop\",\n        \"rome\",\n        65\n    ],\n    [\n        \"romantic\",\n        \"dublin\",\n        65\n    ],\n    [\n        \"classical\",\n        \"vancouver\",\n        65\n    ],\n    [\n        \"electronic\",\n        \"tokyo\",\n        65\n    ],\n    [\n        \"bossa-nova\",\n        \"sidney\",\n        65\n    ],\n    [\n        \"disco\",\n        \"madrid\",\n        64\n    ],\n    [\n        \"singer-songwriter\",\n        \"barcelona\",\n        64\n    ],\n    [\n        \"indie\",\n        \"wellington\",\n        64\n    ],\n    [\n        \"latin\",\n        \"amsterdam\",\n        63\n    ],\n    [\n        \"indie\",\n        \"sidney\",\n        63\n    ],\n    [\n        \"latin\",\n        \"vancouver\",\n        62\n    ],\n    [\n        \"disco\",\n        \"vancouver\",\n        62\n    ],\n    [\n        \"disco\",\n        \"mexico city\",\n        62\n    ],\n    [\n        \"pop\",\n        \"beijing\",\n        62\n    ],\n    [\n        \"tv and film\",\n        \"nairobi\",\n        62\n    ],\n    [\n        \"romantic\",\n        \"cairo\",\n        62\n    ],\n    [\n        \"jazz\",\n        \"tunis\",\n        62\n    ],\n    [\n        \"romantic\",\n        \"sidney\",\n        62\n    ],\n    [\n        \"funk\",\n        \"madrid\",\n        61\n    ],\n    [\n        \"classical\",\n        \"amsterdam\",\n        61\n    ],\n    [\n        \"acoustic\",\n        \"mexico city\",\n        61\n    ],\n    [\n        \"romantic\",\n        \"tokyo\",\n        61\n    ],\n    [\n        \"blues\",\n        \"shanghai\",\n        61\n    ],\n    [\n        \"acoustic\",\n        \"nairobi\",\n        61\n    ],\n    [\n        \"punk\",\n        \"cape town\",\n        61\n    ],\n    [\n        \"electronic\",\n        \"tunis\",\n        61\n    ],\n    [\n        \"bossa-nova\",\n        \"rome\",\n        60\n    ],\n    [\n        \"soul\",\n        \"amsterdam\",\n        60\n    ],\n    [\n        \"indie\",\n        \"l.a.\",\n        60\n    ],\n    [\n        \"cover\",\n        \"l.a.\",\n        60\n    ],\n    [\n        \"bolero\",\n        \"buenos aires\",\n        60\n    ],\n    [\n        \"acoustic\",\n        \"santiago\",\n        60\n    ],\n    [\n        \"singer-songwriter\",\n        \"cairo\",\n        60\n    ],\n    [\n        \"acoustic\",\n        \"luanda\",\n        60\n    ],\n    [\n        \"metal\",\n        \"sidney\",\n        60\n    ],\n    [\n        \"acoustic\",\n        \"sidney\",\n        60\n    ],\n    [\n        \"cover\",\n        \"brisbane\",\n        60\n    ],\n    [\n        \"funk\",\n        \"wellington\",\n        60\n    ],\n    [\n        \"jazz\",\n        \"l.a.\",\n        59\n    ],\n    [\n        \"r and b\",\n        \"brisbane\",\n        59\n    ],\n    [\n        \"jazz\",\n        \"wellington\",\n        59\n    ],\n    [\n        \"romantic\",\n        \"wellington\",\n        59\n    ],\n    [\n        \"romantic\",\n        \"madrid\",\n        58\n    ],\n    [\n        \"metal\",\n        \"dublin\",\n        58\n    ],\n    [\n        \"cumbia\",\n        \"buenos aires\",\n        58\n    ],\n    [\n        \"electronic\",\n        \"manila\",\n        58\n    ],\n    [\n        \"pop\",\n        \"cape town\",\n        58\n    ],\n    [\n        \"electronic\",\n        \"luanda\",\n        58\n    ],\n    [\n        \"electronic\",\n        \"brisbane\",\n        58\n    ],\n    [\n        \"blues\",\n        \"wellington\",\n        58\n    ],\n    [\n        \"urban\",\n        \"madrid\",\n        57\n    ],\n    [\n        \"tv and film\",\n        \"barcelona\",\n        57\n    ],\n    [\n        \"bossa-nova\",\n        \"mumbai\",\n        57\n    ],\n    [\n        \"romantic\",\n        \"cape town\",\n        57\n    ],\n    [\n        \"tv and film\",\n        \"cairo\",\n        57\n    ],\n    [\n        \"country\",\n        \"luanda\",\n        57\n    ],\n    [\n        \"disco\",\n        \"wellington\",\n        57\n    ],\n    [\n        \"electronic\",\n        \"new york\",\n        56\n    ],\n    [\n        \"blues\",\n        \"mexico city\",\n        56\n    ],\n    [\n        \"funk\",\n        \"mexico city\",\n        56\n    ],\n    [\n        \"classical\",\n        \"mumbai\",\n        56\n    ],\n    [\n        \"singer-songwriter\",\n        \"luanda\",\n        56\n    ],\n    [\n        \"bossa-nova\",\n        \"brisbane\",\n        56\n    ],\n    [\n        \"trap\",\n        \"l.a.\",\n        55\n    ],\n    [\n        \"urban\",\n        \"vancouver\",\n        55\n    ],\n    [\n        \"acoustic\",\n        \"brisbane\",\n        55\n    ],\n    [\n        \"blues\",\n        \"barcelona\",\n        54\n    ],\n    [\n        \"rock\",\n        \"helsinki\",\n        54\n    ],\n    [\n        \"romantic\",\n        \"amsterdam\",\n        54\n    ],\n    [\n        \"urban\",\n        \"shanghai\",\n        54\n    ],\n    [\n        \"metal\",\n        \"nairobi\",\n        54\n    ],\n    [\n        \"latin\",\n        \"luanda\",\n        54\n    ],\n    [\n        \"acoustic\",\n        \"new york\",\n        53\n    ],\n    [\n        \"acoustic\",\n        \"cape town\",\n        53\n    ],\n    [\n        \"hard metal\",\n        \"madrid\",\n        52\n    ],\n    [\n        \"indie\",\n        \"barcelona\",\n        52\n    ],\n    [\n        \"tv and film\",\n        \"amsterdam\",\n        52\n    ],\n    [\n        \"bossa-nova\",\n        \"new york\",\n        52\n    ],\n    [\n        \"acoustic\",\n        \"beijing\",\n        52\n    ],\n    [\n        \"cover\",\n        \"shanghai\",\n        52\n    ],\n    [\n        \"urban\",\n        \"mumbai\",\n        52\n    ],\n    [\n        \"classical\",\n        \"nairobi\",\n        52\n    ],\n    [\n        \"soul\",\n        \"new york\",\n        51\n    ],\n    [\n        \"rock\",\n        \"new york\",\n        51\n    ],\n    [\n        \"tv and film\",\n        \"new york\",\n        51\n    ],\n    [\n        \"classical\",\n        \"santiago\",\n        51\n    ],\n    [\n        \"bossa-nova\",\n        \"beijing\",\n        51\n    ],\n    [\n        \"hard metal\",\n        \"cape town\",\n        51\n    ],\n    [\n        \"punk\",\n        \"cairo\",\n        51\n    ],\n    [\n        \"jazz\",\n        \"tokyo\",\n        50\n    ],\n    [\n        \"cumbia\",\n        \"tokyo\",\n        50\n    ],\n    [\n        \"romantic\",\n        \"manila\",\n        50\n    ],\n    [\n        \"singer-songwriter\",\n        \"shanghai\",\n        50\n    ],\n    [\n        \"metal\",\n        \"cape town\",\n        50\n    ],\n    [\n        \"country\",\n        \"tunis\",\n        50\n    ],\n    [\n        \"cover\",\n        \"sidney\",\n        50\n    ],\n    [\n        \"rock\",\n        \"brisbane\",\n        50\n    ],\n    [\n        \"cumbia\",\n        \"madrid\",\n        49\n    ],\n    [\n        \"rock\",\n        \"barcelona\",\n        49\n    ],\n    [\n        \"funk\",\n        \"helsinki\",\n        49\n    ],\n    [\n        \"blues\",\n        \"amsterdam\",\n        49\n    ],\n    [\n        \"urban\",\n        \"santiago\",\n        49\n    ],\n    [\n        \"rock\",\n        \"beijing\",\n        49\n    ],\n    [\n        \"punk\",\n        \"shanghai\",\n        49\n    ],\n    [\n        \"pop\",\n        \"cairo\",\n        49\n    ],\n    [\n        \"indie\",\n        \"luanda\",\n        49\n    ],\n    [\n        \"hard metal\",\n        \"sidney\",\n        49\n    ],\n    [\n        \"cover\",\n        \"wellington\",\n        49\n    ],\n    [\n        \"rock\",\n        \"dublin\",\n        48\n    ],\n    [\n        \"indie\",\n        \"amsterdam\",\n        48\n    ],\n    [\n        \"singer-songwriter\",\n        \"tokyo\",\n        48\n    ],\n    [\n        \"r and b\",\n        \"shanghai\",\n        48\n    ],\n    [\n        \"r and b\",\n        \"mumbai\",\n        48\n    ],\n    [\n        \"cover\",\n        \"mumbai\",\n        48\n    ],\n    [\n        \"singer-songwriter\",\n        \"cape town\",\n        48\n    ],\n    [\n        \"acoustic\",\n        \"tunis\",\n        48\n    ],\n    [\n        \"jazz\",\n        \"barcelona\",\n        47\n    ],\n    [\n        \"country\",\n        \"dublin\",\n        47\n    ],\n    [\n        \"singer-songwriter\",\n        \"dublin\",\n        47\n    ],\n    [\n        \"funk\",\n        \"nairobi\",\n        47\n    ],\n    [\n        \"country\",\n        \"wellington\",\n        47\n    ],\n    [\n        \"punk\",\n        \"madrid\",\n        46\n    ],\n    [\n        \"pop\",\n        \"amsterdam\",\n        46\n    ],\n    [\n        \"urban\",\n        \"l.a.\",\n        46\n    ],\n    [\n        \"country\",\n        \"manila\",\n        46\n    ],\n    [\n        \"bolero\",\n        \"luanda\",\n        46\n    ],\n    [\n        \"cumbia\",\n        \"sidney\",\n        46\n    ],\n    [\n        \"pop\",\n        \"l.a.\",\n        45\n    ],\n    [\n        \"bossa-nova\",\n        \"l.a.\",\n        45\n    ],\n    [\n        \"tv and film\",\n        \"mexico city\",\n        45\n    ],\n    [\n        \"tv and film\",\n        \"buenos aires\",\n        45\n    ],\n    [\n        \"trap\",\n        \"sidney\",\n        45\n    ],\n    [\n        \"r and b\",\n        \"helsinki\",\n        44\n    ],\n    [\n        \"latin\",\n        \"santiago\",\n        44\n    ],\n    [\n        \"electronic\",\n        \"cairo\",\n        44\n    ],\n    [\n        \"funk\",\n        \"dublin\",\n        43\n    ],\n    [\n        \"punk\",\n        \"new york\",\n        43\n    ],\n    [\n        \"classical\",\n        \"buenos aires\",\n        43\n    ],\n    [\n        \"r and b\",\n        \"cape town\",\n        43\n    ],\n    [\n        \"jazz\",\n        \"brisbane\",\n        43\n    ],\n    [\n        \"metal\",\n        \"brisbane\",\n        43\n    ],\n    [\n        \"latin\",\n        \"wellington\",\n        43\n    ],\n    [\n        \"pop\",\n        \"santiago\",\n        42\n    ],\n    [\n        \"disco\",\n        \"cairo\",\n        42\n    ],\n    [\n        \"disco\",\n        \"dublin\",\n        41\n    ],\n    [\n        \"indie\",\n        \"new york\",\n        41\n    ],\n    [\n        \"jazz\",\n        \"luanda\",\n        41\n    ],\n    [\n        \"blues\",\n        \"sidney\",\n        41\n    ],\n    [\n        \"punk\",\n        \"sidney\",\n        41\n    ],\n    [\n        \"bolero\",\n        \"sidney\",\n        41\n    ],\n    [\n        \"rock\",\n        \"rome\",\n        40\n    ],\n    [\n        \"urban\",\n        \"beijing\",\n        40\n    ],\n    [\n        \"r and b\",\n        \"sidney\",\n        40\n    ],\n    [\n        \"latin\",\n        \"brisbane\",\n        40\n    ],\n    [\n        \"country\",\n        \"new york\",\n        39\n    ],\n    [\n        \"funk\",\n        \"manila\",\n        39\n    ],\n    [\n        \"urban\",\n        \"sidney\",\n        39\n    ],\n    [\n        \"cumbia\",\n        \"rome\",\n        38\n    ],\n    [\n        \"latin\",\n        \"dublin\",\n        38\n    ],\n    [\n        \"jazz\",\n        \"buenos aires\",\n        38\n    ],\n    [\n        \"blues\",\n        \"buenos aires\",\n        38\n    ],\n    [\n        \"disco\",\n        \"santiago\",\n        38\n    ],\n    [\n        \"cover\",\n        \"beijing\",\n        38\n    ],\n    [\n        \"pop\",\n        \"mumbai\",\n        38\n    ],\n    [\n        \"latin\",\n        \"cape town\",\n        38\n    ],\n    [\n        \"funk\",\n        \"cairo\",\n        38\n    ],\n    [\n        \"singer-songwriter\",\n        \"sidney\",\n        38\n    ],\n    [\n        \"cumbia\",\n        \"barcelona\",\n        37\n    ],\n    [\n        \"urban\",\n        \"helsinki\",\n        37\n    ],\n    [\n        \"hard metal\",\n        \"santiago\",\n        37\n    ],\n    [\n        \"pop\",\n        \"barcelona\",\n        36\n    ],\n    [\n        \"r and b\",\n        \"l.a.\",\n        36\n    ],\n    [\n        \"soul\",\n        \"nairobi\",\n        36\n    ],\n    [\n        \"funk\",\n        \"cape town\",\n        36\n    ],\n    [\n        \"cumbia\",\n        \"cape town\",\n        36\n    ],\n    [\n        \"romantic\",\n        \"luanda\",\n        36\n    ],\n    [\n        \"bolero\",\n        \"tunis\",\n        36\n    ],\n    [\n        \"classical\",\n        \"barcelona\",\n        35\n    ],\n    [\n        \"cumbia\",\n        \"new york\",\n        35\n    ],\n    [\n        \"singer-songwriter\",\n        \"l.a.\",\n        35\n    ],\n    [\n        \"cumbia\",\n        \"mexico city\",\n        35\n    ],\n    [\n        \"urban\",\n        \"mexico city\",\n        35\n    ],\n    [\n        \"hard metal\",\n        \"buenos aires\",\n        35\n    ],\n    [\n        \"country\",\n        \"brisbane\",\n        35\n    ],\n    [\n        \"metal\",\n        \"wellington\",\n        35\n    ],\n    [\n        \"urban\",\n        \"wellington\",\n        35\n    ],\n    [\n        \"bolero\",\n        \"l.a.\",\n        34\n    ],\n    [\n        \"pop\",\n        \"vancouver\",\n        34\n    ],\n    [\n        \"rock\",\n        \"vancouver\",\n        34\n    ],\n    [\n        \"pop\",\n        \"mexico city\",\n        34\n    ],\n    [\n        \"metal\",\n        \"mexico city\",\n        34\n    ],\n    [\n        \"jazz\",\n        \"manila\",\n        34\n    ],\n    [\n        \"blues\",\n        \"beijing\",\n        34\n    ],\n    [\n        \"funk\",\n        \"mumbai\",\n        34\n    ],\n    [\n        \"trap\",\n        \"nairobi\",\n        34\n    ],\n    [\n        \"metal\",\n        \"new york\",\n        33\n    ],\n    [\n        \"cover\",\n        \"buenos aires\",\n        33\n    ],\n    [\n        \"tv and film\",\n        \"manila\",\n        33\n    ],\n    [\n        \"cumbia\",\n        \"shanghai\",\n        33\n    ],\n    [\n        \"disco\",\n        \"cape town\",\n        33\n    ],\n    [\n        \"blues\",\n        \"cairo\",\n        33\n    ],\n    [\n        \"romantic\",\n        \"barcelona\",\n        32\n    ],\n    [\n        \"hard metal\",\n        \"amsterdam\",\n        32\n    ],\n    [\n        \"classical\",\n        \"beijing\",\n        32\n    ],\n    [\n        \"disco\",\n        \"shanghai\",\n        32\n    ],\n    [\n        \"disco\",\n        \"tunis\",\n        32\n    ],\n    [\n        \"classical\",\n        \"brisbane\",\n        32\n    ],\n    [\n        \"latin\",\n        \"barcelona\",\n        31\n    ],\n    [\n        \"country\",\n        \"beijing\",\n        31\n    ],\n    [\n        \"funk\",\n        \"barcelona\",\n        30\n    ],\n    [\n        \"metal\",\n        \"barcelona\",\n        30\n    ],\n    [\n        \"electronic\",\n        \"helsinki\",\n        30\n    ],\n    [\n        \"r and b\",\n        \"beijing\",\n        30\n    ],\n    [\n        \"latin\",\n        \"tunis\",\n        30\n    ],\n    [\n        \"funk\",\n        \"l.a.\",\n        29\n    ],\n    [\n        \"funk\",\n        \"vancouver\",\n        29\n    ],\n    [\n        \"bossa-nova\",\n        \"cairo\",\n        29\n    ],\n    [\n        \"romantic\",\n        \"brisbane\",\n        29\n    ],\n    [\n        \"electronic\",\n        \"madrid\",\n        28\n    ],\n    [\n        \"trap\",\n        \"dublin\",\n        28\n    ],\n    [\n        \"punk\",\n        \"buenos aires\",\n        28\n    ],\n    [\n        \"bossa-nova\",\n        \"santiago\",\n        28\n    ],\n    [\n        \"trap\",\n        \"manila\",\n        28\n    ],\n    [\n        \"electronic\",\n        \"sidney\",\n        28\n    ],\n    [\n        \"soul\",\n        \"wellington\",\n        28\n    ],\n    [\n        \"trap\",\n        \"madrid\",\n        27\n    ],\n    [\n        \"romantic\",\n        \"l.a.\",\n        27\n    ],\n    [\n        \"punk\",\n        \"vancouver\",\n        27\n    ],\n    [\n        \"bolero\",\n        \"mexico city\",\n        27\n    ],\n    [\n        \"classical\",\n        \"tokyo\",\n        27\n    ],\n    [\n        \"latin\",\n        \"shanghai\",\n        27\n    ],\n    [\n        \"singer-songwriter\",\n        \"nairobi\",\n        27\n    ],\n    [\n        \"hard metal\",\n        \"luanda\",\n        27\n    ],\n    [\n        \"tv and film\",\n        \"vancouver\",\n        26\n    ],\n    [\n        \"bolero\",\n        \"vancouver\",\n        26\n    ],\n    [\n        \"indie\",\n        \"tokyo\",\n        26\n    ],\n    [\n        \"singer-songwriter\",\n        \"manila\",\n        26\n    ],\n    [\n        \"trap\",\n        \"shanghai\",\n        26\n    ],\n    [\n        \"bolero\",\n        \"shanghai\",\n        26\n    ],\n    [\n        \"disco\",\n        \"brisbane\",\n        26\n    ],\n    [\n        \"classical\",\n        \"madrid\",\n        25\n    ],\n    [\n        \"r and b\",\n        \"new york\",\n        25\n    ],\n    [\n        \"urban\",\n        \"new york\",\n        25\n    ],\n    [\n        \"disco\",\n        \"buenos aires\",\n        25\n    ],\n    [\n        \"singer-songwriter\",\n        \"buenos aires\",\n        25\n    ],\n    [\n        \"r and b\",\n        \"tokyo\",\n        25\n    ],\n    [\n        \"pop\",\n        \"shanghai\",\n        25\n    ],\n    [\n        \"electronic\",\n        \"mumbai\",\n        25\n    ],\n    [\n        \"blues\",\n        \"nairobi\",\n        25\n    ],\n    [\n        \"rock\",\n        \"nairobi\",\n        25\n    ],\n    [\n        \"soul\",\n        \"cape town\",\n        25\n    ],\n    [\n        \"tv and film\",\n        \"brisbane\",\n        25\n    ],\n    [\n        \"acoustic\",\n        \"helsinki\",\n        24\n    ],\n    [\n        \"country\",\n        \"vancouver\",\n        24\n    ],\n    [\n        \"metal\",\n        \"tokyo\",\n        24\n    ],\n    [\n        \"indie\",\n        \"nairobi\",\n        24\n    ],\n    [\n        \"pop\",\n        \"sidney\",\n        24\n    ],\n    [\n        \"disco\",\n        \"sidney\",\n        24\n    ],\n    [\n        \"punk\",\n        \"barcelona\",\n        23\n    ],\n    [\n        \"romantic\",\n        \"helsinki\",\n        23\n    ],\n    [\n        \"cumbia\",\n        \"beijing\",\n        23\n    ],\n    [\n        \"cumbia\",\n        \"cairo\",\n        23\n    ],\n    [\n        \"tv and film\",\n        \"tunis\",\n        23\n    ],\n    [\n        \"soul\",\n        \"sidney\",\n        23\n    ],\n    [\n        \"punk\",\n        \"helsinki\",\n        22\n    ],\n    [\n        \"punk\",\n        \"mexico city\",\n        22\n    ],\n    [\n        \"electronic\",\n        \"santiago\",\n        22\n    ],\n    [\n        \"bossa-nova\",\n        \"shanghai\",\n        22\n    ],\n    [\n        \"trap\",\n        \"mumbai\",\n        22\n    ],\n    [\n        \"blues\",\n        \"cape town\",\n        22\n    ],\n    [\n        \"country\",\n        \"barcelona\",\n        21\n    ],\n    [\n        \"blues\",\n        \"santiago\",\n        21\n    ],\n    [\n        \"tv and film\",\n        \"tokyo\",\n        21\n    ],\n    [\n        \"r and b\",\n        \"cairo\",\n        21\n    ],\n    [\n        \"indie\",\n        \"cairo\",\n        21\n    ],\n    [\n        \"rock\",\n        \"sidney\",\n        21\n    ],\n    [\n        \"bolero\",\n        \"helsinki\",\n        20\n    ],\n    [\n        \"jazz\",\n        \"dublin\",\n        20\n    ],\n    [\n        \"soul\",\n        \"vancouver\",\n        20\n    ],\n    [\n        \"soul\",\n        \"buenos aires\",\n        20\n    ],\n    [\n        \"punk\",\n        \"beijing\",\n        20\n    ],\n    [\n        \"electronic\",\n        \"cape town\",\n        20\n    ],\n    [\n        \"punk\",\n        \"wellington\",\n        20\n    ],\n    [\n        \"bossa-nova\",\n        \"madrid\",\n        19\n    ],\n    [\n        \"metal\",\n        \"rome\",\n        19\n    ],\n    [\n        \"country\",\n        \"helsinki\",\n        19\n    ],\n    [\n        \"metal\",\n        \"l.a.\",\n        19\n    ],\n    [\n        \"rock\",\n        \"mexico city\",\n        19\n    ],\n    [\n        \"electronic\",\n        \"nairobi\",\n        19\n    ],\n    [\n        \"indie\",\n        \"cape town\",\n        19\n    ],\n    [\n        \"pop\",\n        \"wellington\",\n        19\n    ],\n    [\n        \"soul\",\n        \"helsinki\",\n        18\n    ],\n    [\n        \"disco\",\n        \"new york\",\n        18\n    ],\n    [\n        \"r and b\",\n        \"mexico city\",\n        18\n    ],\n    [\n        \"bossa-nova\",\n        \"mexico city\",\n        18\n    ],\n    [\n        \"soul\",\n        \"manila\",\n        18\n    ],\n    [\n        \"jazz\",\n        \"beijing\",\n        18\n    ],\n    [\n        \"soul\",\n        \"mumbai\",\n        18\n    ],\n    [\n        \"urban\",\n        \"cape town\",\n        18\n    ],\n    [\n        \"soul\",\n        \"cairo\",\n        18\n    ],\n    [\n        \"country\",\n        \"rome\",\n        17\n    ],\n    [\n        \"acoustic\",\n        \"amsterdam\",\n        17\n    ],\n    [\n        \"rock\",\n        \"l.a.\",\n        17\n    ],\n    [\n        \"romantic\",\n        \"mexico city\",\n        17\n    ],\n    [\n        \"bolero\",\n        \"santiago\",\n        17\n    ],\n    [\n        \"cover\",\n        \"santiago\",\n        17\n    ],\n    [\n        \"punk\",\n        \"manila\",\n        17\n    ],\n    [\n        \"country\",\n        \"shanghai\",\n        17\n    ],\n    [\n        \"acoustic\",\n        \"mumbai\",\n        17\n    ],\n    [\n        \"bossa-nova\",\n        \"nairobi\",\n        17\n    ],\n    [\n        \"trap\",\n        \"cairo\",\n        17\n    ],\n    [\n        \"jazz\",\n        \"madrid\",\n        16\n    ],\n    [\n        \"disco\",\n        \"barcelona\",\n        16\n    ],\n    [\n        \"cover\",\n        \"helsinki\",\n        16\n    ],\n    [\n        \"country\",\n        \"mexico city\",\n        16\n    ],\n    [\n        \"trap\",\n        \"buenos aires\",\n        16\n    ],\n    [\n        \"disco\",\n        \"tokyo\",\n        16\n    ],\n    [\n        \"urban\",\n        \"manila\",\n        16\n    ],\n    [\n        \"bossa-nova\",\n        \"cape town\",\n        16\n    ],\n    [\n        \"hard metal\",\n        \"cairo\",\n        16\n    ],\n    [\n        \"r and b\",\n        \"barcelona\",\n        15\n    ],\n    [\n        \"electronic\",\n        \"buenos aires\",\n        15\n    ],\n    [\n        \"funk\",\n        \"sidney\",\n        15\n    ],\n    [\n        \"acoustic\",\n        \"rome\",\n        14\n    ],\n    [\n        \"pop\",\n        \"helsinki\",\n        14\n    ],\n    [\n        \"punk\",\n        \"amsterdam\",\n        14\n    ],\n    [\n        \"blues\",\n        \"vancouver\",\n        14\n    ],\n    [\n        \"rock\",\n        \"tokyo\",\n        14\n    ],\n    [\n        \"tv and film\",\n        \"mumbai\",\n        14\n    ],\n    [\n        \"bolero\",\n        \"mumbai\",\n        14\n    ],\n    [\n        \"pop\",\n        \"nairobi\",\n        14\n    ],\n    [\n        \"bolero\",\n        \"cape town\",\n        14\n    ],\n    [\n        \"jazz\",\n        \"cairo\",\n        14\n    ],\n    [\n        \"latin\",\n        \"cairo\",\n        14\n    ],\n    [\n        \"latin\",\n        \"madrid\",\n        13\n    ],\n    [\n        \"latin\",\n        \"rome\",\n        13\n    ],\n    [\n        \"trap\",\n        \"tokyo\",\n        13\n    ],\n    [\n        \"soul\",\n        \"luanda\",\n        13\n    ],\n    [\n        \"r and b\",\n        \"tunis\",\n        13\n    ],\n    [\n        \"trap\",\n        \"tunis\",\n        13\n    ],\n    [\n        \"jazz\",\n        \"amsterdam\",\n        12\n    ],\n    [\n        \"latin\",\n        \"l.a.\",\n        12\n    ],\n    [\n        \"classical\",\n        \"l.a.\",\n        12\n    ],\n    [\n        \"hard metal\",\n        \"mexico city\",\n        12\n    ],\n    [\n        \"trap\",\n        \"santiago\",\n        12\n    ],\n    [\n        \"urban\",\n        \"tokyo\",\n        12\n    ],\n    [\n        \"bossa-nova\",\n        \"tokyo\",\n        12\n    ],\n    [\n        \"rock\",\n        \"shanghai\",\n        12\n    ],\n    [\n        \"rock\",\n        \"mumbai\",\n        12\n    ],\n    [\n        \"hard metal\",\n        \"nairobi\",\n        12\n    ],\n    [\n        \"country\",\n        \"cairo\",\n        12\n    ],\n    [\n        \"soul\",\n        \"tunis\",\n        12\n    ],\n    [\n        \"punk\",\n        \"tunis\",\n        12\n    ],\n    [\n        \"singer-songwriter\",\n        \"wellington\",\n        12\n    ],\n    [\n        \"hard metal\",\n        \"helsinki\",\n        11\n    ],\n    [\n        \"acoustic\",\n        \"l.a.\",\n        11\n    ],\n    [\n        \"hard metal\",\n        \"l.a.\",\n        11\n    ],\n    [\n        \"trap\",\n        \"vancouver\",\n        11\n    ],\n    [\n        \"urban\",\n        \"buenos aires\",\n        11\n    ],\n    [\n        \"metal\",\n        \"manila\",\n        11\n    ],\n    [\n        \"disco\",\n        \"luanda\",\n        11\n    ],\n    [\n        \"singer-songwriter\",\n        \"helsinki\",\n        10\n    ],\n    [\n        \"hard metal\",\n        \"beijing\",\n        10\n    ],\n    [\n        \"classical\",\n        \"shanghai\",\n        10\n    ],\n    [\n        \"bolero\",\n        \"madrid\",\n        9\n    ],\n    [\n        \"hard metal\",\n        \"barcelona\",\n        9\n    ],\n    [\n        \"hard metal\",\n        \"vancouver\",\n        9\n    ],\n    [\n        \"acoustic\",\n        \"buenos aires\",\n        9\n    ],\n    [\n        \"country\",\n        \"nairobi\",\n        9\n    ],\n    [\n        \"cumbia\",\n        \"luanda\",\n        9\n    ],\n    [\n        \"blues\",\n        \"tunis\",\n        9\n    ],\n    [\n        \"r and b\",\n        \"santiago\",\n        8\n    ],\n    [\n        \"soul\",\n        \"tokyo\",\n        8\n    ],\n    [\n        \"singer-songwriter\",\n        \"madrid\",\n        7\n    ],\n    [\n        \"cover\",\n        \"dublin\",\n        7\n    ],\n    [\n        \"indie\",\n        \"mexico city\",\n        7\n    ],\n    [\n        \"latin\",\n        \"tokyo\",\n        7\n    ],\n    [\n        \"disco\",\n        \"nairobi\",\n        7\n    ],\n    [\n        \"urban\",\n        \"cairo\",\n        7\n    ],\n    [\n        \"pop\",\n        \"tunis\",\n        7\n    ],\n    [\n        \"singer-songwriter\",\n        \"amsterdam\",\n        6\n    ],\n    [\n        \"funk\",\n        \"new york\",\n        6\n    ],\n    [\n        \"singer-songwriter\",\n        \"mexico city\",\n        6\n    ],\n    [\n        \"country\",\n        \"buenos aires\",\n        6\n    ],\n    [\n        \"funk\",\n        \"tokyo\",\n        6\n    ],\n    [\n        \"bolero\",\n        \"tokyo\",\n        6\n    ],\n    [\n        \"metal\",\n        \"mumbai\",\n        6\n    ],\n    [\n        \"electronic\",\n        \"wellington\",\n        6\n    ],\n    [\n        \"pop\",\n        \"madrid\",\n        5\n    ],\n    [\n        \"blues\",\n        \"l.a.\",\n        5\n    ],\n    [\n        \"r and b\",\n        \"vancouver\",\n        5\n    ],\n    [\n        \"jazz\",\n        \"mexico city\",\n        5\n    ],\n    [\n        \"cumbia\",\n        \"brisbane\",\n        5\n    ],\n    [\n        \"bolero\",\n        \"rome\",\n        4\n    ],\n    [\n        \"singer-songwriter\",\n        \"santiago\",\n        4\n    ],\n    [\n        \"pop\",\n        \"tokyo\",\n        4\n    ],\n    [\n        \"indie\",\n        \"shanghai\",\n        4\n    ],\n    [\n        \"trap\",\n        \"cape town\",\n        4\n    ],\n    [\n        \"cover\",\n        \"madrid\",\n        3\n    ],\n    [\n        \"bossa-nova\",\n        \"barcelona\",\n        3\n    ],\n    [\n        \"metal\",\n        \"helsinki\",\n        3\n    ],\n    [\n        \"cover\",\n        \"new york\",\n        3\n    ],\n    [\n        \"blues\",\n        \"manila\",\n        3\n    ],\n    [\n        \"tv and film\",\n        \"shanghai\",\n        3\n    ],\n    [\n        \"soul\",\n        \"rome\",\n        2\n    ],\n    [\n        \"blues\",\n        \"helsinki\",\n        2\n    ],\n    [\n        \"singer-songwriter\",\n        \"vancouver\",\n        2\n    ],\n    [\n        \"trap\",\n        \"beijing\",\n        2\n    ],\n    [\n        \"electronic\",\n        \"shanghai\",\n        2\n    ],\n    [\n        \"blues\",\n        \"luanda\",\n        2\n    ],\n    [\n        \"rock\",\n        \"luanda\",\n        2\n    ],\n    [\n        \"rock\",\n        \"madrid\",\n        1\n    ],\n    [\n        \"singer-songwriter\",\n        \"rome\",\n        1\n    ],\n    [\n        \"indie\",\n        \"buenos aires\",\n        1\n    ],\n    [\n        \"r and b\",\n        \"manila\",\n        1\n    ],\n    [\n        \"latin\",\n        \"manila\",\n        1\n    ],\n    [\n        \"blues\",\n        \"mumbai\",\n        1\n    ],\n    [\n        \"disco\",\n        \"mumbai\",\n        1\n    ],\n    [\n        \"singer-songwriter\",\n        \"tunis\",\n        1\n    ],\n    [\n        \"funk\",\n        \"brisbane\",\n        1\n    ],\n    [\n        \"cumbia\",\n        \"amsterdam\",\n        0\n    ],\n    [\n        \"latin\",\n        \"new york\",\n        0\n    ],\n    [\n        \"tv and film\",\n        \"beijing\",\n        0\n    ]\n]"
+				}
+			]
+		},
+		{
+			"name": "http://localhost:8443/api/popularity/top",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8443/api/popularity/top",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"popularity",
+						"top"
+					]
+				},
+				"description": "List of the top 10 style/city tuples ordered descending by popularity rate"
+			},
+			"response": [
+				{
+					"name": "http://localhost:8443/api/popularity/top",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8443/api/popularity/top",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"api",
+								"popularity",
+								"top"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 06 Sep 2020 15:55:27 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    [\n        \"r and b\",\n        \"madrid\",\n        100\n    ],\n    [\n        \"classical\",\n        \"rome\",\n        100\n    ],\n    [\n        \"tv and film\",\n        \"madrid\",\n        99\n    ],\n    [\n        \"jazz\",\n        \"new york\",\n        99\n    ],\n    [\n        \"romantic\",\n        \"vancouver\",\n        99\n    ],\n    [\n        \"country\",\n        \"tokyo\",\n        99\n    ],\n    [\n        \"acoustic\",\n        \"vancouver\",\n        99\n    ],\n    [\n        \"classical\",\n        \"new york\",\n        99\n    ],\n    [\n        \"metal\",\n        \"vancouver\",\n        98\n    ],\n    [\n        \"soul\",\n        \"barcelona\",\n        98\n    ]\n]"
+				}
+			]
+		},
+		{
+			"name": "http://localhost:8443/api/53/popularity",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8443/api/53/popularity",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"53",
+						"popularity"
+					]
+				},
+				"description": "List of user id all style/city tuples ordered descending by popularity rate"
+			},
+			"response": [
+				{
+					"name": "http://localhost:8443/api/53/popularity",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8443/api/53/popularity",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"api",
+								"53",
+								"popularity"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 06 Sep 2020 15:57:19 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    [\n        \"jazz\",\n        \"madrid\",\n        16\n    ],\n    [\n        \"jazz\",\n        \"dublin\",\n        20\n    ],\n    [\n        \"jazz\",\n        \"new york\",\n        99\n    ],\n    [\n        \"jazz\",\n        \"cairo\",\n        14\n    ],\n    [\n        \"jazz\",\n        \"sidney\",\n        86\n    ],\n    [\n        \"funk\",\n        \"madrid\",\n        61\n    ],\n    [\n        \"funk\",\n        \"dublin\",\n        43\n    ],\n    [\n        \"funk\",\n        \"new york\",\n        6\n    ],\n    [\n        \"funk\",\n        \"cairo\",\n        38\n    ],\n    [\n        \"funk\",\n        \"sidney\",\n        15\n    ],\n    [\n        \"soul\",\n        \"madrid\",\n        95\n    ],\n    [\n        \"soul\",\n        \"dublin\",\n        83\n    ],\n    [\n        \"soul\",\n        \"new york\",\n        51\n    ],\n    [\n        \"soul\",\n        \"cairo\",\n        18\n    ],\n    [\n        \"soul\",\n        \"sidney\",\n        23\n    ],\n    [\n        \"r and b\",\n        \"madrid\",\n        100\n    ],\n    [\n        \"r and b\",\n        \"dublin\",\n        86\n    ],\n    [\n        \"r and b\",\n        \"new york\",\n        25\n    ],\n    [\n        \"r and b\",\n        \"cairo\",\n        21\n    ],\n    [\n        \"r and b\",\n        \"sidney\",\n        40\n    ],\n    [\n        \"classical\",\n        \"madrid\",\n        25\n    ],\n    [\n        \"classical\",\n        \"dublin\",\n        68\n    ],\n    [\n        \"classical\",\n        \"new york\",\n        99\n    ],\n    [\n        \"classical\",\n        \"cairo\",\n        86\n    ],\n    [\n        \"classical\",\n        \"sidney\",\n        94\n    ]\n]"
+				}
+			]
+		},
+		{
+			"name": "http://localhost:8443/api/53/popularity/top",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8443/api/53/popularity/top",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"53",
+						"popularity",
+						"top"
+					]
+				},
+				"description": "List of top ten user id style/city tuples ordered descending by popularity rate"
+			},
+			"response": [
+				{
+					"name": "http://localhost:8443/api/53/popularity/top",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8443/api/53/popularity/top",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"api",
+								"53",
+								"popularity",
+								"top"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 06 Sep 2020 15:58:10 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    [\n        \"r and b\",\n        \"madrid\",\n        100\n    ],\n    [\n        \"classical\",\n        \"new york\",\n        99\n    ],\n    [\n        \"jazz\",\n        \"new york\",\n        99\n    ],\n    [\n        \"soul\",\n        \"madrid\",\n        95\n    ],\n    [\n        \"classical\",\n        \"sidney\",\n        94\n    ],\n    [\n        \"r and b\",\n        \"dublin\",\n        86\n    ],\n    [\n        \"jazz\",\n        \"sidney\",\n        86\n    ],\n    [\n        \"classical\",\n        \"cairo\",\n        86\n    ],\n    [\n        \"soul\",\n        \"dublin\",\n        83\n    ],\n    [\n        \"classical\",\n        \"dublin\",\n        68\n    ]\n]"
+				}
+			]
+		},
+		{
+			"name": "http://localhost:8443/api/generateData",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8443/api/generateData",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8443",
+					"path": [
+						"api",
+						"generateData"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "http://localhost:8443/api/generateData",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8443/api/generateData",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8443",
+							"path": [
+								"api",
+								"generateData"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/plain;charset=UTF-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "23"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 06 Sep 2020 16:06:03 GMT"
+						}
+					],
+					"cookie": [],
+					"body": "Data has been generated"
+				}
+			]
+		}
+	],
+	"protocolProfileBehavior": {}
+}
