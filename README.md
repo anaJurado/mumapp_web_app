@@ -14,6 +14,16 @@ This app allows you to choose your favorite music styles and preferred cities al
 With that information, MuMApp provides you with the latest popularity rates of those styles in your chosen cities. 
 You can also check the info of the most popular music styles all around the globe.
 
+### Dashboard
+In the dashboard page you can find the information about the music styles and cities the user has chosen as well as the information about the top ten popular music styles in the cities
+There is also a button **GET DATA** that the user can use whenever he/she wants to refresh the data.
+
+
+
+### Profile
+In the profile page the user can see the personal data and update it as he/she wants. There is also the possibility to upload a profile image.
+
+
 ---
 
 ## App Main Aspects 
@@ -30,9 +40,9 @@ Every musical style is related to every cities sharing one attribute, the popula
 
 ### User permissions
 The application contemplates three types of users:
-- *Not registed:* Only have access to the main page and login page
-- *Registed user:* It has access to the dashboard and profile pages
-- *Admin:* It has also access to the admin panel
+- **Not registed:** Only have access to the main page and login page
+- **Registed user:** It has access to the dashboard and profile pages
+- **Admin:** It has also access to the admin panel
 
 ### Images
 Every registed user and admin user have the option to upload a profile image to be used in the profile page and top navbar
@@ -41,15 +51,13 @@ Every registed user and admin user have the option to upload a profile image to 
 
 ### Graphics
 In the dashboard view we can find a bar graphic showing:
-- *X axis:* music and city tuples chosen by the user
-- *Y axis:* Popularity rate between 0 and 100
+- **X axis:** music and city tuples chosen by the user
+- **Y axis:** Popularity rate between 0 and 100
 
 ![](https://github.com/anaJurado/mumapp_web_app/blob/update_readme/documents/graphic_bar.png)
 
 There is a couple of tables that show data as well in the dashboard page.
 
-### Complementary Tech
-TO BE DETERMINED
 
 ### Advance Query
 Due to the nature of the data schema that it's been created from the code by Spring I had to implement some advance queries.
@@ -111,9 +119,65 @@ You can also download the uml file here:  [Class Diagram UML](documents/mumapp_c
 
 ### Development Instructions
 
-Here are the developer instructions
+To configure the development environment and to develop a Spring Boot application, we will need a program that provides us with the structure of the packages to make the application as well as to manage the dependencies of Maven. To start we will download the program, I have used INTELLIJ, which can be downloaded from the following link https://www.jetbrains.com/es-es/idea/, once installed to create a project we will have to go to File -> New -> Sring Starter Project and we would have our project ready to start developing and working.
+The code can be download here: https://github.com/anaJurado/mumapp_web_app.git
+
+### Start the application
+**Windows:** We need to have XAMPP installed to run the MYSQL process or MysqlCommunityServer. We need to have Workbench installed to manage the tables.
+
+The first thing we will do will be to give you start in the xampp part to start the MYSQL process, then we start the workbench and give you run to connect the database. Finally, we will give the run spring boot application in our sts and we could already access our application.
+
+**MacOs:** We need to have XAMPP installed to run the MYSQL process or MysqlCommunityServer. We need to have Workbench installed to manage the tables.
+
+First of all, we need install MysqlCommunityServer and MysqlWorkbench, an IDE to manage the database. We also may manage the database through the console terminal. After that, we create a database with the name "daw" into MysqlWorkbench. Finally, we include the following lines into the application.properties file to indicate how to connect to the datase:
+
+`spring.datasource.url=jdbc:mysql://localhost/daw 
+spring.datasource.username=root 
+spring.datasource.password= 
+spring.datasource.driverClassName=com.mysql.jdbc.Driver 
+spring.jpa.hibernate.ddl-auto=create-drop
+`
+Note: MacOs maybe will not add to the $PATH the mysql Server process. We need to run server into settings page and include it to the path into ~/.bash_profile
 
 ---
 ## Bugs
 
-### Update / Modify USER
+### Update
+I need to implement a DTO class to manage the entity USER. I don't know how to do it. Since that implementation is not done, some problems are derived from that one:
+- When a user updates its own info in the profile page, music and cities previously selected get deleted and the user can't update that info either.
+- There is no way to make the checkboxes in the list checked because the info about user_music and user_city is not readable in the frontend
+- When an admin user updates the info of a user in the admin panel, it fails because of the same reason
+
+**AppControllers.java** 
+     
+   @PostMapping("/saveUser")
+    public String saveUser(Model model, User user, HttpServletRequest request) {
+    
+        // IF NEW USER
+        if (user.getId() == Long.valueOf(0)) {
+            String firstName = user.getFirstName();
+            String lastName = user.getLastName();
+            String name = user.getName();
+            String email = user.getEmail();
+            String pass = user.getPasswordHash();
+            userRepository.save(new User(firstName, lastName, name, email, pass, "ROLE_USER"));
+        }
+
+        return "info_updated";
+    }`
+
+**AppAPIRestController.java**
+   
+`   @PutMapping("/user/{id}")
+   public User updateUserById(@PathVariable long id, @RequestBody User updatedUser) {
+       userRepository.findById(id).getId(); //Returns with 404 if not found in database
+       updatedUser.setId(id);
+       userRepository.save(updatedUser);
+       return updatedUser;
+   }`
+
+    
+### logout
+
+
+---
