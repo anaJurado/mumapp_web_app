@@ -8,7 +8,7 @@ import com.mumapp.mumapp.music.Music;
 import com.mumapp.mumapp.music.MusicRepository;
 import com.mumapp.mumapp.music.MusicService;
 import com.mumapp.mumapp.user.User;
-import com.mumapp.mumapp.user.UserRepository;
+import com.mumapp.mumapp.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -27,7 +27,7 @@ import java.util.stream.Collectors;
 public class AppAPIRestController {
 
     @Autowired
-    private UserRepository userRepository;
+    private UserService userService;
 
     @Autowired
     private MusicService musicService;
@@ -46,53 +46,53 @@ public class AppAPIRestController {
     // GET ALL
     @GetMapping("/user/all")
     public Collection<User> getUsers() {
-        return userRepository.findAll();
+        return userService.findAll();
     }
 
     // POST
     @PostMapping("/user")
     @ResponseStatus(HttpStatus.CREATED)
     public User createUser(@RequestBody User user) {
-        userRepository.save(user);
+        userService.save(user);
         System.out.println(user.getId());
         return user;
     }
 
-    // GET/DELETE/PUT user/{id}
+    // GET
     @GetMapping("/user/{id}")
     public User getUserById(@PathVariable long id) {
-        return userRepository.findById(id);
+        return userService.findById(id);
     }
 
-    // TODO
-    // updatedUser doesnt work properly. I need a DTO class to manage user BUT I don't know hot to do it
+    // PUT
+    // TODO: updatedUser doesnt work properly. I need a DTO class to manage user but I don't know hot to do it
     @PutMapping("/user/{id}")
     public User updateUserById(@PathVariable long id, @RequestBody User updatedUser) {
-        userRepository.findById(id).getId(); //Returns with 404 if not found in database
+        userService.findById(id).getId(); //Returns with 404 if not found in database
         updatedUser.setId(id);
-        userRepository.save(updatedUser);
+        userService.save(updatedUser);
         return updatedUser;
     }
 
+    // DELETE
     @Transactional
     @DeleteMapping("/user/{id}")
     public User deleteUserById(@PathVariable long id) {
-        User deletedUser = userRepository.findById(id);
-        userRepository.deleteUserMusic(id);
-        userRepository.deleteUserCity(id);
-        userRepository.deleteUserRole(id);
-        userRepository.deleteById(id);
+        User deletedUser = userService.findById(id);
+        userService.deleteUserById(id);
         return deletedUser;
     }
 
+    // GET USER CITY
     @GetMapping("/user/{id}/city")
     public Set<City> getUserCity(@PathVariable long id) {
-        return userRepository.findById(id).getCitySet();
+        return userService.findById(id).getCitySet();
     }
 
+    // GET USER MUSIC
     @GetMapping("user/{id}/music")
     public Set<Music> getUserMusic(@PathVariable long id) {
-        return userRepository.findById(id).getMusicSet();
+        return userService.findById(id).getMusicSet();
     }
 
     //***********//
