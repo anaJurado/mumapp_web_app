@@ -20,13 +20,12 @@ public class Music {
     @JsonIgnore
     @OneToMany(
             mappedBy = "music"
-/*            cascade = CascadeType.ALL,
-            orphanRemoval = true*/
     )
     private Set<MusicCity> musicCitySet;
 
 
-    public Music(){}
+    public Music() {
+    }
 
     public Music(String styleName) {
         this.styleName = styleName;

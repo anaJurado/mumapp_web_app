@@ -25,7 +25,6 @@ public class MusicCity implements Serializable {
     private int popularityRate;
 
 
-
     public MusicCity() {
     }
 
@@ -36,12 +35,11 @@ public class MusicCity implements Serializable {
     }
 
 
-
-    public Music getMusic(){
+    public Music getMusic() {
         return music;
     }
 
-    public void setMusic(Music music){
+    public void setMusic(Music music) {
         this.music = music;
     }
 

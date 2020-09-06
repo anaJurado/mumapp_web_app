@@ -26,12 +26,12 @@ public class UserComponent {
         return user;
     }
 
-    public void setLoggedUser(User user) {
-        this.user = user;
-    }
-
     public boolean isLoggedUser() {
         return this.user != null;
+    }
+
+    public void setLoggedUser(User user) {
+        this.user = user;
     }
 
 }
