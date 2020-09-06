@@ -73,4 +73,11 @@ public class MusicService {
         return musicRepository.findTopPopularity();
     }
 
+    @Transactional
+    public void deleteById(long id) {
+        musicRepository.deleteMusicUser(id);
+        musicRepository.deleteMusicMusicCity(id);
+        musicRepository.deleteById(id);
+    }
+
 }

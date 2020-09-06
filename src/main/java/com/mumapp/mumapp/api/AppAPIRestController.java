@@ -99,7 +99,6 @@ public class AppAPIRestController {
     //   MUSIC   //
     //***********//
 
-    // GET ALL
     @GetMapping("/music/all/style")
     public Collection<String> getMusicStyle() {
         return musicService.findAll().stream().map(music -> music.getStyleName()).collect(Collectors.toList());
@@ -110,16 +109,6 @@ public class AppAPIRestController {
         return musicService.findAll().stream().map(music -> music.getId()).collect(Collectors.toList());
     }
 
-    // POST
-    @PostMapping("/music")
-    @ResponseStatus(HttpStatus.CREATED)
-    public Music createMusic(@RequestBody Music music) {
-        musicService.save(music);
-        System.out.println(music.getId());
-        return music;
-    }
-
-    // GET/DELETE/PUT music/{id}
     @GetMapping("/music/{id}")
     public Optional<Music> getMusicById(@PathVariable long id) {
         return musicService.findById(id);
@@ -128,6 +117,14 @@ public class AppAPIRestController {
     @GetMapping("/music/style/{style}")
     public Optional<Music> getMusicByMusicStyle(@PathVariable String style) {
         return musicService.findByStyleName(style);
+    }
+
+    @PostMapping("/music")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Music createMusic(@RequestBody Music music) {
+        musicService.save(music);
+        System.out.println(music.getId());
+        return music;
     }
 
     @PutMapping("/music/{id}")
@@ -142,9 +139,7 @@ public class AppAPIRestController {
     @DeleteMapping("/music/{id}")
     public Optional<Music> deleteMusicById(@PathVariable long id) {
         Optional<Music> deletedMusic = musicService.findById(id);
-        musicRepository.deleteMusicUser(id);
-        musicRepository.deleteMusicMusicCity(id);
-        musicRepository.deleteById(id);
+        musicService.deleteById(id);
         return deletedMusic;
     }
 
