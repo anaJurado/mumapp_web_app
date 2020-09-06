@@ -148,8 +148,9 @@ I need to implement a DTO class to manage the entity USER. I don't know how to d
 - There is no way to make the checkboxes in the list checked because the info about user_music and user_city is not readable in the frontend
 - When an admin user updates the info of a user in the admin panel, it fails because of the same reason
 
-**AppControllers.java** 
-     
+In **AppControllers.java**:
+
+```    
    @PostMapping("/saveUser")
     public String saveUser(Model model, User user, HttpServletRequest request) {
     
@@ -164,18 +165,20 @@ I need to implement a DTO class to manage the entity USER. I don't know how to d
         }
 
         return "info_updated";
-    }`
+    }
+```
 
-**AppAPIRestController.java**
-   
-`   @PutMapping("/user/{id}")
+In **AppAPIRestController.java**:
+
+```   
+   @PutMapping("/user/{id}")
    public User updateUserById(@PathVariable long id, @RequestBody User updatedUser) {
        userRepository.findById(id).getId(); //Returns with 404 if not found in database
        updatedUser.setId(id);
        userRepository.save(updatedUser);
        return updatedUser;
-   }`
-
+   }
+```
     
 ### logout
 
