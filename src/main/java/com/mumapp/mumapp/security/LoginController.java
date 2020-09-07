@@ -27,8 +27,8 @@ public class LoginController {
     @Autowired
     private UserComponent userComponent;
 
-    @RequestMapping("/api/logIn")
-    public ResponseEntity<User> logIn() {
+    @RequestMapping("/api/login")
+    public ResponseEntity<User> login() {
 
         if (!userComponent.isLoggedUser()) {
             log.info("Not user logged");
@@ -40,8 +40,8 @@ public class LoginController {
         }
     }
 
-    @RequestMapping("/api/logOut")
-    public ResponseEntity<Boolean> logOut(HttpSession session) {
+    @RequestMapping("/api/logout")
+    public ResponseEntity<Boolean> logout(HttpSession session) {
 
         if (!userComponent.isLoggedUser()) {
             log.info("No user logged");
