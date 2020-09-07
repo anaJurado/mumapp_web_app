@@ -18,11 +18,11 @@ You can also check the info of the most popular music styles all around the glob
 In the dashboard page you can find the information about the music styles and cities the user has chosen as well as the information about the top ten popular music styles in the cities
 There is also a button **GET DATA** that the user can use whenever he/she wants to refresh the data.
 
-![](documents/mumapp_user_dashboard-full.png)
+![](documents/screenshots/mumapp_user_dashboard-full.png)
 
 ### Profile
 In the profile page the user can see the personal data and update it as he/she wants. There is also the possibility to upload a profile image.
-![](documents/mummap_user_profile-full.png)
+![](documents/screenshots/mummap_user_profile-full.png)
 
 ---
 
@@ -53,14 +53,14 @@ The application contemplates three types of users:
 ### Images
 Every registed user and admin user have the option to upload a profile image to be used in the profile page and top navbar
 
-![](documents/profile_image.png)
+![](documents/screenshots/profile_image.png)
 
 ### Graphics
 In the dashboard view we can find a bar graphic showing:
 - **X axis:** music and city tuples chosen by the user
 - **Y axis:** Popularity rate between 0 and 100
 
-![](documents/graphic_bar.png)
+![](documents/screenshots/graphic_bar.png)
 
 There is a couple of tables that show data as well in the dashboard page.
 
@@ -104,20 +104,20 @@ More advance queries can be found in MusicRepository.java
 ### Web Navigation
 Here is a scheme of the navigation that is possible to do in the app differentiating by the different users roles
 
-![](documents/mumapp-web_navigation_non-registered_user.png)
-![](documents/mumapp-web_navigation_admin.png)
+![](documents/screenshots/mumapp-web_navigation_non-registered_user.png)
+![](documents/screenshots/mumapp-web_navigation_admin.png)
 
 You can also see it here:  [Web navigation pdf document](documents/mumapp-web_navigation.pdf)
 
 ### Data Base Diagram
 
-![](documents/mumappdb_database_uml_diagram.png)
+![](documents/screenshots/mumappdb_database_uml_diagram.png)
 
 You can also download the uml file here:  [Data Base Diagram UML](documents/SCHEMA:mumappdb.uml)
 
 ### Class Diagram
 
-![](documents/mumapp_class_diagram.png)
+![](documents/screenshots/mumapp_class_diagram.png)
 
 You can also download the uml file here:  [Class Diagram UML](documents/mumapp_class_diagram.uml)
 
@@ -201,7 +201,7 @@ Here is the [API REST documentation](documents/API.md)
 **Note:** In order to be able to test the API in POSTMAN I had to disable the CSFR protection and the HTTPS.
 I had problem creating the Security certificate and this app is using a _local created_ certificate so that gives some problems.
 
-![](documents/keytool_certificate_problems_1.png) 
-![](documents/keytool_certificate_problems_2.png) 
+![](documents/screenshots/keytool_certificate_problems_1.png) 
+![](documents/screenshots/keytool_certificate_problems_2.png) 
 
 
