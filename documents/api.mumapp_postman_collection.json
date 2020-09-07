@@ -7,7 +7,7 @@
 	},
 	"item": [
 		{
-			"name": "GET - http://localhost:8443/api/user/all",
+			"name": "GET - http://localhost:8443/api/user/all/",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -471,7 +471,7 @@
 			]
 		},
 		{
-			"name": "GET -  http://localhost:8443/api/user/55/city",
+			"name": "GET -  http://localhost:8443/api/user/55/music",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -837,7 +837,7 @@
 			]
 		},
 		{
-			"name": "GET - http://localhost:8443/api/music/all/style",
+			"name": "GET - http://localhost:8443/api/music/all",
 			"request": {
 				"method": "GET",
 				"header": [],
@@ -3017,7 +3017,7 @@
 			]
 		},
 		{
-			"name": "http://localhost:8443/api/generateData",
+			"name": "http://localhost:8443/api/generate_data",
 			"request": {
 				"method": "POST",
 				"header": [],

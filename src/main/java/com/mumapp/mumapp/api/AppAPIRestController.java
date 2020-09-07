@@ -232,7 +232,7 @@ public class AppAPIRestController {
     //   GENERATE DATA      //
     //**********************//
 
-    @PostMapping("/generateData")
+    @PostMapping("/generate_data")
     public String generateMusicCityData() {
         musicService.generateRandomData();
         return "Data has been generated";
