@@ -14,6 +14,7 @@
 <body>
     <!-- Navbar Auth-->
     <nav id="navbar-main" class="navbar navbar-horizontal navbar-transparent navbar-main navbar-expand-lg navbar-light">
+
         <div class="container">
             {{#admin}}
                 <div class="navbar" id="navbar-admin">
@@ -26,7 +27,6 @@
                 </ul>
             </div>
             {{/admin}}
-
             <a class="navbar-brand" href="dashboard">
                 <img src="../assets/img/brand/white.png">
             </a>
@@ -76,17 +76,20 @@
                                 <i class="ni ni-sound-wave"></i>
                                 <span>My Dashboard</span>
                             </a>
-                            <div class="dropdown-divider"></div>
-                            <a href="/logout" class="dropdown-item">
-                                <i class="ni ni-user-run"></i>
-                                <span>Logout</span>
-                            </a>
                         </div>
                     </li>
                 </ul>
             </div>
+            <!-- LOGOUT BUTTON -->
+            <div>
+                <form action="/logout" method="post">
+                    <button class="btn btn-default navbar-btn"  style="" type="submit" id="logout-button">Log Out</button>
 
+                    <input type="hidden" name="_csrf" value="{{token}}" />
+                </form>
+            </div>
         </div>
+
     </nav>
     <!-- /Navbar Auth-->
 
@@ -220,6 +223,7 @@
                                                         class="dropdown-menu checkbox-menu allow-focus">
                                                         {{#allMusic}}
                                                             <li><label style="text-transform: capitalize;"><input type="checkbox">{{styleName}}</label></li>
+
                                                         {{/allMusic}}
                                                     </ul>
                                                 </div>

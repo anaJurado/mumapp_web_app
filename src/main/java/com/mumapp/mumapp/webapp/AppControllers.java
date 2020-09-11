@@ -61,10 +61,12 @@ public class AppControllers {
         return "login";
     }
 
+/*
     @GetMapping("/logout")
     public String logout(Model model) {
         return "index";
     }
+*/
 
     @GetMapping("/error")
     public String error(Model model) {
